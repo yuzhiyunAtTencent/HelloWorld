@@ -17,14 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     // 修改下一个界面返回按钮的title，注意这行代码每个页面都要写一遍，不是全局的
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     UIImageView *imageView=[[UIImageView alloc]initWithFrame:self.view.bounds];
-    imageView.image=[UIImage imageNamed:@"back.jpg"];
+    // imageView.image=[UIImage imageNamed:@"back.jpg"];
+    //换成使用bundle存储图片
+//    NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"home/back.jpg"]];
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"back" ofType:@"jpg" inDirectory:@"Image.bundle/home"];
+    imageView.image = [UIImage imageWithContentsOfFile:imagePath];
     [self.view addSubview:imageView];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
 
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     UIButton *enterMainButton = [[UIButton alloc] init];
     enterMainButton.frame = CGRectMake(24, [UIScreen mainScreen].bounds.size.height - 32 - 48, [UIScreen mainScreen].bounds.size.width - 48, 48);
     enterMainButton.layer.borderWidth = 1;

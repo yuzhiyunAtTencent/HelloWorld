@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		281A2CF21FE170EC00D95B1B /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A2CF11FE170EC00D95B1B /* News.m */; };
+		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
+		289570ED1FEBB2DE0089DC06 /* test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EC1FEBB2DE0089DC06 /* test.bundle */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		281A2CF01FE170EC00D95B1B /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		281A2CF11FE170EC00D95B1B /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		289570EC1FEBB2DE0089DC06 /* test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = test.bundle; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		28C48D101FD7FDB50096BAB9 = {
 			isa = PBXGroup;
 			children = (
+				289570EC1FEBB2DE0089DC06 /* test.bundle */,
+				289570EA1FEBA4290089DC06 /* Image.bundle */,
 				28C48D1B1FD7FDB50096BAB9 /* Helloworld */,
 				28C48D341FD7FDB50096BAB9 /* HelloworldTests */,
 				28C48D3F1FD7FDB50096BAB9 /* HelloworldUITests */,
@@ -280,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */,
+				289570ED1FEBB2DE0089DC06 /* test.bundle in Resources */,
+				289570EB1FEBA4290089DC06 /* Image.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
