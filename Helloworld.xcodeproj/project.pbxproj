@@ -8,14 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		281A2CF21FE170EC00D95B1B /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A2CF11FE170EC00D95B1B /* News.m */; };
+		284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */; };
+		284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */; };
+		286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7CFE2004C2EC00F928D1 /* MenuView.m */; };
+		286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7D012004C40800F928D1 /* BasicMenuController.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
-		289570ED1FEBB2DE0089DC06 /* test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EC1FEBB2DE0089DC06 /* test.bundle */; };
+		28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */; };
+		28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */; };
+		28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC52025B87B002B9B70 /* VideoViewController.m */; };
+		28AE5BC92025B89B002B9B70 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE5BC82025B89B002B9B70 /* AVFoundation.framework */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
 		28C48D361FD7FDB50096BAB9 /* HelloworldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D351FD7FDB50096BAB9 /* HelloworldTests.m */; };
 		28C48D411FD7FDB50096BAB9 /* HelloworldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D401FD7FDB50096BAB9 /* HelloworldUITests.m */; };
-		28C48D501FD814FF0096BAB9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D4F1FD814FF0096BAB9 /* MainViewController.m */; };
 		28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */; };
 		28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -40,8 +46,22 @@
 /* Begin PBXFileReference section */
 		281A2CF01FE170EC00D95B1B /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		281A2CF11FE170EC00D95B1B /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		284B2F72201F586B00D32D63 /* LearnAVFundationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnAVFundationViewController.h; sourceTree = "<group>"; };
+		284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnAVFundationViewController.m; sourceTree = "<group>"; };
+		284B2F792021C13300D32D63 /* GetAlbumPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAlbumPictureViewController.h; sourceTree = "<group>"; };
+		284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAlbumPictureViewController.m; sourceTree = "<group>"; };
+		286C7CFD2004C2EC00F928D1 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		286C7CFE2004C2EC00F928D1 /* MenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		286C7D002004C40800F928D1 /* BasicMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicMenuController.h; sourceTree = "<group>"; };
+		286C7D012004C40800F928D1 /* BasicMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicMenuController.m; sourceTree = "<group>"; };
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
-		289570EC1FEBB2DE0089DC06 /* test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = test.bundle; sourceTree = "<group>"; };
+		28AE5BBC2025ABCE002B9B70 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
+		28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
+		28AE5BC02025B5F8002B9B70 /* YunBasicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunBasicViewController.h; sourceTree = "<group>"; };
+		28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunBasicViewController.m; sourceTree = "<group>"; };
+		28AE5BC42025B87B002B9B70 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		28AE5BC52025B87B002B9B70 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		28AE5BC82025B89B002B9B70 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,8 +74,6 @@
 		28C48D3C1FD7FDB50096BAB9 /* HelloworldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloworldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D401FD7FDB50096BAB9 /* HelloworldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloworldUITests.m; sourceTree = "<group>"; };
 		28C48D421FD7FDB50096BAB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28C48D4E1FD814FF0096BAB9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		28C48D4F1FD814FF0096BAB9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		28C48D551FD81B7F0096BAB9 /* NewsListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsListTableViewController.h; sourceTree = "<group>"; };
 		28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsListTableViewController.m; sourceTree = "<group>"; };
 		28C48D591FD81CBC0096BAB9 /* NewsItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItemTableViewCell.h; sourceTree = "<group>"; };
@@ -67,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AE5BC92025B89B002B9B70 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,15 +115,95 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		284B2F71201F583F00D32D63 /* AVFundation */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BC32025B868002B9B70 /* Video */,
+				284B2F72201F586B00D32D63 /* LearnAVFundationViewController.h */,
+				284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */,
+			);
+			path = AVFundation;
+			sourceTree = "<group>";
+		};
+		284B2F782021C11800D32D63 /* GetAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				284B2F792021C13300D32D63 /* GetAlbumPictureViewController.h */,
+				284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */,
+			);
+			path = GetAlbum;
+			sourceTree = "<group>";
+		};
+		286C7CFB2004BC8100F928D1 /* SubMenu */ = {
+			isa = PBXGroup;
+			children = (
+				286C7CFC2004C29900F928D1 /* Basic */,
+			);
+			path = SubMenu;
+			sourceTree = "<group>";
+		};
+		286C7CFC2004C29900F928D1 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				286C7CFD2004C2EC00F928D1 /* MenuView.h */,
+				286C7CFE2004C2EC00F928D1 /* MenuView.m */,
+				286C7D002004C40800F928D1 /* BasicMenuController.h */,
+				286C7D012004C40800F928D1 /* BasicMenuController.m */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		286C7D032004CFF800F928D1 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
+		28AE5BBB2025ABA5002B9B70 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BBC2025ABCE002B9B70 /* RootTableViewController.h */,
+				28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		28AE5BBF2025B58B002B9B70 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BC02025B5F8002B9B70 /* YunBasicViewController.h */,
+				28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		28AE5BC32025B868002B9B70 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BC42025B87B002B9B70 /* VideoViewController.h */,
+				28AE5BC52025B87B002B9B70 /* VideoViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		28AE5BC72025B89B002B9B70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BC82025B89B002B9B70 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		28C48D101FD7FDB50096BAB9 = {
 			isa = PBXGroup;
 			children = (
-				289570EC1FEBB2DE0089DC06 /* test.bundle */,
 				289570EA1FEBA4290089DC06 /* Image.bundle */,
 				28C48D1B1FD7FDB50096BAB9 /* Helloworld */,
 				28C48D341FD7FDB50096BAB9 /* HelloworldTests */,
 				28C48D3F1FD7FDB50096BAB9 /* HelloworldUITests */,
 				28C48D1A1FD7FDB50096BAB9 /* Products */,
+				28AE5BC72025B89B002B9B70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,14 +220,18 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28AE5BBF2025B58B002B9B70 /* Basic */,
+				28AE5BBB2025ABA5002B9B70 /* RootViewController */,
+				284B2F782021C11800D32D63 /* GetAlbum */,
+				284B2F71201F583F00D32D63 /* AVFundation */,
+				286C7D032004CFF800F928D1 /* PageView */,
+				286C7CFB2004BC8100F928D1 /* SubMenu */,
 				28C48D511FD81B2E0096BAB9 /* NewsList */,
 				28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */,
 				28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */,
 				28C48D251FD7FDB50096BAB9 /* Assets.xcassets */,
 				28C48D2A1FD7FDB50096BAB9 /* Info.plist */,
 				28C48D2B1FD7FDB50096BAB9 /* main.m */,
-				28C48D4E1FD814FF0096BAB9 /* MainViewController.h */,
-				28C48D4F1FD814FF0096BAB9 /* MainViewController.m */,
 			);
 			path = Helloworld;
 			sourceTree = "<group>";
@@ -286,7 +389,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */,
-				289570ED1FEBB2DE0089DC06 /* test.bundle in Resources */,
 				289570EB1FEBA4290089DC06 /* Image.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,10 +416,16 @@
 			files = (
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
+				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
 				281A2CF21FE170EC00D95B1B /* News.m in Sources */,
+				284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */,
+				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
+				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
-				28C48D501FD814FF0096BAB9 /* MainViewController.m in Sources */,
+				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,
+				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,
+				286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
