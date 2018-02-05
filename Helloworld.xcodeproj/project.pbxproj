@@ -17,6 +17,8 @@
 		28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */; };
 		28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC52025B87B002B9B70 /* VideoViewController.m */; };
 		28AE5BC92025B89B002B9B70 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE5BC82025B89B002B9B70 /* AVFoundation.framework */; };
+		28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BCC2025BBDF002B9B70 /* YunPopWindowView.m */; };
+		28AE5BD12025BC8E002B9B70 /* YunPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BD02025BC8E002B9B70 /* YunPopViewController.m */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
@@ -62,6 +64,10 @@
 		28AE5BC42025B87B002B9B70 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		28AE5BC52025B87B002B9B70 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		28AE5BC82025B89B002B9B70 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		28AE5BCB2025BBDF002B9B70 /* YunPopWindowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunPopWindowView.h; sourceTree = "<group>"; };
+		28AE5BCC2025BBDF002B9B70 /* YunPopWindowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunPopWindowView.m; sourceTree = "<group>"; };
+		28AE5BCF2025BC8E002B9B70 /* YunPopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunPopViewController.h; sourceTree = "<group>"; };
+		28AE5BD02025BC8E002B9B70 /* YunPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunPopViewController.m; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -195,6 +201,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		28AE5BCA2025BB28002B9B70 /* PopWindow */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BD22025BC94002B9B70 /* View */,
+				28AE5BCE2025BC32002B9B70 /* Controller */,
+			);
+			path = PopWindow;
+			sourceTree = "<group>";
+		};
+		28AE5BCE2025BC32002B9B70 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BCF2025BC8E002B9B70 /* YunPopViewController.h */,
+				28AE5BD02025BC8E002B9B70 /* YunPopViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		28AE5BD22025BC94002B9B70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BCB2025BBDF002B9B70 /* YunPopWindowView.h */,
+				28AE5BCC2025BBDF002B9B70 /* YunPopWindowView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		28C48D101FD7FDB50096BAB9 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +253,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28AE5BCA2025BB28002B9B70 /* PopWindow */,
 				28AE5BBF2025B58B002B9B70 /* Basic */,
 				28AE5BBB2025ABA5002B9B70 /* RootViewController */,
 				284B2F782021C11800D32D63 /* GetAlbum */,
@@ -417,10 +451,12 @@
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
+				28AE5BD12025BC8E002B9B70 /* YunPopViewController.m in Sources */,
 				281A2CF21FE170EC00D95B1B /* News.m in Sources */,
 				284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */,
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
+				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
 				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "NewsListTableViewController.h"
 #import "LearnAVFundationViewController.h"
 #import "GetAlbumPictureViewController.h"
+#import "YunPopViewController.h"
 
 @interface RootTableViewController ()
 
@@ -62,7 +63,7 @@
             nextPage = [[GetAlbumPictureViewController alloc]init];
             break;
         case 3:
-//            nextPage = [[NewsListTableViewController alloc]init];
+            nextPage = [[YunPopViewController alloc]init];
             break;
         default:
             break;
