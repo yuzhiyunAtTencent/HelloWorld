@@ -21,6 +21,8 @@
 		28AE5BD12025BC8E002B9B70 /* YunPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BD02025BC8E002B9B70 /* YunPopViewController.m */; };
 		28AE5BD6202850A3002B9B70 /* WKWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BD5202850A3002B9B70 /* WKWebViewViewController.m */; };
 		28AE5BDB20298338002B9B70 /* AFNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BDA20298338002B9B70 /* AFNetworkingViewController.m */; };
+		28AE5BE120298A53002B9B70 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE5BE020298A53002B9B70 /* WebKit.framework */; };
+		28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
@@ -78,6 +80,11 @@
 		28AE5BDA20298338002B9B70 /* AFNetworkingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingViewController.m; sourceTree = "<group>"; };
 		28AE5BDC20298425002B9B70 /* YunPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunPrefixHeader.pch; sourceTree = "<group>"; };
 		28AE5BDE2029852E002B9B70 /* CommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
+		28AE5BE020298A53002B9B70 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		28AE5BE320298E02002B9B70 /* UIScreen+YunUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+YunUtils.h"; sourceTree = "<group>"; };
+		28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+YunUtils.m"; sourceTree = "<group>"; };
+		28AE5BE620298E76002B9B70 /* YunDataGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunDataGlobal.h; sourceTree = "<group>"; };
+		28AE5BE7202993A1002B9B70 /* UIKit+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKit+Category.h"; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AE5BE120298A53002B9B70 /* WebKit.framework in Frameworks */,
 				28AE5BC92025B89B002B9B70 /* AVFoundation.framework in Frameworks */,
 				7604A21244CC47F42A4BA499 /* libPods-Helloworld.a in Frameworks */,
 			);
@@ -209,6 +217,7 @@
 		28AE5BC72025B89B002B9B70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28AE5BE020298A53002B9B70 /* WebKit.framework */,
 				28AE5BC82025B89B002B9B70 /* AVFoundation.framework */,
 				58DA26AC5CF3E5C7FB069108 /* libPods-Helloworld.a */,
 			);
@@ -263,9 +272,21 @@
 		28AE5BDD202984EA002B9B70 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				28AE5BE220298D5B002B9B70 /* UIKit+Category */,
 				28AE5BDE2029852E002B9B70 /* CommonMacros.h */,
+				28AE5BE620298E76002B9B70 /* YunDataGlobal.h */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		28AE5BE220298D5B002B9B70 /* UIKit+Category */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BE7202993A1002B9B70 /* UIKit+Category.h */,
+				28AE5BE320298E02002B9B70 /* UIScreen+YunUtils.h */,
+				28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */,
+			);
+			path = "UIKit+Category";
 			sourceTree = "<group>";
 		};
 		28C48D101FD7FDB50096BAB9 = {
@@ -559,6 +580,7 @@
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
+				28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */,
 				28AE5BD6202850A3002B9B70 /* WKWebViewViewController.m in Sources */,
 				28AE5BD12025BC8E002B9B70 /* YunPopViewController.m in Sources */,
 				28AE5BDB20298338002B9B70 /* AFNetworkingViewController.m in Sources */,

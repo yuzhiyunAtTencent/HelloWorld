@@ -7,16 +7,27 @@
 //
 
 #import "WKWebViewViewController.h"
+#import <WebKit/WebKit.h>
 
-@interface WKWebViewViewController () 
+@interface WKWebViewViewController () <WKUIDelegate>
 
+@property(nonatomic, strong) WKWebView *webView;
 @end
 
 @implementation WKWebViewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    WKWebViewConfiguration *configuration =[[WKWebViewConfiguration alloc] init];
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, SCREEN_HEIGHT) configuration:configuration];
+    [self.view addSubview:self.webView];
+    self.webView.UIDelegate = self;
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"https://www.baidu.com"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    [self.webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {
