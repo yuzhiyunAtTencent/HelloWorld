@@ -13,6 +13,7 @@
 #import "YunPopViewController.h"
 #import "WKWebViewViewController.h"
 #import "AFNetworkingViewController.h"
+#import "DownLoadImageViewController.h"
 
 @interface RootTableViewController ()
 
@@ -28,7 +29,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     self.array = [NSMutableArray array];
-    [self.array addObjectsFromArray:@[@"进入列表页", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView", @"AFNetworking"]];
+    [self.array addObjectsFromArray:@[@"进入列表页", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView", @"AFNetworking", @"NSURLSession下载图片"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +75,9 @@
             break;
         case 5:
             nextPage = [[AFNetworkingViewController alloc] init];
+            break;
+        case 6:
+            nextPage = [[DownLoadImageViewController alloc] init];
             break;
         default:
             break;

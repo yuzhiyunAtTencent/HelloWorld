@@ -23,6 +23,7 @@
 		28AE5BDB20298338002B9B70 /* AFNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BDA20298338002B9B70 /* AFNetworkingViewController.m */; };
 		28AE5BE120298A53002B9B70 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE5BE020298A53002B9B70 /* WebKit.framework */; };
 		28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */; };
+		28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
@@ -85,6 +86,8 @@
 		28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+YunUtils.m"; sourceTree = "<group>"; };
 		28AE5BE620298E76002B9B70 /* YunDataGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunDataGlobal.h; sourceTree = "<group>"; };
 		28AE5BE7202993A1002B9B70 /* UIKit+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKit+Category.h"; sourceTree = "<group>"; };
+		28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadImageViewController.m; sourceTree = "<group>"; };
+		28AE5BEA20299B1F002B9B70 /* DownLoadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadImageViewController.h; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -289,6 +292,15 @@
 			path = "UIKit+Category";
 			sourceTree = "<group>";
 		};
+		28AE5BE820299AFD002B9B70 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				28AE5BEA20299B1F002B9B70 /* DownLoadImageViewController.h */,
+				28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */,
+			);
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
 		28C48D101FD7FDB50096BAB9 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +328,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28AE5BE820299AFD002B9B70 /* NSURLSession */,
 				28AE5BDD202984EA002B9B70 /* Common */,
 				28AE5BD820298167002B9B70 /* AFNetworking */,
 				28AE5BD320285067002B9B70 /* WebView */,
@@ -577,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
