@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     WKWebViewConfiguration *configuration =[[WKWebViewConfiguration alloc] init];
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, SCREEN_HEIGHT) configuration:configuration];
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kQNNavigationBarHeight_DP + kQNSystemStatusBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT) configuration:configuration];
     [self.view addSubview:self.webView];
     self.webView.UIDelegate = self;
     
