@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YunBasicViewController.h"
 
 @interface LearnAVFundationViewController : YunBasicViewController
 

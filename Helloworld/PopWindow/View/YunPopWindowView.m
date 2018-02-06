@@ -28,6 +28,7 @@
             [btn addTarget:self action:@selector(p_cancel) forControlEvents:UIControlEventTouchUpInside];
             btn;
         });
+        [self addSubview:self.cancelBackground];
         
         self.contentView = ({
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 300, self.bounds.size.width - 20, 200)];
@@ -51,20 +52,25 @@
 
 #pragma mark Public
 - (void)showPopWindowView {
+    // 获取当前window （之前在appDelegate中设置了makeKeyAndVisible）的那个Window就是keyWindow
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     if (!window) {
         window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     }
     
+    // 获取最底层ViewController
     UIViewController *rootViewController = window.rootViewController;
-    [rootViewController.view addSubview:self.cancelBackground];
-    [rootViewController.view addSubview:self.contentView];
+    [rootViewController.view addSubview:self];
+    
+    self.contentView.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentView.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+    }];
 }
 
 #pragma mark Private
 - (void)p_cancel {
-    [self.cancelBackground removeFromSuperview];
-    [self.contentView removeFromSuperview];
+    [self removeFromSuperview];
 }
 
 @end
