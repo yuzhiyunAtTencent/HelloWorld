@@ -37,13 +37,20 @@
 
 // 子线程的任务
 - (void)run {
-    for (int i = 0; i < 10; i++) {
-        NSLog(@"%i",i);
-        if (i == 9) {
-            // performSelectorOnMainThread也是NSObject的一个分类哦
-            [self performSelectorOnMainThread:@selector(runMainThread) withObject:nil waitUntilDone:YES];
+    // 加锁方式一
+//    @synchronized(self) {
+    // 加锁方式二
+    NSCondition *condition = [[NSCondition alloc] init];
+    [condition lock]; //加锁
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"%i",i);
+            if (i == 9) {
+                // performSelectorOnMainThread也是NSObject的一个分类哦
+                [self performSelectorOnMainThread:@selector(runMainThread) withObject:nil waitUntilDone:YES];
+            }
         }
-    }
+    [condition unlock]; //解锁
+//    }
 }
 
 - (void)runMainThread {
