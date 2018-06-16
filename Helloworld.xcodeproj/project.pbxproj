@@ -32,6 +32,7 @@
 		28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */; };
 		28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */; };
 		7604A21244CC47F42A4BA499 /* libPods-Helloworld.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DA26AC5CF3E5C7FB069108 /* libPods-Helloworld.a */; };
+		CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItemTableViewCell.m; sourceTree = "<group>"; };
 		58DA26AC5CF3E5C7FB069108 /* libPods-Helloworld.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Helloworld.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF41C3570CC0F499C96C809 /* Pods-Helloworld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helloworld.release.xcconfig"; path = "Pods/Target Support Files/Pods-Helloworld/Pods-Helloworld.release.xcconfig"; sourceTree = "<group>"; };
+		CD69D98C20D4F0D3005FA5D1 /* MultiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadViewController.h; sourceTree = "<group>"; };
+		CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				CD69D98B20D4F060005FA5D1 /* MultiThread */,
 				28AE5BE820299AFD002B9B70 /* NSURLSession */,
 				28AE5BDD202984EA002B9B70 /* Common */,
 				28AE5BD820298167002B9B70 /* AFNetworking */,
@@ -393,6 +397,15 @@
 				28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */,
 			);
 			path = viewController;
+			sourceTree = "<group>";
+		};
+		CD69D98B20D4F060005FA5D1 /* MultiThread */ = {
+			isa = PBXGroup;
+			children = (
+				CD69D98C20D4F0D3005FA5D1 /* MultiThreadViewController.h */,
+				CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */,
+			);
+			path = MultiThread;
 			sourceTree = "<group>";
 		};
 		E0F1566D6ED85F00B23BF688 /* Pods */ = {
@@ -605,6 +618,7 @@
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
+				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
 				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,
 				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,
 				286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */,
