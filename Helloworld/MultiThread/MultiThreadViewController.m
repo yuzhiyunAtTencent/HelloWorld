@@ -18,7 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    // 本地通知
+//    UILocalNotification *notification = [[UILocalNotification alloc] init];
+//    if (notification == nil)
+//        return;
+//    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
+//    notification.timeZone = [NSTimeZone defaultTimeZone];
+//    notification.applicationIconBadgeNumber = -1;
+//    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, [UIScreen mainScreen].bounds.size.width - 40, 40)];
     [btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -31,6 +38,12 @@
     [btn2 addTarget:self action:@selector(clickGCD) forControlEvents:UIControlEventTouchUpInside];
     [btn2 setTitle:@"GCD" forState:UIControlStateNormal];
     [self.view addSubview:btn2];
+    
+    UIButton *btn3 = [[UIButton alloc] initWithFrame:CGRectMake(20, 160, [UIScreen mainScreen].bounds.size.width - 40, 40)];
+    [btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn3 addTarget:self action:@selector(clickNSOperationTest) forControlEvents:UIControlEventTouchUpInside];
+    [btn3 setTitle:@"NSOperation" forState:UIControlStateNormal];
+    [self.view addSubview:btn3];
 }
 
 - (void)clickNSThread {
@@ -78,6 +91,20 @@
             [self runMainThread];
         });
     });
+}
+
+- (void)clickNSOperationTest {
+    // 这种方式是在主线程的
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(runNSOperation) object:self];
+    [operation start];
+}
+
+- (void)runNSOperation {
+    [self runMainThread];
+    // 可以看出这里也是在主线程执行的
+    for (int i = 0; i < 9; i++) {
+        NSLog(@"%d",i);
+    }
 }
 
 @end
