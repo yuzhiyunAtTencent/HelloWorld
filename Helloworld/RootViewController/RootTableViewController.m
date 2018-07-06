@@ -15,6 +15,7 @@
 #import "AFNetworkingViewController.h"
 #import "DownLoadImageViewController.h"
 #import "MultiThreadViewController.h"
+#import "AppOpenURLViewController.h"
 
 @interface RootTableViewController ()
 
@@ -30,7 +31,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     self.array = [NSMutableArray array];
-    [self.array addObjectsFromArray:@[@"进入列表页", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView", @"AFNetworking", @"NSURLSession下载图片",@"多线程"]];
+    [self.array addObjectsFromArray:@[@"进入列表页", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView", @"AFNetworking", @"NSURLSession下载图片",@"多线程",@"应用间跳转"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +83,9 @@
             break;
         case 7:
             nextPage = [[MultiThreadViewController alloc] init];
+            break;
+        case 8:
+            nextPage = [[AppOpenURLViewController alloc] init];
             break;
         default:
             break;
