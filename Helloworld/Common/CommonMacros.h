@@ -23,3 +23,6 @@
 #define CHECK_VALID_MUTABLEDICTIONARY(__aDictionary) \
 (__aDictionary && [__aDictionary isKindOfClass:[NSMutableDictionary class]] && [__aDictionary count])
 #define CHECK_VALID_SET(__aSet) (__aSet && [__aSet isKindOfClass:[NSSet class]] && [__aSet count])
+
+/** util **/
+#define QN_DECLARE_CONST_NSSTRING(name) NSString *const name = @"" #name;

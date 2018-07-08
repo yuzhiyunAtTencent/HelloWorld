@@ -17,15 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // 本地通知
-//    UILocalNotification *notification = [[UILocalNotification alloc] init];
-//    if (notification == nil)
-//        return;
-//    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
-//    notification.timeZone = [NSTimeZone defaultTimeZone];
-//    notification.applicationIconBadgeNumber = -1;
-//    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, [UIScreen mainScreen].bounds.size.width - 40, 40)];
     [btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

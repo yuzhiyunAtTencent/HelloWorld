@@ -10,15 +10,29 @@
 //#import "MainViewController.h"
 #import "NewsListTableViewController.h"
 #import "RootTableViewController.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+QN_DECLARE_CONST_NSSTRING(kQNViewAction);
+QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
+QN_DECLARE_CONST_NSSTRING(kQNUninterestAction);
+QN_DECLARE_CONST_NSSTRING(kQNCancelAction);
+QN_DECLARE_CONST_NSSTRING(kQNReturnToListViewEvent);
+QN_DECLARE_CONST_NSSTRING(kQNUserHasReadArticleEvent);
+QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
+
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
 @implementation AppDelegate
 
-
+#pragma mark - UIApplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // 10.0 之后的通知
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    [self p_requestPushAuthorize];
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//设置窗口
     UIViewController *mainVC = [[RootTableViewController alloc] init];
@@ -62,5 +76,61 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - UNUserNotificationCenterDelegate
+/** 当收到通知时候 用户处于前台时,不在通知栏展示通知UI，可以在这里处理逻辑*/
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    NSLog(@"前台 不展示通知");
+}
+
+/** 当收到通知时候 不处于前台时,与通知交互走这个方法 */
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
+    NSLog(@"点击通知");
+}
+
+#pragma mark - Private
+// 申请push权限
+- (void)p_requestPushAuthorize {
+    if ([UNNotificationCategory
+         respondsToSelector:@selector(categoryWithIdentifier:actions:intentIdentifiers:options:)]) {
+        UNNotificationAction *checkAction =
+        [UNNotificationAction actionWithIdentifier:kQNViewAction
+                                             title:@"打开"
+                                           options:UNNotificationActionOptionForeground];
+        UNNotificationAction *storeUpAction =
+        [UNNotificationAction actionWithIdentifier:kQNFavoriteAction
+                                             title:@"收藏"
+                                           options:UNNotificationActionOptionNone];
+        UNNotificationAction *uninterestAction =
+        [UNNotificationAction actionWithIdentifier:kQNUninterestAction
+                                             title:@"不感兴趣"
+                                           options:UNNotificationActionOptionNone];
+        UNNotificationAction *cancelAction =
+        [UNNotificationAction actionWithIdentifier:kQNCancelAction
+                                             title:@"取消"
+                                           options:UNNotificationActionOptionDestructive];
+        
+        NSArray *actionArray = [NSArray arrayWithObjects:checkAction, storeUpAction, uninterestAction, cancelAction, nil];
+        // 这里设置了categoryIdentifier ，和本地通知的UNMutableNotificationContent的categoryIdentifier字段一一对应的，如果是远程通知，在推送的payload（就是一段json） 中添加 category 字段即可，这样对应起来后，action才会发挥作用
+        UNNotificationCategory *category = [UNNotificationCategory
+                                            categoryWithIdentifier:@"view_news_detail"
+                                            actions:actionArray
+                                            intentIdentifiers:@[]
+                                            options:UNNotificationCategoryOptionCustomDismissAction];
+        
+        [[UNUserNotificationCenter currentNotificationCenter]
+         setNotificationCategories:[NSSet setWithObject:category]];
+    }
+    [[UNUserNotificationCenter currentNotificationCenter]
+     requestAuthorizationWithOptions:UNAuthorizationOptionBadge | UNAuthorizationOptionSound |
+     UNAuthorizationOptionAlert
+     completionHandler:^(BOOL granted, NSError *_Nullable error) {
+         NSLog(@"用户允许push？ --- %@",granted?@"YES":@"NO");
+         dispatch_async(
+                        dispatch_get_main_queue(),
+                        ^{
+                            [[UIApplication sharedApplication] registerForRemoteNotifications];
+                        });
+     }];
+}
 
 @end
