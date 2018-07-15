@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // test 
+    // test
+    // test git twice
     // Do any additional setup after loading the view.
     
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, [UIScreen mainScreen].bounds.size.width - 40, 40)];
