@@ -9,6 +9,9 @@
 #import "NewsListTableViewController.h"
 #import "NewsItemTableViewCell.h"
 #import "News.h"
+
+#import <SVPullToRefresh/SVPullToRefresh.h>
+
 @interface NewsListTableViewController (){
     NSMutableArray* newsArray;
 }
@@ -23,6 +26,25 @@
     [newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
     [newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
     [newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    [newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
+    [newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
+    [newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    [newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
+    [newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
+    [newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    
+    // 下拉刷新
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [newsArray insertObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"新增数据*****"] atIndex:0];
+        [self.tableView reloadData];
+        [self.tableView.pullToRefreshView stopAnimating];
+    }];
+    // 上拉刷新
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"新增数据*****"]];
+        [self.tableView reloadData];
+        [self.tableView.infiniteScrollingView stopAnimating];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
