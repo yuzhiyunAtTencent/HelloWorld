@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		281A2CF21FE170EC00D95B1B /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A2CF11FE170EC00D95B1B /* News.m */; };
+		281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281D970120FCBE8A009AED47 /* LottieViewController.m */; };
+		281D970420FCC1A6009AED47 /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 281D970320FCC1A6009AED47 /* heart.json */; };
 		284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */; };
 		284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */; };
 		286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7CFE2004C2EC00F928D1 /* MenuView.m */; };
@@ -59,6 +61,9 @@
 		0BEB8D0C1BB5909BE0F7BB3C /* Pods-Helloworld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helloworld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Helloworld/Pods-Helloworld.debug.xcconfig"; sourceTree = "<group>"; };
 		281A2CF01FE170EC00D95B1B /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		281A2CF11FE170EC00D95B1B /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		281D970020FCBE8A009AED47 /* LottieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieViewController.h; sourceTree = "<group>"; };
+		281D970120FCBE8A009AED47 /* LottieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieViewController.m; sourceTree = "<group>"; };
+		281D970320FCC1A6009AED47 /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
 		284B2F72201F586B00D32D63 /* LearnAVFundationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnAVFundationViewController.h; sourceTree = "<group>"; };
 		284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnAVFundationViewController.m; sourceTree = "<group>"; };
 		284B2F792021C13300D32D63 /* GetAlbumPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAlbumPictureViewController.h; sourceTree = "<group>"; };
@@ -155,6 +160,15 @@
 				281A2CF11FE170EC00D95B1B /* News.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		281D96FF20FCBDEB009AED47 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				281D970020FCBE8A009AED47 /* LottieViewController.h */,
+				281D970120FCBE8A009AED47 /* LottieViewController.m */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		284B2F71201F583F00D32D63 /* AVFundation */ = {
@@ -341,6 +355,8 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				281D970320FCC1A6009AED47 /* heart.json */,
+				281D96FF20FCBDEB009AED47 /* Lottie */,
 				CD69D99620F20771005FA5D1 /* Notification */,
 				CD69D99120EF929A005FA5D1 /* OpenURL */,
 				CD69D98B20D4F060005FA5D1 /* MultiThread */,
@@ -458,8 +474,6 @@
 				28C48D151FD7FDB50096BAB9 /* Sources */,
 				28C48D161FD7FDB50096BAB9 /* Frameworks */,
 				28C48D171FD7FDB50096BAB9 /* Resources */,
-				3289761BBBACC7C31A51AC7C /* [CP] Embed Pods Frameworks */,
-				8066123F3B8FEBD06743D91F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -563,6 +577,7 @@
 			files = (
 				28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */,
 				289570EB1FEBA4290089DC06 /* Image.bundle in Resources */,
+				281D970420FCC1A6009AED47 /* heart.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,36 +598,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3289761BBBACC7C31A51AC7C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Helloworld/Pods-Helloworld-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8066123F3B8FEBD06743D91F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Helloworld/Pods-Helloworld-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8FE786C30FBC23E679E5B336 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,6 +636,7 @@
 				CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */,
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
+				281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
