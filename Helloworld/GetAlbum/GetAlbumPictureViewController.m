@@ -26,11 +26,11 @@
         imageView.backgroundColor = [UIColor blueColor];
         imageView.layer.cornerRadius = imageView.frame.size.width / 2;
         imageView.layer.masksToBounds = YES;
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"avatar" ofType:@"png" inDirectory:@"Image.bundle/home"];
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
         imageView;
     });
-    self.backgroundImageView.alpha = 0.5;
+//    self.backgroundImageView.alpha = 0.5;
     [self.view addSubview:self.backgroundImageView];
     
     self.effectView = ({
@@ -41,11 +41,12 @@
     [self.view addSubview:self.effectView];
     
     self.avatarImageView = ({
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 80) / 2, 100, 80, 80)];
+        CGFloat imageViewSize = 160;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 200, imageViewSize, imageViewSize)];
         imageView.backgroundColor = [UIColor blueColor];
         imageView.layer.cornerRadius = imageView.frame.size.width / 2;
         imageView.layer.masksToBounds = YES;
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"avatar" ofType:@"png" inDirectory:@"Image.bundle/home"];
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
         imageView;
     });
@@ -92,6 +93,7 @@
         UIImage *originImage =
         [info objectForKey:UIImagePickerControllerOriginalImage];
         self.avatarImageView.image = originImage;
+        self.backgroundImageView.image = originImage;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
