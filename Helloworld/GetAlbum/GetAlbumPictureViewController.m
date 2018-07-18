@@ -10,13 +10,35 @@
 
 @interface GetAlbumPictureViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property(nonatomic, strong) UIImageView *backgroundImageView;
+@property(nonatomic, strong) UIVisualEffectView *effectView;
 @property(nonatomic, strong) UIImageView *avatarImageView;
+
 @end
 
 @implementation GetAlbumPictureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.backgroundImageView = ({
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        imageView.backgroundColor = [UIColor blueColor];
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2;
+        imageView.layer.masksToBounds = YES;
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"avatar" ofType:@"png" inDirectory:@"Image.bundle/home"];
+        imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+        imageView;
+    });
+    self.backgroundImageView.alpha = 0.5;
+    [self.view addSubview:self.backgroundImageView];
+    
+    self.effectView = ({
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+        effectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        effectView;
+    });
+    [self.view addSubview:self.effectView];
     
     self.avatarImageView = ({
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 80) / 2, 100, 80, 80)];
@@ -27,9 +49,8 @@
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
         imageView;
     });
-    
     [self.view addSubview:self.avatarImageView];
-    
+
     //打开用户交互
     self.avatarImageView.userInteractionEnabled = YES;
     //初始化一个手势
