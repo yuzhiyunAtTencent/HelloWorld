@@ -21,11 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBarHidden = YES;
+    
+    CGRect backFrame = CGRectMake(0, 0, self.view.bounds.size.width, 400);
     self.backgroundImageView = ({
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:backFrame];
         imageView.backgroundColor = [UIColor blueColor];
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2;
-        imageView.layer.masksToBounds = YES;
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
         imageView;
@@ -34,15 +35,16 @@
     [self.view addSubview:self.backgroundImageView];
     
     self.effectView = ({
-        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-        effectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+        effectView.alpha = 0.9;
+        effectView.frame = backFrame;
         effectView;
     });
     [self.view addSubview:self.effectView];
     
     self.avatarImageView = ({
-        CGFloat imageViewSize = 160;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 200, imageViewSize, imageViewSize)];
+        CGFloat imageViewSize = 100;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 100, imageViewSize, imageViewSize)];
         imageView.backgroundColor = [UIColor blueColor];
         imageView.layer.cornerRadius = imageView.frame.size.width / 2;
         imageView.layer.masksToBounds = YES;

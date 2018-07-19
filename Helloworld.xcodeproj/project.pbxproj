@@ -15,6 +15,7 @@
 		286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7CFE2004C2EC00F928D1 /* MenuView.m */; };
 		286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7D012004C40800F928D1 /* BasicMenuController.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
+		28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A934202100B763007F8C40 /* YunSDWebImageViewController.m */; };
 		28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */; };
 		28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */; };
 		28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC52025B87B002B9B70 /* VideoViewController.m */; };
@@ -73,6 +74,8 @@
 		286C7D002004C40800F928D1 /* BasicMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicMenuController.h; sourceTree = "<group>"; };
 		286C7D012004C40800F928D1 /* BasicMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicMenuController.m; sourceTree = "<group>"; };
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		28A9341F2100B763007F8C40 /* YunSDWebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunSDWebImageViewController.h; sourceTree = "<group>"; };
+		28A934202100B763007F8C40 /* YunSDWebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunSDWebImageViewController.m; sourceTree = "<group>"; };
 		28AE5BBC2025ABCE002B9B70 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
 		28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		28AE5BC02025B5F8002B9B70 /* YunBasicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunBasicViewController.h; sourceTree = "<group>"; };
@@ -216,6 +219,15 @@
 			path = PageView;
 			sourceTree = "<group>";
 		};
+		28A9341E2100B745007F8C40 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				28A9341F2100B763007F8C40 /* YunSDWebImageViewController.h */,
+				28A934202100B763007F8C40 /* YunSDWebImageViewController.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
 		28AE5BBB2025ABA5002B9B70 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +367,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28A9341E2100B745007F8C40 /* SDWebImage */,
 				281D970320FCC1A6009AED47 /* heart.json */,
 				281D96FF20FCBDEB009AED47 /* Lottie */,
 				CD69D99620F20771005FA5D1 /* Notification */,
@@ -626,6 +639,7 @@
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
+				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
 				28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */,
 				28AE5BD6202850A3002B9B70 /* WKWebViewViewController.m in Sources */,

@@ -15,24 +15,30 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - lottie-ios (2.5.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - lottie-ios
+  - SDWebImage (= 4.0)
   - SVPullToRefresh
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - lottie-ios
+    - SDWebImage
     - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 0afe51641517b6094e3771e53ed96468cd0548eb
+PODFILE CHECKSUM: 967afac6727b8377819ccd15bf3d0d7804d4fbea
 
 COCOAPODS: 1.5.3
