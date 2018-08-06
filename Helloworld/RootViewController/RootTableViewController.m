@@ -19,6 +19,7 @@
 #import "NotificationViewController.h"
 #import "LottieViewController.h"
 #import "YunSDWebImageViewController.h"
+#import "YunDrawRectViewController.h"
 
 @interface RootTableViewController ()
 
@@ -34,7 +35,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     self.array = [NSMutableArray array];
-    [self.array addObjectsFromArray:@[@"下拉刷新", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView", @"AFNetworking", @"NSURLSession下载图片",@"多线程",@"应用间跳转",@"push通知",@"lottie动画",@"SDWebImage"]];
+    [self.array addObjectsFromArray:@[@"下拉刷新", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView", @"AFNetworking", @"NSURLSession下载图片", @"多线程", @"应用间跳转", @"push通知", @"lottie动画", @"SDWebImage", @"DrawRect"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,6 +99,9 @@
             break;
         case 11:
             nextPage = [[YunSDWebImageViewController alloc] init];
+            break;
+        case 12:
+            nextPage = [[YunDrawRectViewController alloc] init];
             break;
         default:
             break;

@@ -46,16 +46,10 @@
 }
 
 - (void)callDownloadFileAPI {
-    
-    
-    
     // 1.网络请求管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    // 让AFN返回原始的二进制数据,我们自己来解析
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://old.bz55.com/uploads/allimg/160125/139-160125150940.jpg"]];
-    
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         // 在这个代码块里面指定文件下载完成之后的缓存路径,指定好了之后,会自动的剪切到completionHandler里面
         NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"newIconImage.jpg"];
@@ -71,7 +65,6 @@
         } else {
             self.iconImageView.image = newIconImage;
         }
-        
     }];
     [downloadTask resume];
     
@@ -79,6 +72,8 @@
 
 // 访问JSON接口
 - (void)callJSONNetAPI {
+    
+    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
 
@@ -103,6 +98,8 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }];
     [dataTask resume];
+    NSLog(@"%@", [NSCalendar currentCalendar]);
+    NSLog(@"%@", dataTask);
 }
 
 // 判断网络
