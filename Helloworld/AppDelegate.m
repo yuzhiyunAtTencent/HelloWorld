@@ -11,6 +11,7 @@
 #import "NewsListTableViewController.h"
 #import "RootTableViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import <AspectsV1.4.2/Aspects.h>
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -28,7 +29,12 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 
 #pragma mark - UIApplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    // 使用Aspect hook了UIViewController的viewDidAppear函数
+    /*[UIViewController aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        NSLog(@"%@: %@", [aspectInfo.instance class], aspectInfo.arguments);
+        NSLog(@"viewDidAppear -->>>>>>>>>><<<<<<<<<<<<<--");
+    } error:nil];
+     */
     // 10.0 之后的通知
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     [self p_requestPushAuthorize];

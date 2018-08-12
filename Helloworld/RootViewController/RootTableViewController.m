@@ -20,6 +20,8 @@
 #import "LottieViewController.h"
 #import "YunSDWebImageViewController.h"
 #import "YunDrawRectViewController.h"
+#import <AspectsV1.4.2/Aspects.h>
+
 
 @interface RootTableViewController ()
 
@@ -71,7 +73,11 @@
             nextPage= [[LearnAVFundationViewController alloc] init];
             break;
         case 2:
+            
             nextPage = [[GetAlbumPictureViewController alloc] init];
+            [nextPage aspect_hookSelector:@selector(avatarDidTapped:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){
+                NSLog(@"%@: %@", [aspectInfo.instance class], aspectInfo.arguments);
+            } error:nil];
             break;
         case 3:
             nextPage = [[YunPopViewController alloc] init];
