@@ -16,6 +16,9 @@
 		286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7D012004C40800F928D1 /* BasicMenuController.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
 		289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F638C2117FAAC00F197CF /* YunDrawRectViewController.m */; };
+		289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F63C3212072EF00F197CF /* YunMethodSwizzlingViewController.m */; };
+		289F63C7212073C400F197CF /* UIImage+hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F63C6212073C400F197CF /* UIImage+hook.m */; };
+		289F63CF212083E700F197CF /* icon_hello.png in Resources */ = {isa = PBXBuildFile; fileRef = 289F63CE212083E700F197CF /* icon_hello.png */; };
 		28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A934202100B763007F8C40 /* YunSDWebImageViewController.m */; };
 		28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */; };
 		28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */; };
@@ -77,6 +80,11 @@
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		289F638B2117FAAC00F197CF /* YunDrawRectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunDrawRectViewController.h; sourceTree = "<group>"; };
 		289F638C2117FAAC00F197CF /* YunDrawRectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunDrawRectViewController.m; sourceTree = "<group>"; };
+		289F63C2212072EF00F197CF /* YunMethodSwizzlingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunMethodSwizzlingViewController.h; sourceTree = "<group>"; };
+		289F63C3212072EF00F197CF /* YunMethodSwizzlingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunMethodSwizzlingViewController.m; sourceTree = "<group>"; };
+		289F63C5212073C400F197CF /* UIImage+hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+hook.h"; sourceTree = "<group>"; };
+		289F63C6212073C400F197CF /* UIImage+hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+hook.m"; sourceTree = "<group>"; };
+		289F63CE212083E700F197CF /* icon_hello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hello.png; sourceTree = "<group>"; };
 		28A9341F2100B763007F8C40 /* YunSDWebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunSDWebImageViewController.h; sourceTree = "<group>"; };
 		28A934202100B763007F8C40 /* YunSDWebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunSDWebImageViewController.m; sourceTree = "<group>"; };
 		28AE5BBC2025ABCE002B9B70 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
@@ -231,6 +239,18 @@
 			path = DrawRect;
 			sourceTree = "<group>";
 		};
+		289F63C12120702700F197CF /* MethodSwizzling */ = {
+			isa = PBXGroup;
+			children = (
+				289F63CE212083E700F197CF /* icon_hello.png */,
+				289F63C2212072EF00F197CF /* YunMethodSwizzlingViewController.h */,
+				289F63C3212072EF00F197CF /* YunMethodSwizzlingViewController.m */,
+				289F63C5212073C400F197CF /* UIImage+hook.h */,
+				289F63C6212073C400F197CF /* UIImage+hook.m */,
+			);
+			path = MethodSwizzling;
+			sourceTree = "<group>";
+		};
 		28A9341E2100B745007F8C40 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +399,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				289F63C12120702700F197CF /* MethodSwizzling */,
 				289F638A2117FA9400F197CF /* DrawRect */,
 				28A9341E2100B745007F8C40 /* SDWebImage */,
 				281D970320FCC1A6009AED47 /* heart.json */,
@@ -602,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */,
+				289F63CF212083E700F197CF /* icon_hello.png in Resources */,
 				289570EB1FEBA4290089DC06 /* Image.bundle in Resources */,
 				281D970420FCC1A6009AED47 /* heart.json in Resources */,
 			);
@@ -665,8 +687,10 @@
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
 				289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */,
 				281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */,
+				289F63C7212073C400F197CF /* UIImage+hook.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
+				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
