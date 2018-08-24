@@ -6,4 +6,6 @@ pod 'lottie-ios'
 pod 'SVPullToRefresh'
 pod 'SDWebImage', '4.0'
 pod 'AspectsV1.4.2', '1.4.2'
+pod 'WebViewJavascriptBridge', '~> 6.0'
+
 end

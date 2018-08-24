@@ -20,6 +20,7 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SVPullToRefresh (0.4.1)
+  - WebViewJavascriptBridge (6.0.3)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - lottie-ios
   - SDWebImage (= 4.0)
   - SVPullToRefresh
+  - WebViewJavascriptBridge (~> 6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - lottie-ios
     - SDWebImage
     - SVPullToRefresh
+    - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -42,7 +45,8 @@ SPEC CHECKSUMS:
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 8b2c976c9ee0c8a4c3b66e799d8efadf9f1ae960
+PODFILE CHECKSUM: 696c679fd310a403ad1c7722fb3393428971f14d
 
 COCOAPODS: 1.5.3
