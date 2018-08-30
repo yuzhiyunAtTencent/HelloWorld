@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+   	<meta charset="utf-8" />
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>JSApi Demo</title>
+	<style type="text/css">
+		body {
+			font-size: 12px;
+		}
+		h2 {
+			font-size: 14px;
+			font-weight: bold;
+			margin: 10px 0px;
+		}
+		p {
+			margin: 5px 0px;
+		}
+		code {
+		    border: 1px solid gray;
+		    font-size: 10px;
+		    font-family: "Monaco", "Menlo", "Ubuntu Mono", "Consolas", "source-code-pro", monospace;
+		    display: block;
+		    padding: 1px;
+		    margin: 5px 0px 10px 0px;
+		    white-space: pre-wrap;
+		    text-align: left;
+		    color: #666;
+		}
+		.intro {
+			margin-bottom: 30px;
+		}
+		.index {
+			font-weight: bold;
+		}
+		.item {
+			margin-bottom: 30px;
+		}
+		.textInput {
+			height: 200px;
+			width: 100%;
+			margin: 5px 0px 10px 0px;
+		}
+	</style>
+</head>
+<body>
+
+    <!--为了方便测试新的native接口，以后只要在输入框中输入js就可以了-->
+    </div class='item'>
+        <h2>在输入框中输入js 来测试native接口</h2>
+        <textarea  class="textInput" id="jsTextArea">alert("hh")</textarea>
+        <br>
+    	<button onclick="evalJS()">执行输入框中JS代码</button>
+    </div>
+
+	<script type="text/javascript">
+		function evalJS() {
+            var jsText = document.getElementById("jsTextArea").value;
+            eval(jsText);
+        }
+	</script>
+    
+</body>
+</html>

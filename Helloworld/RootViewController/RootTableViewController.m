@@ -22,7 +22,7 @@
 #import "YunDrawRectViewController.h"
 #import <AspectsV1.4.2/Aspects.h>
 #import "YunMethodSwizzlingViewController.h"
-
+#import "TestBridgeViewController.h"
 
 @interface RootTableViewController ()
 
@@ -40,7 +40,7 @@
     self.array = [NSMutableArray array];
     [self.array addObjectsFromArray:@[@"下拉刷新", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView",
                                       @"AFNetworking", @"NSURLSession下载图片", @"多线程", @"应用间跳转", @"push通知",
-                                      @"lottie动画", @"SDWebImage", @"DrawRect", @"Method Swizzling"]];
+                                      @"lottie动画", @"SDWebImage", @"DrawRect", @"Method Swizzling", @"JSBridge"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,6 +114,9 @@
             break;
         case 13:
             nextPage = [[YunMethodSwizzlingViewController alloc] init];
+            break;
+        case 14:
+            nextPage = [[TestBridgeViewController alloc] init];
             break;
         default:
             break;
