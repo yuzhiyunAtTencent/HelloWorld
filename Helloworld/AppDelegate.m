@@ -45,6 +45,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
+    
     return YES;
 }
 
