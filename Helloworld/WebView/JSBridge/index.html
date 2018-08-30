@@ -49,16 +49,35 @@
     <!--为了方便测试新的native接口，以后只要在输入框中输入js就可以了-->
     </div class='item'>
         <h2>在输入框中输入js 来测试native接口</h2>
-        <textarea  class="textInput" id="jsTextArea">alert("hh")</textarea>
+        <textarea  class="textInput" id="jsTextArea">
+            setupWebViewJavascriptBridge(function(bridge) {
+                bridge.callHandler('ObjC Echo', {'key':'value'}, function responseCallback(responseData) {
+                    alert(responseData)
+                })
+            })
+        </textarea>
         <br>
     	<button onclick="evalJS()">执行输入框中JS代码</button>
     </div>
 
 	<script type="text/javascript">
-		function evalJS() {
-            var jsText = document.getElementById("jsTextArea").value;
-            eval(jsText);
-        }
+        
+    function evalJS() {
+        var jsText = document.getElementById("jsTextArea").value;
+        eval(jsText);
+    }
+    
+    function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'https://__bridge_loaded__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+    }
+    
 	</script>
     
 </body>
