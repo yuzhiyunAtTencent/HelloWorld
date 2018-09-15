@@ -46,6 +46,14 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
     
+    NSMutableString *string = [[NSMutableString alloc] initWithCapacity:32];
+    [string appendFormat:@"%02hhx",223333];
+    NSLog(string);
+    
+    
+    
+    
+    
     return YES;
 }
 

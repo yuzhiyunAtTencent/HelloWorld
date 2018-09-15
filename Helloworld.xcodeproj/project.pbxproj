@@ -873,6 +873,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YunPrefixHeader.pch";
 				INFOPLIST_FILE = Helloworld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Helloworld/NewsList/openssl",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -890,6 +894,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YunPrefixHeader.pch";
 				INFOPLIST_FILE = Helloworld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Helloworld/NewsList/openssl",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

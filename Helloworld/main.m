@@ -15,6 +15,9 @@ int main(int argc, char * argv[]) {
     @autoreleasepool {
         NSLog([[NSNumber numberWithInt:0] boolValue] ? @"Yes" : @"No");
         NSLog([[NSNumber numberWithInt:1] boolValue] ? @"Yes" : @"No");
+        
+        
+ 
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
