@@ -33,6 +33,7 @@
 		28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */; };
 		28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */; };
 		28AF32672137D23C00AF4F25 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 28AF32662137D23B00AF4F25 /* index.html */; };
+		28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B42169215CBD790079C81C /* YunLongImageView.m */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
@@ -116,6 +117,8 @@
 		28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadImageViewController.m; sourceTree = "<group>"; };
 		28AE5BEA20299B1F002B9B70 /* DownLoadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadImageViewController.h; sourceTree = "<group>"; };
 		28AF32662137D23B00AF4F25 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		28B42168215CBD790079C81C /* YunLongImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunLongImageView.h; sourceTree = "<group>"; };
+		28B42169215CBD790079C81C /* YunLongImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunLongImageView.m; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 		28A9341E2100B745007F8C40 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				28B42167215CBD130079C81C /* LongImageView */,
 				28A9341F2100B763007F8C40 /* YunSDWebImageViewController.h */,
 				28A934202100B763007F8C40 /* YunSDWebImageViewController.m */,
 			);
@@ -394,6 +398,15 @@
 				28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */,
 			);
 			path = NSURLSession;
+			sourceTree = "<group>";
+		};
+		28B42167215CBD130079C81C /* LongImageView */ = {
+			isa = PBXGroup;
+			children = (
+				28B42168215CBD790079C81C /* YunLongImageView.h */,
+				28B42169215CBD790079C81C /* YunLongImageView.m */,
+			);
+			path = LongImageView;
 			sourceTree = "<group>";
 		};
 		28C48D101FD7FDB50096BAB9 = {
@@ -711,6 +724,7 @@
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
 				289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */,
+				28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */,
 				281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */,
 				289F63C7212073C400F197CF /* UIImage+hook.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
