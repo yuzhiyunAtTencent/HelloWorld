@@ -35,6 +35,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
         NSLog(@"viewDidAppear -->>>>>>>>>><<<<<<<<<<<<<--");
     } error:nil];
      */
+    // 在test分支修改
     // 10.0 之后的通知
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     [self p_requestPushAuthorize];
