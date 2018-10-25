@@ -31,6 +31,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 在 master 修改代码
     // 在 master 再次修改代码
+    // 在 master 第三次修改代码
     // 使用Aspect hook了UIViewController的viewDidAppear函数
     /*[UIViewController aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
         NSLog(@"%@: %@", [aspectInfo.instance class], aspectInfo.arguments);
