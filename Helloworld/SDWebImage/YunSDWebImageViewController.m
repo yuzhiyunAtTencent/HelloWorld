@@ -31,6 +31,7 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showCompleteImageView)];
     [imageView addGestureRecognizer:gesture];
 
+    // 在master分支做修改
 }
 
 - (void)showCompleteImageView {
