@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // 在test分支追加代码
+    // 在test分支第二次追加代码
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 500)];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
