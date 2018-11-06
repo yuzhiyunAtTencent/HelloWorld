@@ -33,6 +33,7 @@
 		28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE420298E02002B9B70 /* UIScreen+YunUtils.m */; };
 		28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */; };
 		28AF32672137D23C00AF4F25 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 28AF32662137D23B00AF4F25 /* index.html */; };
+		28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B092572191979D00DAC7F7 /* YunTestViewController.m */; };
 		28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B42169215CBD790079C81C /* YunLongImageView.m */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
@@ -117,6 +118,8 @@
 		28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadImageViewController.m; sourceTree = "<group>"; };
 		28AE5BEA20299B1F002B9B70 /* DownLoadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadImageViewController.h; sourceTree = "<group>"; };
 		28AF32662137D23B00AF4F25 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		28B092562191979D00DAC7F7 /* YunTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunTestViewController.h; sourceTree = "<group>"; };
+		28B092572191979D00DAC7F7 /* YunTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunTestViewController.m; sourceTree = "<group>"; };
 		28B42168215CBD790079C81C /* YunLongImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunLongImageView.h; sourceTree = "<group>"; };
 		28B42169215CBD790079C81C /* YunLongImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunLongImageView.m; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,6 +403,15 @@
 			path = NSURLSession;
 			sourceTree = "<group>";
 		};
+		28B092552191976700DAC7F7 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				28B092562191979D00DAC7F7 /* YunTestViewController.h */,
+				28B092572191979D00DAC7F7 /* YunTestViewController.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		28B42167215CBD130079C81C /* LongImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +448,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28B092552191976700DAC7F7 /* Test */,
 				289F63C12120702700F197CF /* MethodSwizzling */,
 				289F638A2117FA9400F197CF /* DrawRect */,
 				28A9341E2100B745007F8C40 /* SDWebImage */,
@@ -727,6 +740,7 @@
 				28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */,
 				281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */,
 				289F63C7212073C400F197CF /* UIImage+hook.m in Sources */,
+				28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
 				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
