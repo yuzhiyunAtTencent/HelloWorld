@@ -54,6 +54,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     
     CGFloat scale = [UIScreen mainScreen].scale;
     
+    
     return YES;
 }
 

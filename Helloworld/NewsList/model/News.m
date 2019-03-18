@@ -10,10 +10,11 @@
 
 @implementation News
 
--(News*) initWithPicUrl: (NSString *) picUrl title : (NSString *) title{
-    News* news=[[News alloc]init];
+- (News *)initWithPicUrl:(NSString *)picUrl title:(NSString *)title {
+    News* news = [[News alloc] init];
     [news setPicUrl:picUrl];
     [news setTitle:title];
     return news;
 }
+
 @end

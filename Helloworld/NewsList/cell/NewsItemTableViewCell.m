@@ -28,9 +28,6 @@
         labelTitle.frame=CGRectMake(170, 10, 400, 20);
         [self setLabelTitle:labelTitle];
         [self addSubview:labelTitle];
-
-        
-        
     }
     return self;
 }
