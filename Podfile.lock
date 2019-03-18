@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - AspectsV1.4.2 (1.4.2)
+  - FDFullscreenPopGesture (1.1)
   - lottie-ios (2.5.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
@@ -25,6 +26,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - AspectsV1.4.2 (= 1.4.2)
+  - FDFullscreenPopGesture (= 1.1)
   - lottie-ios
   - SDWebImage (= 4.0)
   - SVPullToRefresh
@@ -34,6 +36,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - AspectsV1.4.2
+    - FDFullscreenPopGesture
     - lottie-ios
     - SDWebImage
     - SVPullToRefresh
@@ -42,11 +45,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AspectsV1.4.2: a8b168606776215f5ba4790b95ff315df336aca9
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 696c679fd310a403ad1c7722fb3393428971f14d
+PODFILE CHECKSUM: b38739a709b81c2c1dc991c0312d122bd5fe1ead
 
 COCOAPODS: 1.5.3
