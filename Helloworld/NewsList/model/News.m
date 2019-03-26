@@ -17,4 +17,9 @@
     return news;
 }
 
+- (void)dealloc
+{
+    NSLog(@"");
+}
+
 @end

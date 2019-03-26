@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-#import "News.h"
-
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         NSLog([[NSNumber numberWithInt:0] boolValue] ? @"Yes" : @"No");

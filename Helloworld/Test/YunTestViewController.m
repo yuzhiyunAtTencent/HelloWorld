@@ -7,6 +7,8 @@
 //
 
 #import "YunTestViewController.h"
+#import "News.h"
+#import "CYLDeallocBlockExecutor.h"
 
 @interface YunTestViewController ()
 
@@ -21,6 +23,12 @@
     [[NSOperationQueue new] addOperationWithBlock:^{
         [self performSelector:@selector(delayOperation) withObject:nil afterDelay:1];
         [self performSelector:@selector(operation) withObject:nil];
+    }];
+    
+    News *news = [[News alloc] initWithPicUrl:@"" title:@""];
+    NSLog(@"");
+    [news cyl_willDeallocWithSelfCallback:^(__unsafe_unretained id owner, NSUInteger identifier) {
+        NSLog(@"cyl_willDeallocWithSelfCallback");
     }];
 }
 

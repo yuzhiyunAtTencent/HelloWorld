@@ -984,7 +984,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/WechatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1005,7 +1005,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/WechatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
