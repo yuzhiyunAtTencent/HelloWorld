@@ -7,12 +7,14 @@
 //
 
 #import "GetAlbumPictureViewController.h"
+#import "UIView+Utils.h"
 
 @interface GetAlbumPictureViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property(nonatomic, strong) UIImageView *backgroundImageView;
 @property(nonatomic, strong) UIVisualEffectView *effectView;
 @property(nonatomic, strong) UIImageView *avatarImageView;
+@property(nonatomic, strong) UIButton *saveCurrentImageToAlbumBtn;
 
 @end
 
@@ -59,11 +61,39 @@
     //初始化一个手势
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidTapped:)];
     //为图片添加手势
-    [ self.avatarImageView addGestureRecognizer:singleTap];
+    [self.avatarImageView addGestureRecognizer:singleTap];
+    
+    self.saveCurrentImageToAlbumBtn = ({
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 600, 300, 30)];
+        [btn setTitle:@"把当前页面转为image 保存到相册" forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor redColor];
+        [btn addTarget:self action:@selector(_saveCurrentImageToAlbum) forControlEvents:UIControlEventTouchUpInside];
+        btn;
+    });
+    [self.view addSubview:self.saveCurrentImageToAlbumBtn];
+    
+    self.saveCurrentImageToAlbumBtn.qn_bottom = SCREEN_HEIGHT - 2;
 }
 
+#pragma mark - Private
+
+- (void)_saveCurrentImageToAlbum {
+    UIImage *image = [self.view viewToImage];
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+// 保存图片到相册的回调函数
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error) {
+        NSLog(@"保存失败");
+    } else {
+        NSLog(@"保存成功");
+    }
+}
+
+
 //头像点击事件
--(void)avatarDidTapped:(UIGestureRecognizer *) gestureRecognizer{
+- (void)avatarDidTapped:(UIGestureRecognizer *) gestureRecognizer {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.allowsEditing = YES;
     picker.delegate = self;
