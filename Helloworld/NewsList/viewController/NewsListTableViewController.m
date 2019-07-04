@@ -23,6 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    News *news = [[News alloc] initWithPicUrl:@"oldUrl" title:@"oldTitle"];
+    
+    NSLog(@"%p", [news methodForSelector:@selector(setTitle:)]);
+    
+    [news addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    NSLog(@"%p", [news methodForSelector:@selector(setTitle:)]);
+    
+    [news willChangeValueForKey:@"title"];
+    [news didChangeValueForKey:@"title"];
+    
     self.newsArray=[[NSMutableArray  alloc]init];
     [self.newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
     [self.newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
@@ -48,6 +60,10 @@
     }];
     
     [self.view addSubview:self.tableView];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"old = %@ , new = %@ ",[change objectForKey:NSKeyValueChangeOldKey], [change objectForKey:NSKeyValueChangeNewKey]);
 }
 
 - (void)didReceiveMemoryWarning {

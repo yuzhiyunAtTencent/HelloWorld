@@ -54,6 +54,26 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     
     CGFloat scale = [UIScreen mainScreen].scale;
     
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:@(1)];
+    [array addObject:@(2)];
+    [array addObject:@(1)];
+    
+    [array addObject:@"哈"];
+    [array addObject:@"哈哈"];
+    [array addObject:@"哈哈"];
+    
+    NSMutableSet *set = [NSMutableSet set];
+    [set addObject:@(1)];
+    [set addObject:@(2)];
+    [set addObject:@(1)];
+    
+    [set addObject:@"哈"];
+    [set addObject:@"哈哈"];
+    [set addObject:@"哈哈"];
+    
+//    NSMutableDictionary
+//    NSHashTable
     
     return YES;
 }

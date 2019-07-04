@@ -25,6 +25,7 @@
 #import "TestBridgeViewController.h"
 #import "YunTestViewController.h"
 #import "YUNWechatLoginViewController.h"
+#import "YUNHashViewController.h"
 
 @interface RootTableViewController ()
 
@@ -36,13 +37,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"1");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"2");
+    }) ;
+    NSLog(@"3");
+    
     // 去除多余cell分割线
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     self.array = [NSMutableArray array];
     [self.array addObjectsFromArray:@[@"下拉刷新", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView",
                                       @"AFNetworking", @"NSURLSession下载图片", @"多线程", @"应用间跳转", @"push通知",
-                                      @"lottie动画", @"SDWebImage", @"DrawRect", @"Method Swizzling", @"JSBridge", @"零碎test代码合集", @"微信SDK"]];
+                                      @"lottie动画", @"SDWebImage", @"DrawRect", @"Method Swizzling", @"JSBridge", @"零碎test代码合集", @"微信SDK",
+                                      @"关于hash函数"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,6 +134,9 @@
             break;
         case 16:
             nextPage = [[YUNWechatLoginViewController alloc] init];
+            break;
+        case 17:
+            nextPage = [[YUNHashViewController alloc] init];
             break;
         default:
             break;

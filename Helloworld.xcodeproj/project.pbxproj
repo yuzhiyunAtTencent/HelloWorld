@@ -26,6 +26,7 @@
 		284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */; };
 		286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7CFE2004C2EC00F928D1 /* MenuView.m */; };
 		286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7D012004C40800F928D1 /* BasicMenuController.m */; };
+		286EB34D22C49F2B00359D7F /* YUNHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286EB34C22C49F2B00359D7F /* YUNHashViewController.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
 		2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2898CE9D213799A200167892 /* TestBridgeViewController.m */; };
 		289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F638C2117FAAC00F197CF /* YunDrawRectViewController.m */; };
@@ -112,6 +113,8 @@
 		286C7CFE2004C2EC00F928D1 /* MenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		286C7D002004C40800F928D1 /* BasicMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicMenuController.h; sourceTree = "<group>"; };
 		286C7D012004C40800F928D1 /* BasicMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicMenuController.m; sourceTree = "<group>"; };
+		286EB34B22C49F2B00359D7F /* YUNHashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNHashViewController.h; sourceTree = "<group>"; };
+		286EB34C22C49F2B00359D7F /* YUNHashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNHashViewController.m; sourceTree = "<group>"; };
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		2898CE9C213799A200167892 /* TestBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBridgeViewController.h; sourceTree = "<group>"; };
 		2898CE9D213799A200167892 /* TestBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBridgeViewController.m; sourceTree = "<group>"; };
@@ -311,6 +314,15 @@
 				286C7D012004C40800F928D1 /* BasicMenuController.m */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		286EB34A22C49F0D00359D7F /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				286EB34B22C49F2B00359D7F /* YUNHashViewController.h */,
+				286EB34C22C49F2B00359D7F /* YUNHashViewController.m */,
+			);
+			path = Hash;
 			sourceTree = "<group>";
 		};
 		2898CE9A213798F500167892 /* JSBridge */ = {
@@ -531,6 +543,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				286EB34A22C49F0D00359D7F /* Hash */,
 				28407EDE21E84A2000DB987D /* Account */,
 				28B092552191976700DAC7F7 /* Test */,
 				289F63C12120702700F197CF /* MethodSwizzling */,
@@ -813,6 +826,7 @@
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
 				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
+				286EB34D22C49F2B00359D7F /* YUNHashViewController.m in Sources */,
 				28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */,
 				28AE5BD6202850A3002B9B70 /* WKWebViewViewController.m in Sources */,
 				28AE5BD12025BC8E002B9B70 /* YunPopViewController.m in Sources */,
