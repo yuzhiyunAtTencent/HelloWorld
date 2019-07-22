@@ -55,8 +55,13 @@
 		28C48D411FD7FDB50096BAB9 /* HelloworldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D401FD7FDB50096BAB9 /* HelloworldUITests.m */; };
 		28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */; };
 		28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */; };
+		28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C9B6D122DC8720008041EA /* BackgroundTaskViewController.m */; };
+		28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */; };
+		28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
-		7604A21244CC47F42A4BA499 /* libPods-Helloworld.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DA26AC5CF3E5C7FB069108 /* libPods-Helloworld.a */; };
+		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
+		28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DE22E5BC3F00519567 /* RunloopMonitor.m */; };
+		8EBF9C477D83C9EC16B06917 /* Pods_Helloworld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B84AE0721A1ECFD44EE89A7 /* Pods_Helloworld.framework */; };
 		CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */; };
 		CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D99320EF92C0005FA5D1 /* AppOpenURLViewController.m */; };
 		CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D99820F20794005FA5D1 /* NotificationViewController.m */; };
@@ -172,8 +177,18 @@
 		28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsListTableViewController.m; sourceTree = "<group>"; };
 		28C48D591FD81CBC0096BAB9 /* NewsItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItemTableViewCell.h; sourceTree = "<group>"; };
 		28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItemTableViewCell.m; sourceTree = "<group>"; };
+		28C9B6D022DC8720008041EA /* BackgroundTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundTaskViewController.h; sourceTree = "<group>"; };
+		28C9B6D122DC8720008041EA /* BackgroundTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundTaskViewController.m; sourceTree = "<group>"; };
+		28C9B6FC22DDC2EF008041EA /* StrongWeakBlcokViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrongWeakBlcokViewController.h; sourceTree = "<group>"; };
+		28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrongWeakBlcokViewController.m; sourceTree = "<group>"; };
+		28D0EC5C22CE439A00261992 /* ThreadSafetyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadSafetyViewController.h; sourceTree = "<group>"; };
+		28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadSafetyViewController.m; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
-		58DA26AC5CF3E5C7FB069108 /* libPods-Helloworld.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Helloworld.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F090DA22E5A5FC00519567 /* YUNRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNRunloopViewController.h; sourceTree = "<group>"; };
+		28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNRunloopViewController.m; sourceTree = "<group>"; };
+		28F090DD22E5BC3F00519567 /* RunloopMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopMonitor.h; sourceTree = "<group>"; };
+		28F090DE22E5BC3F00519567 /* RunloopMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopMonitor.m; sourceTree = "<group>"; };
+		5B84AE0721A1ECFD44EE89A7 /* Pods_Helloworld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helloworld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF41C3570CC0F499C96C809 /* Pods-Helloworld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helloworld.release.xcconfig"; path = "Pods/Target Support Files/Pods-Helloworld/Pods-Helloworld.release.xcconfig"; sourceTree = "<group>"; };
 		CD69D98C20D4F0D3005FA5D1 /* MultiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadViewController.h; sourceTree = "<group>"; };
 		CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadViewController.m; sourceTree = "<group>"; };
@@ -199,8 +214,8 @@
 				CD69D99B20F20D23005FA5D1 /* UserNotifications.framework in Frameworks */,
 				28AE5BE120298A53002B9B70 /* WebKit.framework in Frameworks */,
 				28AE5BC92025B89B002B9B70 /* AVFoundation.framework in Frameworks */,
-				7604A21244CC47F42A4BA499 /* libPods-Helloworld.a in Frameworks */,
 				28407EEB21E84D7100DB987D /* libWeChatSDK.a in Frameworks */,
+				8EBF9C477D83C9EC16B06917 /* Pods_Helloworld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +430,7 @@
 				CD69D99A20F20D23005FA5D1 /* UserNotifications.framework */,
 				28AE5BE020298A53002B9B70 /* WebKit.framework */,
 				28AE5BC82025B89B002B9B70 /* AVFoundation.framework */,
-				58DA26AC5CF3E5C7FB069108 /* libPods-Helloworld.a */,
+				5B84AE0721A1ECFD44EE89A7 /* Pods_Helloworld.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -543,6 +558,9 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28F090D922E5A5CA00519567 /* Runloop */,
+				28C9B6CF22DC86F8008041EA /* BackgroundTask */,
+				28D0EC5B22CE437C00261992 /* ThreadSafety */,
 				286EB34A22C49F0D00359D7F /* Hash */,
 				28407EDE21E84A2000DB987D /* Account */,
 				28B092552191976700DAC7F7 /* Test */,
@@ -570,6 +588,8 @@
 				28C48D251FD7FDB50096BAB9 /* Assets.xcassets */,
 				28C48D2A1FD7FDB50096BAB9 /* Info.plist */,
 				28C48D2B1FD7FDB50096BAB9 /* main.m */,
+				28C9B6FC22DDC2EF008041EA /* StrongWeakBlcokViewController.h */,
+				28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */,
 			);
 			path = Helloworld;
 			sourceTree = "<group>";
@@ -620,6 +640,35 @@
 			path = viewController;
 			sourceTree = "<group>";
 		};
+		28C9B6CF22DC86F8008041EA /* BackgroundTask */ = {
+			isa = PBXGroup;
+			children = (
+				28C9B6D022DC8720008041EA /* BackgroundTaskViewController.h */,
+				28C9B6D122DC8720008041EA /* BackgroundTaskViewController.m */,
+			);
+			path = BackgroundTask;
+			sourceTree = "<group>";
+		};
+		28D0EC5B22CE437C00261992 /* ThreadSafety */ = {
+			isa = PBXGroup;
+			children = (
+				28D0EC5C22CE439A00261992 /* ThreadSafetyViewController.h */,
+				28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */,
+			);
+			path = ThreadSafety;
+			sourceTree = "<group>";
+		};
+		28F090D922E5A5CA00519567 /* Runloop */ = {
+			isa = PBXGroup;
+			children = (
+				28F090DA22E5A5FC00519567 /* YUNRunloopViewController.h */,
+				28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */,
+				28F090DD22E5BC3F00519567 /* RunloopMonitor.h */,
+				28F090DE22E5BC3F00519567 /* RunloopMonitor.m */,
+			);
+			path = Runloop;
+			sourceTree = "<group>";
+		};
 		CD69D98B20D4F060005FA5D1 /* MultiThread */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,6 +716,7 @@
 				28C48D151FD7FDB50096BAB9 /* Sources */,
 				28C48D161FD7FDB50096BAB9 /* Frameworks */,
 				28C48D171FD7FDB50096BAB9 /* Resources */,
+				26000C40B1BC1736394288FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -795,6 +845,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26000C40B1BC1736394288FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Helloworld/Pods-Helloworld-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AspectsV1.4.2/AspectsV1_4_2.framework",
+				"${BUILT_PRODUCTS_DIR}/CYLDeallocBlockExecutor/CYLDeallocBlockExecutor.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AspectsV1_4_2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLDeallocBlockExecutor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Helloworld/Pods-Helloworld-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8FE786C30FBC23E679E5B336 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -820,10 +902,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */,
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				280E76FA21EF1AC80075DCA8 /* YUNTestPresentViewController.m in Sources */,
+				28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
+				28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */,
 				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
 				286EB34D22C49F2B00359D7F /* YUNHashViewController.m in Sources */,
@@ -834,6 +919,7 @@
 				28407EE221E84A7900DB987D /* YUNWechatLoginViewController.m in Sources */,
 				281A2CF21FE170EC00D95B1B /* News.m in Sources */,
 				284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */,
+				28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */,
 				CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */,
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
@@ -851,6 +937,7 @@
 				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,
 				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,
 				2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */,
+				28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */,
 				282BD4B02267105000B1F817 /* UIView+Utils.m in Sources */,
 				286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */,
 			);

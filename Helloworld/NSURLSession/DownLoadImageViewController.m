@@ -45,6 +45,8 @@
     
     // 启动任务
     [task resume];
+    
+    [NSThread sleepForTimeInterval:6];
 }
 
 #pragma mark NSURLSessionDataDelegate

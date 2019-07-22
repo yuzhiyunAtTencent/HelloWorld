@@ -20,12 +20,17 @@
 #import "LottieViewController.h"
 #import "YunSDWebImageViewController.h"
 #import "YunDrawRectViewController.h"
-#import <AspectsV1.4.2/Aspects.h>
+//#import <AspectsV1.4.2/Aspects.h>
+#import <Aspects.h>
 #import "YunMethodSwizzlingViewController.h"
 #import "TestBridgeViewController.h"
 #import "YunTestViewController.h"
 #import "YUNWechatLoginViewController.h"
 #import "YUNHashViewController.h"
+#import "ThreadSafetyViewController.h"
+#import "BackgroundTaskViewController.h"
+#import "StrongWeakBlcokViewController.h"
+#import "YUNRunloopViewController.h"
 
 @interface RootTableViewController ()
 
@@ -51,7 +56,8 @@
     [self.array addObjectsFromArray:@[@"下拉刷新", @"学习AVFundation", @"获取相册中的图片", @"弹出自定义窗口", @"WKWebView",
                                       @"AFNetworking", @"NSURLSession下载图片", @"多线程", @"应用间跳转", @"push通知",
                                       @"lottie动画", @"SDWebImage", @"DrawRect", @"Method Swizzling", @"JSBridge", @"零碎test代码合集", @"微信SDK",
-                                      @"关于hash函数"]];
+                                      @"关于hash函数", @"线程安全", @"BackgroundTaskViewController", @"StrongWeakBlcokViewController",
+                                      @"YUNRunloopViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -137,6 +143,18 @@
             break;
         case 17:
             nextPage = [[YUNHashViewController alloc] init];
+            break;
+        case 18:
+            nextPage = [[ThreadSafetyViewController alloc] init];
+            break;
+        case 19:
+            nextPage = [[BackgroundTaskViewController alloc] init];
+            break;
+        case 20:
+            nextPage = [[StrongWeakBlcokViewController alloc] init];
+            break;
+        case 21:
+            nextPage = [[YUNRunloopViewController alloc] init];
             break;
         default:
             break;

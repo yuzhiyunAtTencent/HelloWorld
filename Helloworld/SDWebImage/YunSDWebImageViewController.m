@@ -33,6 +33,10 @@
 
 }
 
+- (void)unusedFun {
+    NSLog(@"s");
+}
+
 - (void)showCompleteImageView {
     [self addImageOnViewWithImage];
 }

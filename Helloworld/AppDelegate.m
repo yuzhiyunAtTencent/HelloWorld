@@ -11,7 +11,7 @@
 #import "NewsListTableViewController.h"
 #import "RootTableViewController.h"
 #import <UserNotifications/UserNotifications.h>
-#import <AspectsV1.4.2/Aspects.h>
+#import <Aspects.h>
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
