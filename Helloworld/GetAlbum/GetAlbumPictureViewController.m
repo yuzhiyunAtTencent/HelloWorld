@@ -8,6 +8,7 @@
 
 #import "GetAlbumPictureViewController.h"
 #import "UIView+Utils.h"
+#import <Aspects.h>
 
 @interface GetAlbumPictureViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -73,6 +74,10 @@
     [self.view addSubview:self.saveCurrentImageToAlbumBtn];
     
     self.saveCurrentImageToAlbumBtn.qn_bottom = SCREEN_HEIGHT - 2;
+    
+    [self aspect_hookSelector:@selector(avatarDidTapped:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){
+        NSLog(@"class = %@: %@", [aspectInfo.instance class], aspectInfo.arguments);
+    } error:nil];
 }
 
 #pragma mark - Private

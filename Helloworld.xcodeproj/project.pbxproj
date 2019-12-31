@@ -62,6 +62,8 @@
 		28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C9B6D122DC8720008041EA /* BackgroundTaskViewController.m */; };
 		28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */; };
 		28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */; };
+		28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */; };
+		28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
 		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
 		28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DE22E5BC3F00519567 /* RunloopMonitor.m */; };
@@ -196,6 +198,10 @@
 		28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrongWeakBlcokViewController.m; sourceTree = "<group>"; };
 		28D0EC5C22CE439A00261992 /* ThreadSafetyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadSafetyViewController.h; sourceTree = "<group>"; };
 		28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadSafetyViewController.m; sourceTree = "<group>"; };
+		28D3041E23BB6D200008DF3A /* YUNAudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAudioViewController.h; sourceTree = "<group>"; };
+		28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAudioViewController.m; sourceTree = "<group>"; };
+		28D3042323BB6FC90008DF3A /* YUNKnowledgeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNKnowledgeItem.h; sourceTree = "<group>"; };
+		28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNKnowledgeItem.m; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
 		28F090DA22E5A5FC00519567 /* YUNRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNRunloopViewController.h; sourceTree = "<group>"; };
 		28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNRunloopViewController.m; sourceTree = "<group>"; };
@@ -436,13 +442,13 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		28AE5BBB2025ABA5002B9B70 /* RootViewController */ = {
+		28AE5BBB2025ABA5002B9B70 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				28AE5BBC2025ABCE002B9B70 /* RootTableViewController.h */,
 				28AE5BBD2025ABCE002B9B70 /* RootTableViewController.m */,
 			);
-			path = RootViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		28AE5BBF2025B58B002B9B70 /* Basic */ = {
@@ -604,6 +610,8 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28D3042123BB6F7D0008DF3A /* MainPage */,
+				28D3041D23BB6D050008DF3A /* Audio */,
 				287C6FA623604DED00F51F89 /* Gesture */,
 				2872C1E1235855D300A215C7 /* LayerContent */,
 				284FDB9A233A45A1002338B8 /* FLAnimatedImage */,
@@ -627,7 +635,6 @@
 				28AE5BD320285067002B9B70 /* WebView */,
 				28AE5BCA2025BB28002B9B70 /* PopWindow */,
 				28AE5BBF2025B58B002B9B70 /* Basic */,
-				28AE5BBB2025ABA5002B9B70 /* RootViewController */,
 				284B2F782021C11800D32D63 /* GetAlbum */,
 				284B2F71201F583F00D32D63 /* AVFundation */,
 				286C7CFB2004BC8100F928D1 /* SubMenu */,
@@ -705,6 +712,33 @@
 				28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */,
 			);
 			path = ThreadSafety;
+			sourceTree = "<group>";
+		};
+		28D3041D23BB6D050008DF3A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				28D3041E23BB6D200008DF3A /* YUNAudioViewController.h */,
+				28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		28D3042123BB6F7D0008DF3A /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				28D3042223BB6F930008DF3A /* Model */,
+				28AE5BBB2025ABA5002B9B70 /* ViewController */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		28D3042223BB6F930008DF3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28D3042323BB6FC90008DF3A /* YUNKnowledgeItem.h */,
+				28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		28F090D922E5A5CA00519567 /* Runloop */ = {
@@ -957,6 +991,7 @@
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				280E76FA21EF1AC80075DCA8 /* YUNTestPresentViewController.m in Sources */,
+				28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */,
 				28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
 				287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */,
@@ -987,6 +1022,7 @@
 				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
+				28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */,
 				280D632922FAEF570051AB12 /* WKWebView+Responder.m in Sources */,
 				284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
