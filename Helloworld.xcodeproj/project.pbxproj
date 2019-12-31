@@ -64,6 +64,7 @@
 		28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */; };
 		28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */; };
 		28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */; };
+		28D3042723BB76720008DF3A /* 20191005A02R4R.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
 		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
 		28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DE22E5BC3F00519567 /* RunloopMonitor.m */; };
@@ -202,6 +203,7 @@
 		28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAudioViewController.m; sourceTree = "<group>"; };
 		28D3042323BB6FC90008DF3A /* YUNKnowledgeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNKnowledgeItem.h; sourceTree = "<group>"; };
 		28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNKnowledgeItem.m; sourceTree = "<group>"; };
+		28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 20191005A02R4R.mp3; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
 		28F090DA22E5A5FC00519567 /* YUNRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNRunloopViewController.h; sourceTree = "<group>"; };
 		28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNRunloopViewController.m; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 		28D3041D23BB6D050008DF3A /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */,
 				28D3041E23BB6D200008DF3A /* YUNAudioViewController.h */,
 				28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */,
 			);
@@ -906,6 +909,7 @@
 				28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */,
 				28AF32672137D23C00AF4F25 /* index.html in Resources */,
 				289570EB1FEBA4290089DC06 /* Image.bundle in Resources */,
+				28D3042723BB76720008DF3A /* 20191005A02R4R.mp3 in Resources */,
 				28407EEA21E84D7100DB987D /* README.txt in Resources */,
 				281D970420FCC1A6009AED47 /* heart.json in Resources */,
 			);
