@@ -58,6 +58,8 @@
     
     self.array = [NSMutableArray array];
     
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"音频" viewCtlName:@"YUNAudioViewController"]];
+    /*
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"学习AVFundation" viewCtlName:@"LearnAVFundationViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
@@ -83,6 +85,7 @@
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"FLAnimatedViewController" viewCtlName:@"FLAnimatedViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"ContentOfLayerViewController" viewCtlName:@"ContentOfLayerViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"YUNGestureViewController" viewCtlName:@"YUNGestureViewController"]];
+    */
 }
 
 - (void)didReceiveMemoryWarning {
