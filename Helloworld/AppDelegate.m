@@ -72,8 +72,15 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     [set addObject:@"哈哈"];
     [set addObject:@"哈哈"];
     
+    
+    NSMutableArray *array2 = [NSMutableArray array];
+    [array2 addObject:@(1)];
+    [array2 insertObject:@(2) atIndex:0];
+    [array2 insertObject:@(3) atIndex:0];
 //    NSMutableDictionary
 //    NSHashTable
+    
+    
     
     return YES;
 }

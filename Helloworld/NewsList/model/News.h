@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface News : NSObject
-@property NSString * title;
-@property NSString * picUrl;
+@property(nonatomic, strong) NSString * title;
+@property(nonatomic, strong) NSString * picUrl;
 -(News*) initWithPicUrl: (NSString *) picUrl title : (NSString *) title;
 @end

@@ -31,6 +31,9 @@
 #import "BackgroundTaskViewController.h"
 #import "StrongWeakBlcokViewController.h"
 #import "YUNRunloopViewController.h"
+#import "FLAnimatedViewController.h"
+#import "ContentOfLayerViewController.h"
+#import "YUNGestureViewController.h"
 
 @interface RootTableViewController ()
 
@@ -57,7 +60,8 @@
                                       @"AFNetworking", @"NSURLSession下载图片", @"多线程", @"应用间跳转", @"push通知",
                                       @"lottie动画", @"SDWebImage", @"DrawRect", @"Method Swizzling", @"JSBridge", @"零碎test代码合集", @"微信SDK",
                                       @"关于hash函数", @"线程安全", @"BackgroundTaskViewController", @"StrongWeakBlcokViewController",
-                                      @"YUNRunloopViewController"]];
+                                      @"YUNRunloopViewController", @"FLAnimatedViewController", @"ContentOfLayerViewController",
+                                      @"YUNGestureViewController"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,6 +160,16 @@
         case 21:
             nextPage = [[YUNRunloopViewController alloc] init];
             break;
+        case 22:
+            nextPage = [[FLAnimatedViewController alloc] init];
+            break;
+        case 23:
+            nextPage = [[ContentOfLayerViewController alloc] init];
+            break;
+        case 24:
+            nextPage = [[YUNGestureViewController alloc] init];
+            break;
+            
         default:
             break;
     }

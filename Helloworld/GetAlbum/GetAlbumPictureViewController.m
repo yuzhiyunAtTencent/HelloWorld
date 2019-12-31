@@ -37,8 +37,8 @@
     [self.view addSubview:self.backgroundImageView];
     
     self.effectView = ({
-        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
-        effectView.alpha = 0.9;
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+        effectView.alpha = 0.5;
         effectView.frame = backFrame;
         effectView;
     });

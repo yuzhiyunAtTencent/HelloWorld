@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "82EE95CF-88F8-452D-8FC8-86DFC7D0A73A"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "05029A95-AE29-4822-B18F-328FD9773D35"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,11 +24,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "0BA98C96-195E-4328-85C3-306D7CCD7CE4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Helloworld/NSURLSession/DownLoadImageViewController.m"
-            timestampString = "585492700.973314"
+            timestampString = "585653400.418491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "32CD0AD9-5FAD-4DE5-AF34-EB77388448B2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,7 +58,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            uuid = "DD2E7FDE-1A28-4B26-ACD6-303C0F5DE3A1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/SDWebImage/SDWebImage/SDWebImageManager.m"
@@ -67,14 +72,15 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  uuid = "DD2E7FDE-1A28-4B26-ACD6-303C0F5DE3A1 - 749859c74c4e3494"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[SDWebImageManager loadImageWithURL:options:progress:completed:]"
                   moduleName = "SDWebImage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///iOS/personal/other/HelloWorld/Pods/SDWebImage/SDWebImage/SDWebImageManager.m"
-                  timestampString = "585492701.361101"
+                  timestampString = "591022705.712292"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -82,14 +88,15 @@
                   offsetFromSymbolStart = "1660">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  uuid = "DD2E7FDE-1A28-4B26-ACD6-303C0F5DE3A1 - 53c98d21badec787"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__65-[SDWebImageManager loadImageWithURL:options:progress:completed:]_block_invoke"
                   moduleName = "SDWebImage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///iOS/personal/other/HelloWorld/Pods/SDWebImage/SDWebImage/SDWebImageManager.m"
-                  timestampString = "585492701.363432"
+                  timestampString = "591022705.7137541"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -97,14 +104,15 @@
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  uuid = "DD2E7FDE-1A28-4B26-ACD6-303C0F5DE3A1 - 1055fd3e8bbc7b6"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__destroy_helper_block_.116"
                   moduleName = "SDWebImage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///iOS/personal/other/HelloWorld/Pods/SDWebImage/SDWebImage/SDWebImageManager.m"
-                  timestampString = "585492701.365478"
+                  timestampString = "591022705.7152801"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -117,6 +125,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1BCA8C33-A56B-495F-A2B3-3A798ADD0077"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -133,6 +142,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2CBB782C-C7BB-44C8-89DC-8F11E03C05E6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -149,6 +159,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EDB9C55B-EA05-4A41-9F41-F663B83116A3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -165,6 +176,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B75DC32A-E187-491B-BBD4-240624FB19AD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -181,16 +193,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C426A5B2-99C7-4540-9BBF-0FAD3973229A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Helloworld/Runloop/RunloopMonitor.m"
-            timestampString = "585492700.973464"
+            filePath = "Helloworld/NewsList/viewController/NewsListTableViewController.m"
+            timestampString = "586665343.466163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-beginMonitor"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

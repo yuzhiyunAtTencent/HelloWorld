@@ -25,10 +25,36 @@
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
     
-    NSURL *url = [[NSURL alloc] initWithString:@"https://www.weiyun.com/"];
+    NSURL *url = [[NSURL alloc] initWithString:@"https://view.inews.qq.com/a/20190726A0S73500?uid=100146243534&shareto=wx"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     [self.webView loadRequest:request];
+    
+    [self setMenu];
+}
+
+- (void)setMenu {
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
+    [menuController setMenuItems:[self contextMenuItems]];
+}
+
+- (NSArray*)contextMenuItems {
+    static NSArray* menuItems;
+    if (!CHECK_VALID_ARRAY(menuItems)) {
+        NSArray* data = @[
+                          @[@"分享", @"share"],                 //分享
+                          ];
+        NSMutableArray* items = [NSMutableArray array];
+        
+        for (NSArray* pair in data) {
+            NSString* title = pair[0];
+            NSString* selector = pair[1];
+            UIMenuItem* menuItem = [[UIMenuItem alloc] initWithTitle:title action:NSSelectorFromString(selector)];
+            [items addObject:menuItem];
+        }
+        menuItems = items;
+    }
+    return menuItems;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +71,10 @@
     } else {
         decisionHandler(WKNavigationActionPolicyAllow);
     }
+}
+
+- (void)testUnusedMethod {
+    NSLog(@"测试删除无用方法的工具是否有用");
 }
 
 @end

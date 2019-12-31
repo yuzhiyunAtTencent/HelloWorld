@@ -23,6 +23,9 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 500)];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.backgroundColor = [UIColor redColor];
+    imageView.layer.cornerRadius = 10;
+    imageView.layer.masksToBounds = YES;
     imageView.clipsToBounds = YES;
     [self.view addSubview:imageView];
     [imageView sd_setImageWithURL:[NSURL URLWithString:IMAGE_URL]];
