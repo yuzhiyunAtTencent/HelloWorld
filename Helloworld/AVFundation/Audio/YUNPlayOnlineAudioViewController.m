@@ -82,7 +82,14 @@
 
 
     //通过Notification监听播放是否结束
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:songItem]
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_playbackFinished)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:self.songItem];
+}
+
+- (void)_playbackFinished {
+    NSLog(@"play music finished");
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
