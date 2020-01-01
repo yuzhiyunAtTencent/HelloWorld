@@ -156,3 +156,42 @@
 
 @end
 
+/*
+ 
+ 来源于k文章：
+ 对音频的下载调优和监控
+ 如果想监控AVPlayer的数据加载情况，或者想对AVPlayer的网络加载做自己调优的话可以通过代理AVAssetResourceLoader来实现。
+ 
+ 
+ //对AVURLAsset的resourceLoader注册自己实现的resourceLoader代理，并设定代理运行的线程为主线程mainqueue(这个可以看自己的需求)
+ AVURLAsset * asset = [AVURLAsset URLAssetWithURL:[self.url customSchemeURL] options:nil];
+ [asset.resourceLoader setDelegate:self.resourceLoader queue:dispatch_get_main_queue()];
+ self.currentItem = [AVPlayerItem playerItemWithAsset:asset];
+ self.player = [AVPlayer playerWithPlayerItem:self.currentItem];
+
+
+ //自己的resourceLoader实现代理的以下两个方法。
+ - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
+ //在addLoadingRequest里响应loadingRequest所需要的数据段则可
+     [self addLoadingRequest:loadingRequest];
+     return YES;
+ }
+
+ - (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
+     [self removeLoadingRequest:loadingRequest];
+ }
+
+
+ //在数据下载过程中往对应loadingRequest里填数据
+ //填写 contentInformationRequest的信息，注意contentLength需要填写下载的文件的总长度，contentType需要转换
+ CFStringRef contentType = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (__bridge CFStringRef)(MimeType), NULL);
+     loadingRequest.contentInformationRequest.contentType = CFBridgingRelease(contentType);
+     loadingRequest.contentInformationRequest.byteRangeAccessSupported = YES;
+     loadingRequest.contentInformationRequest.contentLength = dataLength;
+ [loadingRequest.dataRequest respondWithData:data];
+
+ //待loadingRequest需要的数据都ok后完成该loadingRequest。
+ [loadingRequest finishLoading];
+ */
+
+
