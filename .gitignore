@@ -17,6 +17,7 @@ DerivedData
 *.hmap
 *.xccheckout
 *.xcworkspace
+*.xcworkspace/xcuserdata/
 !default.xcworkspace
 
 #CocoaPods
