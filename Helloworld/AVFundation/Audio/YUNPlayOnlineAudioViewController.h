@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LearnAVFundationViewController : YunBasicViewController
+@interface YUNPlayOnlineAudioViewController : YunBasicViewController
 
 @end

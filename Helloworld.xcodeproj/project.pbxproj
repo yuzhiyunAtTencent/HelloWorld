@@ -23,7 +23,7 @@
 		28407EF821E8718100DB987D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28407EF721E8718100DB987D /* CFNetwork.framework */; };
 		28407EFD21E89AF500DB987D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28407EFC21E89AF500DB987D /* libc++.tbd */; };
 		28407EFE21E89CA700DB987D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28407EF321E870B400DB987D /* libz.tbd */; };
-		284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */; };
+		284B2F74201F586B00D32D63 /* YUNPlayOnlineAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F73201F586B00D32D63 /* YUNPlayOnlineAudioViewController.m */; };
 		284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */; };
 		284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284FDB9C233A45C6002338B8 /* FLAnimatedViewController.m */; };
 		286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C7CFE2004C2EC00F928D1 /* MenuView.m */; };
@@ -65,6 +65,7 @@
 		28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */; };
 		28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */; };
 		28D3042723BB76720008DF3A /* 20191005A02R4R.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */; };
+		28D3042A23BC3CFB0008DF3A /* YUNAudioOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
 		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
 		28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DE22E5BC3F00519567 /* RunloopMonitor.m */; };
@@ -120,8 +121,8 @@
 		28407EF521E8713400DB987D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		28407EF721E8718100DB987D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		28407EFC21E89AF500DB987D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		284B2F72201F586B00D32D63 /* LearnAVFundationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnAVFundationViewController.h; sourceTree = "<group>"; };
-		284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnAVFundationViewController.m; sourceTree = "<group>"; };
+		284B2F72201F586B00D32D63 /* YUNPlayOnlineAudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNPlayOnlineAudioViewController.h; sourceTree = "<group>"; };
+		284B2F73201F586B00D32D63 /* YUNPlayOnlineAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNPlayOnlineAudioViewController.m; sourceTree = "<group>"; };
 		284B2F792021C13300D32D63 /* GetAlbumPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAlbumPictureViewController.h; sourceTree = "<group>"; };
 		284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAlbumPictureViewController.m; sourceTree = "<group>"; };
 		284FDB9B233A45C6002338B8 /* FLAnimatedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLAnimatedViewController.h; sourceTree = "<group>"; };
@@ -204,6 +205,8 @@
 		28D3042323BB6FC90008DF3A /* YUNKnowledgeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNKnowledgeItem.h; sourceTree = "<group>"; };
 		28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNKnowledgeItem.m; sourceTree = "<group>"; };
 		28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 20191005A02R4R.mp3; sourceTree = "<group>"; };
+		28D3042823BC3CFB0008DF3A /* YUNAudioOnlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAudioOnlineViewController.h; sourceTree = "<group>"; };
+		28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAudioOnlineViewController.m; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
 		28F090DA22E5A5FC00519567 /* YUNRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNRunloopViewController.h; sourceTree = "<group>"; };
 		28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNRunloopViewController.m; sourceTree = "<group>"; };
@@ -318,14 +321,18 @@
 			path = WechatSDK;
 			sourceTree = "<group>";
 		};
-		284B2F71201F583F00D32D63 /* AVFundation */ = {
+		284B2F71201F583F00D32D63 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				28AE5BC32025B868002B9B70 /* Video */,
-				284B2F72201F586B00D32D63 /* LearnAVFundationViewController.h */,
-				284B2F73201F586B00D32D63 /* LearnAVFundationViewController.m */,
+				28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */,
+				284B2F72201F586B00D32D63 /* YUNPlayOnlineAudioViewController.h */,
+				284B2F73201F586B00D32D63 /* YUNPlayOnlineAudioViewController.m */,
+				28D3041E23BB6D200008DF3A /* YUNAudioViewController.h */,
+				28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */,
+				28D3042823BC3CFB0008DF3A /* YUNAudioOnlineViewController.h */,
+				28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */,
 			);
-			path = AVFundation;
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		284B2F782021C11800D32D63 /* GetAlbum */ = {
@@ -613,7 +620,7 @@
 			isa = PBXGroup;
 			children = (
 				28D3042123BB6F7D0008DF3A /* MainPage */,
-				28D3041D23BB6D050008DF3A /* Audio */,
+				28D3041D23BB6D050008DF3A /* AVFundation */,
 				287C6FA623604DED00F51F89 /* Gesture */,
 				2872C1E1235855D300A215C7 /* LayerContent */,
 				284FDB9A233A45A1002338B8 /* FLAnimatedImage */,
@@ -638,7 +645,6 @@
 				28AE5BCA2025BB28002B9B70 /* PopWindow */,
 				28AE5BBF2025B58B002B9B70 /* Basic */,
 				284B2F782021C11800D32D63 /* GetAlbum */,
-				284B2F71201F583F00D32D63 /* AVFundation */,
 				286C7CFB2004BC8100F928D1 /* SubMenu */,
 				28C48D511FD81B2E0096BAB9 /* NewsList */,
 				28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */,
@@ -716,14 +722,13 @@
 			path = ThreadSafety;
 			sourceTree = "<group>";
 		};
-		28D3041D23BB6D050008DF3A /* Audio */ = {
+		28D3041D23BB6D050008DF3A /* AVFundation */ = {
 			isa = PBXGroup;
 			children = (
-				28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */,
-				28D3041E23BB6D200008DF3A /* YUNAudioViewController.h */,
-				28D3041F23BB6D200008DF3A /* YUNAudioViewController.m */,
+				28AE5BC32025B868002B9B70 /* Video */,
+				284B2F71201F583F00D32D63 /* Audio */,
 			);
-			path = Audio;
+			path = AVFundation;
 			sourceTree = "<group>";
 		};
 		28D3042123BB6F7D0008DF3A /* MainPage */ = {
@@ -1010,8 +1015,9 @@
 				28AE5BD12025BC8E002B9B70 /* YunPopViewController.m in Sources */,
 				28AE5BDB20298338002B9B70 /* AFNetworkingViewController.m in Sources */,
 				28407EE221E84A7900DB987D /* YUNWechatLoginViewController.m in Sources */,
+				28D3042A23BC3CFB0008DF3A /* YUNAudioOnlineViewController.m in Sources */,
 				281A2CF21FE170EC00D95B1B /* News.m in Sources */,
-				284B2F74201F586B00D32D63 /* LearnAVFundationViewController.m in Sources */,
+				284B2F74201F586B00D32D63 /* YUNPlayOnlineAudioViewController.m in Sources */,
 				28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */,
 				CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */,
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,

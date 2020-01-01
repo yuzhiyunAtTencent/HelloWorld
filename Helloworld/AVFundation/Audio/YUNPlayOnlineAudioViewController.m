@@ -6,24 +6,23 @@
 //  Copyright © 2018年 zhiyunyu. All rights reserved.
 //
 
-#import "LearnAVFundationViewController.h"
+#import "YUNPlayOnlineAudioViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "VideoViewController.h"
 
 #define MP3_URL @"http://techslides.com/demos/samples/sample.mp3" //文件来源于 http://techslides.com/sample-files-for-development
 
-@interface LearnAVFundationViewController ()
+@interface YUNPlayOnlineAudioViewController ()
 
 @property(nonatomic, strong) UIButton *startPlayBtn;
-@property(nonatomic, strong) UIButton *jumpToVideoBtn;
 @property(nonatomic, strong) UIProgressView *musicProgressView;
 
 @property(nonatomic, strong) AVPlayer *player;
 
 @end
 
-@implementation LearnAVFundationViewController
+@implementation YUNPlayOnlineAudioViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,18 +40,6 @@
         btn;
     });
     [self.view addSubview:self.startPlayBtn];
-    
-    self.jumpToVideoBtn = ({
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, [UIScreen mainScreen].bounds.size.height - 400,[UIScreen mainScreen].bounds.size.width - 200, 48)];
-        btn.layer.borderWidth = 1;
-        btn.layer.cornerRadius = 24;
-        btn.layer.borderColor = [UIColor blueColor].CGColor;
-        [btn setTitle:@"跳到视频播放" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(jumpToVideo:) forControlEvents:UIControlEventTouchUpInside];
-        btn;
-    });
-    [self.view addSubview:self.jumpToVideoBtn];
     
     self.musicProgressView = ({
         UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(24, [UIScreen mainScreen].bounds.size.height - 250,[UIScreen mainScreen].bounds.size.width - 48, 20)];
@@ -84,12 +71,6 @@
 
 -(void)startPlay:(id)sender {
     [self.player play];
-}
-
--(void)jumpToVideo:(id)sender {
-    NSLog(@"jumpToVideo");
-    VideoViewController *controller = [[VideoViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
 }
 
 //设置控制中心的歌曲信息

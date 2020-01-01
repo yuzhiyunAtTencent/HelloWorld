@@ -31,7 +31,7 @@
     NSURL *musicURL = [[NSBundle mainBundle] URLForResource:@"20191005A02R4R" withExtension:@".mp3"];
     // 2.创建 AVAudioPlayer 对象
     NSError *outError;
-    self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL: musicURL error:&outError];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:&outError];
     // 3.设置循环播放
     self.audioPlayer.numberOfLoops = 0;
     // 4.设置AVAudioPlayer代理

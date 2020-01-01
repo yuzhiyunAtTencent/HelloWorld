@@ -8,7 +8,7 @@
 
 #import "RootTableViewController.h"
 #import "NewsListTableViewController.h"
-#import "LearnAVFundationViewController.h"
+#import "YUNPlayOnlineAudioViewController.h"
 #import "GetAlbumPictureViewController.h"
 #import "YunPopViewController.h"
 #import "WKWebViewViewController.h"
@@ -58,7 +58,11 @@
     
     self.array = [NSMutableArray array];
     
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"音频" viewCtlName:@"YUNAudioViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVAudioPlayer 播放本地音频" viewCtlName:@"YUNAudioViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"LearnAVFundationViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
+    
     /*
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"学习AVFundation" viewCtlName:@"LearnAVFundationViewController"]];
