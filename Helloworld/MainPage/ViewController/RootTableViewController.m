@@ -59,8 +59,8 @@
     self.array = [NSMutableArray array];
     
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVAudioPlayer 播放本地音频" viewCtlName:@"YUNAudioViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"LearnAVFundationViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
     
     /*

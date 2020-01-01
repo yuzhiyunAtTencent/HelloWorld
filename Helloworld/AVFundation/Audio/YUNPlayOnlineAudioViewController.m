@@ -19,6 +19,7 @@
 @property(nonatomic, strong) UIProgressView *musicProgressView;
 
 @property(nonatomic, strong) AVPlayer *player;
+@property(nonatomic, strong) AVPlayerItem * songItem;
 
 @end
 
@@ -49,12 +50,14 @@
     [self.view addSubview:self.musicProgressView];
     
     [self setMusicInfo];
+    [self _addObserver];
 }
 
 -(void)setMusicInfo {
     NSURL * url  = [NSURL URLWithString:MP3_URL];
-    AVPlayerItem * songItem = [[AVPlayerItem alloc]initWithURL:url];
-    self.player = [[AVPlayer alloc]initWithPlayerItem:songItem];
+    AVPlayerItem * songItem = [[AVPlayerItem alloc] initWithURL:url];
+    self.songItem = songItem;
+    self.player = [[AVPlayer alloc] initWithPlayerItem:songItem];
     
     //    @weakify(self); 我目前没有添加对应的库，正式工程中一定要加上@weakify(self);
     id observer = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(10.0, 10.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
@@ -67,6 +70,45 @@
     //告诉系统，我们要接受远程控制事件（如果这里不设置，即使设置了MPNowPlayingInfoCenter，控制中心也不会显示歌曲信息）
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
+}
+
+- (void)_addObserver {
+    //通过Observer方式监听播放状态
+    [self.songItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+
+    //通过Observer方式监听数据缓冲状态
+    [self.songItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
+
+
+
+    //通过Notification监听播放是否结束
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:songItem]
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+
+//在KVO方法中获取其status的改变
+    if ([keyPath isEqualToString:@"status"]) {
+        switch (self.player.status) {
+            case AVPlayerStatusUnknown:
+                NSLog(@"未知状态，此时不能播放");
+                break;
+            case AVPlayerStatusReadyToPlay:
+//                self.status = StatusReadyToPlay;
+                NSLog(@"已经就绪，可以播放");
+                break;
+            case AVPlayerStatusFailed:
+                NSLog(@"加载失败，网络或者解析出问题");
+                break;
+            default:
+                break;
+        }
+    } else if([keyPath isEqualToString:@"loadedTimeRanges"]) {
+        NSArray * array = self.songItem.loadedTimeRanges;
+        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue]; //缓冲的时间范围
+        NSTimeInterval totalBuffer = CMTimeGetSeconds(timeRange.start) + CMTimeGetSeconds(timeRange.duration); //缓冲总长度
+        NSLog(@"缓冲%.2f",totalBuffer);
+    }
 }
 
 -(void)startPlay:(id)sender {
