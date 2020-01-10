@@ -32,6 +32,7 @@
 		2872C1E4235855F800A215C7 /* ContentOfLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2872C1E3235855F800A215C7 /* ContentOfLayerViewController.m */; };
 		287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
+		2895ED2923C89F1000D064BF /* GetMainColorFromImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */; };
 		2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2898CE9D213799A200167892 /* TestBridgeViewController.m */; };
 		289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F638C2117FAAC00F197CF /* YunDrawRectViewController.m */; };
 		289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289F63C3212072EF00F197CF /* YunMethodSwizzlingViewController.m */; };
@@ -138,6 +139,8 @@
 		287C6FA723604E0D00F51F89 /* YUNGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNGestureViewController.h; sourceTree = "<group>"; };
 		287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNGestureViewController.m; sourceTree = "<group>"; };
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		2895ED2723C89F1000D064BF /* GetMainColorFromImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMainColorFromImageViewController.h; sourceTree = "<group>"; };
+		2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMainColorFromImageViewController.m; sourceTree = "<group>"; };
 		2898CE9C213799A200167892 /* TestBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBridgeViewController.h; sourceTree = "<group>"; };
 		2898CE9D213799A200167892 /* TestBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBridgeViewController.m; sourceTree = "<group>"; };
 		2898CEA321379F7C00167892 /* YunPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunPrefixHeader.pch; sourceTree = "<group>"; };
@@ -399,6 +402,15 @@
 			path = Gesture;
 			sourceTree = "<group>";
 		};
+		2895ED2623C89EF100D064BF /* GetImageMainColor */ = {
+			isa = PBXGroup;
+			children = (
+				2895ED2723C89F1000D064BF /* GetMainColorFromImageViewController.h */,
+				2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */,
+			);
+			path = GetImageMainColor;
+			sourceTree = "<group>";
+		};
 		2898CE9A213798F500167892 /* JSBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +631,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				2895ED2623C89EF100D064BF /* GetImageMainColor */,
 				28D3042123BB6F7D0008DF3A /* MainPage */,
 				28D3041D23BB6D050008DF3A /* AVFundation */,
 				287C6FA623604DED00F51F89 /* Gesture */,
@@ -1036,6 +1049,7 @@
 				280D632922FAEF570051AB12 /* WKWebView+Responder.m in Sources */,
 				284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
+				2895ED2923C89F1000D064BF /* GetMainColorFromImageViewController.m in Sources */,
 				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,
 				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,
 				2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */,
