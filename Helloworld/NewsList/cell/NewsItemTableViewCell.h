@@ -10,8 +10,5 @@
 
 @interface NewsItemTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *imageCover;
-@property (nonatomic, strong) UILabel *labelTitle;
-
 -(void)setImage:(NSString *)img setTitle:(NSString *)title;
 @end

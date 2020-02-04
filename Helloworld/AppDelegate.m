@@ -11,6 +11,7 @@
 #import "NewsListTableViewController.h"
 #import "RootTableViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import <Aspects.h>
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -28,7 +29,12 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 
 #pragma mark - UIApplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    // 使用Aspect hook了UIViewController的viewDidAppear函数
+    /*[UIViewController aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        NSLog(@"%@: %@", [aspectInfo.instance class], aspectInfo.arguments);
+        NSLog(@"viewDidAppear -->>>>>>>>>><<<<<<<<<<<<<--");
+    } error:nil];
+     */
     // 10.0 之后的通知
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     [self p_requestPushAuthorize];
@@ -39,6 +45,43 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
+    
+    CGFloat screen_width;
+    screen_width = [UIScreen mainScreen].bounds.size.width;
+    
+    CGFloat screen_height;
+    screen_height = [UIScreen mainScreen].bounds.size.height;
+    
+    CGFloat scale = [UIScreen mainScreen].scale;
+    
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:@(1)];
+    [array addObject:@(2)];
+    [array addObject:@(1)];
+    
+    [array addObject:@"哈"];
+    [array addObject:@"哈哈"];
+    [array addObject:@"哈哈"];
+    
+    NSMutableSet *set = [NSMutableSet set];
+    [set addObject:@(1)];
+    [set addObject:@(2)];
+    [set addObject:@(1)];
+    
+    [set addObject:@"哈"];
+    [set addObject:@"哈哈"];
+    [set addObject:@"哈哈"];
+    
+    
+    NSMutableArray *array2 = [NSMutableArray array];
+    [array2 addObject:@(1)];
+    [array2 insertObject:@(2) atIndex:0];
+    [array2 insertObject:@(3) atIndex:0];
+//    NSMutableDictionary
+//    NSHashTable
+    
+    
+    
     return YES;
 }
 

@@ -9,20 +9,61 @@
 #import "NewsListTableViewController.h"
 #import "NewsItemTableViewCell.h"
 #import "News.h"
-@interface NewsListTableViewController (){
-    NSMutableArray* newsArray;
-}
 
+#import <SVPullToRefresh/SVPullToRefresh.h>
+
+@interface NewsListTableViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property(nonatomic,strong) UITableView *tableView;
+@property(nonatomic,strong) NSMutableArray* newsArray;
 @end
+
 
 @implementation NewsListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    newsArray=[[NSMutableArray  alloc]init];
-    [newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
-    [newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
-    [newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    
+    News *news = [[News alloc] initWithPicUrl:@"oldUrl" title:@"oldTitle"];
+    
+    NSLog(@"%p", [news methodForSelector:@selector(setTitle:)]);
+    
+    [news addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    NSLog(@"%p", [news methodForSelector:@selector(setTitle:)]);
+    
+    [news willChangeValueForKey:@"title"];
+    [news didChangeValueForKey:@"title"];
+    
+    self.newsArray=[[NSMutableArray  alloc]init];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"beauty.jpg" title:@"青青子衿 悠悠我心"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"但为君故 沉吟至今"]];
+    [self.newsArray addObject:[[News alloc]initWithPicUrl:@"wawa.jpg"  title:@"呦呦鹿鸣 食野之萍"]];
+    
+    // 下拉刷新
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [self.newsArray insertObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"新增数据*****"] atIndex:0];
+        [self.tableView reloadData];
+        [self.tableView.pullToRefreshView stopAnimating];
+    }];
+    // 上拉刷新
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [self.newsArray addObject:[[News alloc]initWithPicUrl:@"helle.jpg" title:@"新增数据*****"]];
+        [self.tableView reloadData];
+        [self.tableView.infiniteScrollingView stopAnimating];
+    }];
+    
+    [self.view addSubview:self.tableView];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"old = %@ , new = %@ ",[change objectForKey:NSKeyValueChangeOldKey], [change objectForKey:NSKeyValueChangeNewKey]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +80,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return [newsArray count];
+    return [self.newsArray count];
 }
 
 
@@ -50,9 +91,14 @@
         //单元格样式设置为UITableViewCellStyleDefault
         cell = [[NewsItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
-    News* news=[newsArray objectAtIndex:indexPath.row];
+    News* news=[self.newsArray objectAtIndex:indexPath.row];
     [cell setImage:[news picUrl] setTitle:[news title]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.newsArray removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 //设置单元格的高度
@@ -62,6 +108,13 @@
     return 100;
 }
 
-
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
+}
 
 @end

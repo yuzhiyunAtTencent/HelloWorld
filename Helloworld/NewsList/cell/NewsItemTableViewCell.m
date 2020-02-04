@@ -8,35 +8,50 @@
 
 #import "NewsItemTableViewCell.h"
 
+@interface NewsItemTableViewCell ()
+
+@property(nonatomic, strong) UIImageView *coverImageView;
+@property(nonatomic, strong) UILabel *titleLabel;
+@end
+
 @implementation NewsItemTableViewCell
 
+#pragma mark - Override
 
-
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier])
-    {
-
-        //创建imageView添加到cell中
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"beauty.jpg"]];
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.frame = CGRectMake(10, 10, 150, 80);
-        [self setImageCover:imageView];
-        [self addSubview:imageView];
-        //创建labelTitle添加到cell中
-        UILabel *labelTitle = [[UILabel alloc]init];
-        labelTitle.frame=CGRectMake(170, 10, 400, 20);
-        [self setLabelTitle:labelTitle];
-        [self addSubview:labelTitle];
-
-        
-        
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self.contentView addSubview:self.coverImageView];
+        [self.contentView addSubview:self.titleLabel];
     }
     return self;
 }
--(void)setImage:(NSString *)img setTitle:(NSString *)title{
-    [self.imageCover setImage:[UIImage imageNamed:img]];
-    [self.labelTitle setText:title];
+
+- (void)setImage:(NSString *)img setTitle:(NSString *)title {
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
+    [self.coverImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    [self.titleLabel setText:title];
+}
+
+#pragma mark - Accessors
+
+- (UIImageView *)coverImageView {
+    if (!_coverImageView) {
+        _coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+        _coverImageView.layer.cornerRadius = 50;
+        _coverImageView.backgroundColor = [UIColor redColor];
+        _coverImageView.layer.masksToBounds = YES;
+//        _coverImageView.layer.mask
+        _coverImageView.clipsToBounds = YES;
+    }
+    return _coverImageView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(170, 10, 400, 20)];
+    }
+    return _titleLabel;
 }
 
 @end
