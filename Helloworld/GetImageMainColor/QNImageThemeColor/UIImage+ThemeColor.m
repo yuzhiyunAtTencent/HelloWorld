@@ -10,9 +10,11 @@
 
 @implementation UIImage (ThemeColor)
 
-- (void)getThemeColor:(QNGetColorBlock)block {
-    // warning zhiyun
-    block([UIColor redColor]);
+- (void)getThemeColor:(QNGetColorBlock)colorBlock {
+    QNThemeColorExtracter *colorExtracter = [[QNThemeColorExtracter alloc] init];
+    
+    [colorExtracter extractColorsFromImage:self
+                                colorBlock:colorBlock];
 }
 
 @end

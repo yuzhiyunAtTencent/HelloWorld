@@ -32,7 +32,10 @@
 		2872C1E4235855F800A215C7 /* ContentOfLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2872C1E3235855F800A215C7 /* ContentOfLayerViewController.m */; };
 		287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */; };
 		288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */; };
-		288C846E241124B900D65B78 /* QNThemeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846D241124B900D65B78 /* QNThemeColor.m */; };
+		288C846E241124B900D65B78 /* QNThemeColorExtracter.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846D241124B900D65B78 /* QNThemeColorExtracter.m */; };
+		288C847124112DA200D65B78 /* QNColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C847024112DA200D65B78 /* QNColorTransformer.m */; };
+		288C84742411320100D65B78 /* QNColorBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C84732411320100D65B78 /* QNColorBox.m */; };
+		288C84772411334800D65B78 /* QNColorBoxPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C84762411334800D65B78 /* QNColorBoxPriorityQueue.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
 		2895ED2923C89F1000D064BF /* GetMainColorFromImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */; };
 		2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2898CE9D213799A200167892 /* TestBridgeViewController.m */; };
@@ -144,8 +147,14 @@
 		287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNGestureViewController.m; sourceTree = "<group>"; };
 		288C8469241123DB00D65B78 /* UIImage+ThemeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ThemeColor.h"; sourceTree = "<group>"; };
 		288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ThemeColor.m"; sourceTree = "<group>"; };
-		288C846C241124B900D65B78 /* QNThemeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNThemeColor.h; sourceTree = "<group>"; };
-		288C846D241124B900D65B78 /* QNThemeColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNThemeColor.m; sourceTree = "<group>"; };
+		288C846C241124B900D65B78 /* QNThemeColorExtracter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNThemeColorExtracter.h; sourceTree = "<group>"; };
+		288C846D241124B900D65B78 /* QNThemeColorExtracter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNThemeColorExtracter.m; sourceTree = "<group>"; };
+		288C846F24112DA200D65B78 /* QNColorTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNColorTransformer.h; sourceTree = "<group>"; };
+		288C847024112DA200D65B78 /* QNColorTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNColorTransformer.m; sourceTree = "<group>"; };
+		288C84722411320100D65B78 /* QNColorBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNColorBox.h; sourceTree = "<group>"; };
+		288C84732411320100D65B78 /* QNColorBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNColorBox.m; sourceTree = "<group>"; };
+		288C84752411334800D65B78 /* QNColorBoxPriorityQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNColorBoxPriorityQueue.h; sourceTree = "<group>"; };
+		288C84762411334800D65B78 /* QNColorBoxPriorityQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNColorBoxPriorityQueue.m; sourceTree = "<group>"; };
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		2895ED2723C89F1000D064BF /* GetMainColorFromImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMainColorFromImageViewController.h; sourceTree = "<group>"; };
 		2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMainColorFromImageViewController.m; sourceTree = "<group>"; };
@@ -419,8 +428,14 @@
 			children = (
 				288C8469241123DB00D65B78 /* UIImage+ThemeColor.h */,
 				288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */,
-				288C846C241124B900D65B78 /* QNThemeColor.h */,
-				288C846D241124B900D65B78 /* QNThemeColor.m */,
+				288C846C241124B900D65B78 /* QNThemeColorExtracter.h */,
+				288C846D241124B900D65B78 /* QNThemeColorExtracter.m */,
+				288C846F24112DA200D65B78 /* QNColorTransformer.h */,
+				288C847024112DA200D65B78 /* QNColorTransformer.m */,
+				288C84722411320100D65B78 /* QNColorBox.h */,
+				288C84732411320100D65B78 /* QNColorBox.m */,
+				288C84752411334800D65B78 /* QNColorBoxPriorityQueue.h */,
+				288C84762411334800D65B78 /* QNColorBoxPriorityQueue.m */,
 			);
 			path = QNImageThemeColor;
 			sourceTree = "<group>";
@@ -1053,7 +1068,7 @@
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				280E76FA21EF1AC80075DCA8 /* YUNTestPresentViewController.m in Sources */,
-				288C846E241124B900D65B78 /* QNThemeColor.m in Sources */,
+				288C846E241124B900D65B78 /* QNThemeColorExtracter.m in Sources */,
 				28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */,
 				28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
@@ -1083,16 +1098,19 @@
 				281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */,
 				289F63C7212073C400F197CF /* UIImage+hook.m in Sources */,
 				28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */,
+				288C84742411320100D65B78 /* QNColorBox.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
 				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
 				28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */,
+				288C847124112DA200D65B78 /* QNColorTransformer.m in Sources */,
 				288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */,
 				280D632922FAEF570051AB12 /* WKWebView+Responder.m in Sources */,
 				284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
+				288C84772411334800D65B78 /* QNColorBoxPriorityQueue.m in Sources */,
 				2895ED2923C89F1000D064BF /* GetMainColorFromImageViewController.m in Sources */,
 				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,
 				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,

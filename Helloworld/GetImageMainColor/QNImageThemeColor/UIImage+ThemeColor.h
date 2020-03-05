@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QNThemeColor.h"
+#import "QNThemeColorExtracter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

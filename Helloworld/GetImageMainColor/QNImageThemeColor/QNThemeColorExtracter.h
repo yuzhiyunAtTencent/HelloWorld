@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^QNGetColorBlock)(UIColor *themeColor);
 
-@interface QNThemeColor : NSObject
+@interface QNThemeColorExtracter : NSObject
+
+- (void)extractColorsFromImage:(UIImage *)image
+                    colorBlock:(QNGetColorBlock)colorBlock;
 
 @end
 

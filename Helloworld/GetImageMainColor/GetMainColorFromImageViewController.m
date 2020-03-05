@@ -27,6 +27,7 @@
     self.avatarImageView = ({
         CGFloat imageViewSize = 300;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 100, imageViewSize, imageViewSize)];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.backgroundColor = [UIColor blueColor];
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
@@ -50,6 +51,11 @@
         view.backgroundColor = [UIColor blackColor];
         view;
     });
+    
+    [self.avatarImageView.image getThemeColor:^(UIColor * _Nonnull themeColor) {
+        NSLog(@"themeColor of avatarImageView.image is %@", themeColor);
+        self.mainColorView.backgroundColor = themeColor;
+    }];
     
     [self.view addSubview:self.avatarImageView];
     [self.view addSubview:self.mainColorLabel];
@@ -111,7 +117,7 @@
         [info objectForKey:UIImagePickerControllerOriginalImage];
         self.avatarImageView.image = originImage;
         
-        // warning zhiyun 这里拿到了UIImage ,开始解析图片获取颜色值
+        // 这里拿到了UIImage ,开始解析图片获取颜色值
         [originImage getThemeColor:^(UIColor * _Nonnull themeColor) {
             NSLog(@"themeColor of originImage is %@", themeColor);
             self.mainColorView.backgroundColor = themeColor;
