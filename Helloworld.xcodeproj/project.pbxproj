@@ -71,6 +71,8 @@
 		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
 		28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DE22E5BC3F00519567 /* RunloopMonitor.m */; };
 		28F0914222F01AE100519567 /* TestAtomic.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F0914122F01ADF00519567 /* TestAtomic.m */; };
+		28F3037623E9558100A96923 /* YUNUIInterfaceOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */; };
+		28F3037923E9566700A96923 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037823E9566700A96923 /* HorizontalViewController.m */; };
 		6A0460C596BD6B71BA73C5B9 /* Pods_Helloworld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */; };
 		CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */; };
 		CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D99320EF92C0005FA5D1 /* AppOpenURLViewController.m */; };
@@ -217,6 +219,10 @@
 		28F090DE22E5BC3F00519567 /* RunloopMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopMonitor.m; sourceTree = "<group>"; };
 		28F0914022F01ADF00519567 /* TestAtomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAtomic.h; sourceTree = "<group>"; };
 		28F0914122F01ADF00519567 /* TestAtomic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAtomic.m; sourceTree = "<group>"; };
+		28F3037423E9558100A96923 /* YUNUIInterfaceOrientationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNUIInterfaceOrientationViewController.h; sourceTree = "<group>"; };
+		28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNUIInterfaceOrientationViewController.m; sourceTree = "<group>"; };
+		28F3037723E9566700A96923 /* HorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
+		28F3037823E9566700A96923 /* HorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
 		A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helloworld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD69D98C20D4F0D3005FA5D1 /* MultiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadViewController.h; sourceTree = "<group>"; };
 		CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadViewController.m; sourceTree = "<group>"; };
@@ -631,6 +637,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28F3037023E9553300A96923 /* UIInterfaceOrientation */,
 				2895ED2623C89EF100D064BF /* GetImageMainColor */,
 				28D3042123BB6F7D0008DF3A /* MainPage */,
 				28D3041D23BB6D050008DF3A /* AVFundation */,
@@ -773,13 +780,23 @@
 			path = Runloop;
 			sourceTree = "<group>";
 		};
+		28F3037023E9553300A96923 /* UIInterfaceOrientation */ = {
+			isa = PBXGroup;
+			children = (
+				28F3037423E9558100A96923 /* YUNUIInterfaceOrientationViewController.h */,
+				28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */,
+				28F3037723E9566700A96923 /* HorizontalViewController.h */,
+				28F3037823E9566700A96923 /* HorizontalViewController.m */,
+			);
+			path = UIInterfaceOrientation;
+			sourceTree = "<group>";
+		};
 		3B6F9E69F5220B21617091E3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				00482C0EFCE561AB6DE0CB32 /* Pods-Helloworld.debug.xcconfig */,
 				F826B74DBA3F35BE322847FA /* Pods-Helloworld.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1021,6 +1038,7 @@
 				28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */,
 				28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
+				28F3037923E9566700A96923 /* HorizontalViewController.m in Sources */,
 				287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */,
 				28F0914222F01AE100519567 /* TestAtomic.m in Sources */,
 				28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */,
@@ -1040,6 +1058,7 @@
 				CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */,
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
+				28F3037623E9558100A96923 /* YUNUIInterfaceOrientationViewController.m in Sources */,
 				289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */,
 				28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */,
 				281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */,

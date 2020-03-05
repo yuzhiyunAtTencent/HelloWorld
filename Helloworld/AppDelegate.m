@@ -27,6 +27,10 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 
 @implementation AppDelegate
 
++ (UIWindow *)yun_window {
+    return (AppDelegate *)([UIApplication sharedApplication].delegate).window;
+}
+
 #pragma mark - UIApplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 使用Aspect hook了UIViewController的viewDidAppear函数
@@ -37,7 +41,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
      */
     // 10.0 之后的通知
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-    [self p_requestPushAuthorize];
+//    [self p_requestPushAuthorize];
     
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//设置窗口

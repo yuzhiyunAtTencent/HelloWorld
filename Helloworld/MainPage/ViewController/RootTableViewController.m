@@ -36,6 +36,7 @@
 #import "YUNAudioViewController.h"
 #import "YUNKnowledgeItem.h"
 #import "GetMainColorFromImageViewController.h"
+#import "YUNUIInterfaceOrientationViewController.h"
 
 @interface RootTableViewController ()
 
@@ -59,12 +60,13 @@
     
     self.array = [NSMutableArray array];
     
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVAudioPlayer 播放本地音频" viewCtlName:@"YUNAudioViewController"]];
-//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVAudioPlayer 播放本地音频" viewCtlName:@"YUNAudioViewController"]];
+////    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取图片的主颜色" viewCtlName:@"GetMainColorFromImageViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"UIInterfaceOrientation" viewCtlName:@"YUNUIInterfaceOrientationViewController"]];
     
     /*
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];

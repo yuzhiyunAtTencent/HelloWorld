@@ -13,6 +13,8 @@
 
 @interface GetMainColorFromImageViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property(nonatomic, strong) UIImageView *avatarImageView;
+@property(nonatomic, strong) UIView *mainColorView;
+@property(nonatomic, strong) UILabel *mainColorLabel;
 @end
 
 @implementation GetMainColorFromImageViewController
@@ -30,8 +32,29 @@
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
         imageView;
     });
-    [self.view addSubview:self.avatarImageView];
+    
+    self.mainColorLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"上方图片的主题色是：";
+        [label sizeToFit];
+        label.qn_top = self.avatarImageView.qn_bottom + 20;
+        label.qn_centerX = self.avatarImageView.qn_centerX;
+        label;
+    });
 
+    self.mainColorView = ({
+        CGFloat leftSpace = 50;
+        UIView *view = [[UIView alloc] initWithFrame:
+                        CGRectMake(leftSpace, 0, self.view.bounds.size.width - 2 * leftSpace, 50)];
+        view.qn_top = self.mainColorLabel.qn_bottom + 20;
+        view.backgroundColor = [UIColor blackColor];
+        view;
+    });
+    
+    [self.view addSubview:self.avatarImageView];
+    [self.view addSubview:self.mainColorLabel];
+    [self.view addSubview:self.mainColorView];
+    
     //打开用户交互
     self.avatarImageView.userInteractionEnabled = YES;
     //初始化一个手势
