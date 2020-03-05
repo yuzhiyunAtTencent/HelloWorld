@@ -31,6 +31,8 @@
 		286EB34D22C49F2B00359D7F /* YUNHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286EB34C22C49F2B00359D7F /* YUNHashViewController.m */; };
 		2872C1E4235855F800A215C7 /* ContentOfLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2872C1E3235855F800A215C7 /* ContentOfLayerViewController.m */; };
 		287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */; };
+		288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */; };
+		288C846E241124B900D65B78 /* QNThemeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846D241124B900D65B78 /* QNThemeColor.m */; };
 		289570EB1FEBA4290089DC06 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 289570EA1FEBA4290089DC06 /* Image.bundle */; };
 		2895ED2923C89F1000D064BF /* GetMainColorFromImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */; };
 		2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2898CE9D213799A200167892 /* TestBridgeViewController.m */; };
@@ -140,6 +142,10 @@
 		2872C1E3235855F800A215C7 /* ContentOfLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentOfLayerViewController.m; sourceTree = "<group>"; };
 		287C6FA723604E0D00F51F89 /* YUNGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNGestureViewController.h; sourceTree = "<group>"; };
 		287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNGestureViewController.m; sourceTree = "<group>"; };
+		288C8469241123DB00D65B78 /* UIImage+ThemeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ThemeColor.h"; sourceTree = "<group>"; };
+		288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ThemeColor.m"; sourceTree = "<group>"; };
+		288C846C241124B900D65B78 /* QNThemeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNThemeColor.h; sourceTree = "<group>"; };
+		288C846D241124B900D65B78 /* QNThemeColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNThemeColor.m; sourceTree = "<group>"; };
 		289570EA1FEBA4290089DC06 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		2895ED2723C89F1000D064BF /* GetMainColorFromImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMainColorFromImageViewController.h; sourceTree = "<group>"; };
 		2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMainColorFromImageViewController.m; sourceTree = "<group>"; };
@@ -408,9 +414,21 @@
 			path = Gesture;
 			sourceTree = "<group>";
 		};
+		288C84622411145B00D65B78 /* QNImageThemeColor */ = {
+			isa = PBXGroup;
+			children = (
+				288C8469241123DB00D65B78 /* UIImage+ThemeColor.h */,
+				288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */,
+				288C846C241124B900D65B78 /* QNThemeColor.h */,
+				288C846D241124B900D65B78 /* QNThemeColor.m */,
+			);
+			path = QNImageThemeColor;
+			sourceTree = "<group>";
+		};
 		2895ED2623C89EF100D064BF /* GetImageMainColor */ = {
 			isa = PBXGroup;
 			children = (
+				288C84622411145B00D65B78 /* QNImageThemeColor */,
 				2895ED2723C89F1000D064BF /* GetMainColorFromImageViewController.h */,
 				2895ED2823C89F1000D064BF /* GetMainColorFromImageViewController.m */,
 			);
@@ -1035,6 +1053,7 @@
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				280E76FA21EF1AC80075DCA8 /* YUNTestPresentViewController.m in Sources */,
+				288C846E241124B900D65B78 /* QNThemeColor.m in Sources */,
 				28D3042023BB6D200008DF3A /* YUNAudioViewController.m in Sources */,
 				28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */,
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
@@ -1070,6 +1089,7 @@
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
 				28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */,
+				288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */,
 				280D632922FAEF570051AB12 /* WKWebView+Responder.m in Sources */,
 				284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,

@@ -9,7 +9,7 @@
 #import "GetMainColorFromImageViewController.h"
 #import "GetAlbumPictureViewController.h"
 #import "UIView+Utils.h"
-
+#import "UIImage+ThemeColor.h"
 
 @interface GetMainColorFromImageViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property(nonatomic, strong) UIImageView *avatarImageView;
@@ -110,6 +110,12 @@
         UIImage *originImage =
         [info objectForKey:UIImagePickerControllerOriginalImage];
         self.avatarImageView.image = originImage;
+        
+        // warning zhiyun 这里拿到了UIImage ,开始解析图片获取颜色值
+        [originImage getThemeColor:^(UIColor * _Nonnull themeColor) {
+            NSLog(@"themeColor of originImage is %@", themeColor);
+            self.mainColorView.backgroundColor = themeColor;
+        }];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
