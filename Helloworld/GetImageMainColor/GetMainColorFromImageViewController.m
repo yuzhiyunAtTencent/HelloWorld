@@ -31,7 +31,7 @@ UITableViewDataSource, UITableViewDelegate>
     self.navigationController.navigationBarHidden = YES;
     
     self.colorTableView = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 400, 350)
                                                               style:UITableViewStylePlain];
         
         tableView.delegate = self;
@@ -41,7 +41,7 @@ UITableViewDataSource, UITableViewDelegate>
     
     self.avatarImageView = ({
         CGFloat imageViewSize = 150;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 100, imageViewSize, imageViewSize)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 60, imageViewSize, imageViewSize)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.backgroundColor = [UIColor blueColor];
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
@@ -53,7 +53,7 @@ UITableViewDataSource, UITableViewDelegate>
         UILabel *label = [[UILabel alloc] init];
         label.text = @"上方图片的主题色是：";
         [label sizeToFit];
-        label.qn_top = self.avatarImageView.qn_bottom + 20;
+        label.qn_top = self.avatarImageView.qn_bottom + 5;
         label.qn_centerX = self.avatarImageView.qn_centerX;
         label;
     });
@@ -61,8 +61,8 @@ UITableViewDataSource, UITableViewDelegate>
     self.mainColorView = ({
         CGFloat leftSpace = 50;
         UIView *view = [[UIView alloc] initWithFrame:
-                        CGRectMake(leftSpace, 0, self.view.bounds.size.width - 2 * leftSpace, 50)];
-        view.qn_top = self.mainColorLabel.qn_bottom + 20;
+                        CGRectMake(leftSpace, 0, self.view.bounds.size.width - 2 * leftSpace, 30)];
+        view.qn_top = self.mainColorLabel.qn_bottom + 5;
         view.backgroundColor = [UIColor blackColor];
         view;
     });
@@ -75,6 +75,17 @@ UITableViewDataSource, UITableViewDelegate>
         self.mainColorView.backgroundColor = themeColor;
         
         self.colorArray = [colorArray copy];
+    
+        self.colorArray = [colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            QNColorItem *color1 = (QNColorItem *)obj1;
+            QNColorItem *color2 = (QNColorItem *)obj2;
+            
+            if (color1.pixelCount > color2.pixelCount) {
+                return NSOrderedAscending;
+            } else {
+                return NSOrderedDescending;
+            }
+        }];
         [self.colorTableView reloadData];
     }];
     
@@ -145,7 +156,16 @@ UITableViewDataSource, UITableViewDelegate>
         [originImage getThemeColor:^(UIColor * _Nonnull themeColor, NSArray<QNColorItem *> * _Nonnull colorArray) {
             self.mainColorView.backgroundColor = themeColor;
             
-            self.colorArray = [colorArray copy];
+            self.colorArray = [colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                QNColorItem *color1 = (QNColorItem *)obj1;
+                QNColorItem *color2 = (QNColorItem *)obj2;
+                
+                if (color1.pixelCount > color2.pixelCount) {
+                    return NSOrderedAscending;
+                } else {
+                    return NSOrderedDescending;
+                }
+            }];
             [self.colorTableView reloadData];
         }];
     }
