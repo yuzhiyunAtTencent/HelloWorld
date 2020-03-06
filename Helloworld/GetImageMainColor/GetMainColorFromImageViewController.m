@@ -11,10 +11,16 @@
 #import "UIView+Utils.h"
 #import "UIImage+ThemeColor.h"
 
-@interface GetMainColorFromImageViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface GetMainColorFromImageViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,
+UITableViewDataSource, UITableViewDelegate>
+
 @property(nonatomic, strong) UIImageView *avatarImageView;
 @property(nonatomic, strong) UIView *mainColorView;
 @property(nonatomic, strong) UILabel *mainColorLabel;
+@property(nonatomic, strong) UITableView *colorTableView;
+
+@property(nonatomic, strong) NSArray<QNColorItem *> *colorArray;
+
 @end
 
 @implementation GetMainColorFromImageViewController
@@ -24,8 +30,17 @@
     
     self.navigationController.navigationBarHidden = YES;
     
+    self.colorTableView = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)
+                                                              style:UITableViewStylePlain];
+        
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView;
+    });
+    
     self.avatarImageView = ({
-        CGFloat imageViewSize = 300;
+        CGFloat imageViewSize = 150;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 100, imageViewSize, imageViewSize)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.backgroundColor = [UIColor blueColor];
@@ -52,14 +67,21 @@
         view;
     });
     
-    [self.avatarImageView.image getThemeColor:^(UIColor * _Nonnull themeColor) {
-        NSLog(@"themeColor of avatarImageView.image is %@", themeColor);
+    self.colorTableView.qn_centerX = self.view.bounds.size.width / 2;
+    self.colorTableView.qn_top = self.mainColorView.qn_bottom + 20;
+    
+    // weakify
+    [self.avatarImageView.image getThemeColor:^(UIColor * _Nonnull themeColor, NSArray<QNColorItem *> * _Nonnull colorArray) {
         self.mainColorView.backgroundColor = themeColor;
+        
+        self.colorArray = [colorArray copy];
+        [self.colorTableView reloadData];
     }];
     
     [self.view addSubview:self.avatarImageView];
     [self.view addSubview:self.mainColorLabel];
     [self.view addSubview:self.mainColorView];
+    [self.view addSubview:self.colorTableView];
     
     //打开用户交互
     self.avatarImageView.userInteractionEnabled = YES;
@@ -93,6 +115,8 @@
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"我的相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;//我的相片 （这种形式会把一张张照片罗列出来）
+        picker.allowsEditing = NO;
+
         [self presentViewController:picker animated:YES completion:nil];
     }];
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -118,9 +142,11 @@
         self.avatarImageView.image = originImage;
         
         // 这里拿到了UIImage ,开始解析图片获取颜色值
-        [originImage getThemeColor:^(UIColor * _Nonnull themeColor) {
-            NSLog(@"themeColor of originImage is %@", themeColor);
+        [originImage getThemeColor:^(UIColor * _Nonnull themeColor, NSArray<QNColorItem *> * _Nonnull colorArray) {
             self.mainColorView.backgroundColor = themeColor;
+            
+            self.colorArray = [colorArray copy];
+            [self.colorTableView reloadData];
         }];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -142,6 +168,32 @@
             }
         }];
     }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.colorArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *reuseIdentifier = @"reuseIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    }
+    QNColorItem *colorItem = [self.colorArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"百分之%@', 像素点数量：%@",
+                           @(colorItem.percent),
+                           @(colorItem.pixelCount)];
+    
+    [cell.textLabel sizeToFit];
+    cell.contentView.backgroundColor = colorItem.color;
+
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 20;
 }
 
 @end

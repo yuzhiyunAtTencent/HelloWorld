@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QNColorItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^QNGetColorBlock)(UIColor *themeColor);
+typedef void(^QNGetColorBlock)(UIColor *themeColor, NSArray<QNColorItem *> *colorArray);
 
 @interface QNThemeColorExtracter : NSObject
 

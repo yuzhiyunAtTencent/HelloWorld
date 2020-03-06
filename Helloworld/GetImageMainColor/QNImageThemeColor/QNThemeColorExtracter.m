@@ -21,6 +21,8 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
 @property(nonatomic, assign) NSInteger pixelCount;
 @property(nonatomic, strong) NSMutableArray *distinctColors;
 @property(nonatomic, strong) QNColorBoxPriorityQueue *priorityQueue;
+@property(nonatomic, strong) NSMutableArray<QNColorItem *> *colorArray;
+
 @end
 
 @implementation QNThemeColorExtracter
@@ -127,17 +129,26 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
         UIColor *imageThemeColor = [self findMaxColorBox:self.priorityQueue];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            colorBlock(imageThemeColor);
+            colorBlock(imageThemeColor, self.colorArray);
         });
     });
 }
 
 - (void)calculateAverageColors:(QNColorBoxPriorityQueue *)queue {
+    if (!self.colorArray) {
+        self.colorArray = [NSMutableArray array];
+    }
+    
     NSMutableArray *colorBoxArray = [queue getColorBoxArray];
     for (QNColorBox *box in colorBoxArray){
         [box calculateAverageColor];
         
-        NSLog(@"count in this box = %@, ", @(box.pixelTotalCount));
+        NSInteger colorPercentOfWholeImage = (NSInteger)([box pixelTotalCount] * 100 / self.pixelCount);
+        QNColorItem *colorItem = [[QNColorItem alloc] initWithColor:[box getAverageColor]
+                                                            percent:colorPercentOfWholeImage
+                                                         pixelCount:[box pixelTotalCount]];
+        
+        [self.colorArray addObject:colorItem];
     }
 }
 

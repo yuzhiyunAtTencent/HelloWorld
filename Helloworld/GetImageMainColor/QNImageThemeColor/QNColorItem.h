@@ -1,0 +1,25 @@
+//
+//  QNColorItem.h
+//  Helloworld
+//
+//  Created by zhiyunyu on 2020/3/6.
+//  Copyright © 2020 zhiyunyu. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface QNColorItem : NSObject
+
+@property(nonatomic, strong, readonly) UIColor *color;
+@property(nonatomic, assign, readonly) NSInteger percent;
+@property(nonatomic, assign, readonly) NSInteger pixelCount;
+
+- (instancetype)initWithColor:(UIColor *)color
+                      percent:(NSInteger)percent
+                   pixelCount:(NSInteger)pixelCount;
+
+@end
+
+NS_ASSUME_NONNULL_END

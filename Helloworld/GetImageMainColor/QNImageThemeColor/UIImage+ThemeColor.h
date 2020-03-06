@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QNThemeColorExtracter.h"
+#import "QNColorItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -73,6 +73,7 @@
 		28D3042723BB76720008DF3A /* 20191005A02R4R.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */; };
 		28D3042A23BC3CFB0008DF3A /* YUNAudioOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
+		28E62FF124128FA500C8CD33 /* QNColorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E62FF024128FA400C8CD33 /* QNColorItem.m */; };
 		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
 		28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DE22E5BC3F00519567 /* RunloopMonitor.m */; };
 		28F0914222F01AE100519567 /* TestAtomic.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F0914122F01ADF00519567 /* TestAtomic.m */; };
@@ -228,6 +229,8 @@
 		28D3042823BC3CFB0008DF3A /* YUNAudioOnlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAudioOnlineViewController.h; sourceTree = "<group>"; };
 		28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAudioOnlineViewController.m; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
+		28E62FEF24128FA400C8CD33 /* QNColorItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNColorItem.h; sourceTree = "<group>"; };
+		28E62FF024128FA400C8CD33 /* QNColorItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNColorItem.m; sourceTree = "<group>"; };
 		28F090DA22E5A5FC00519567 /* YUNRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNRunloopViewController.h; sourceTree = "<group>"; };
 		28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNRunloopViewController.m; sourceTree = "<group>"; };
 		28F090DD22E5BC3F00519567 /* RunloopMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopMonitor.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				288C84732411320100D65B78 /* QNColorBox.m */,
 				288C84752411334800D65B78 /* QNColorBoxPriorityQueue.h */,
 				288C84762411334800D65B78 /* QNColorBoxPriorityQueue.m */,
+				28E62FEF24128FA400C8CD33 /* QNColorItem.h */,
+				28E62FF024128FA400C8CD33 /* QNColorItem.m */,
 			);
 			path = QNImageThemeColor;
 			sourceTree = "<group>";
@@ -1065,6 +1070,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */,
+				28E62FF124128FA500C8CD33 /* QNColorItem.m in Sources */,
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				280E76FA21EF1AC80075DCA8 /* YUNTestPresentViewController.m in Sources */,
