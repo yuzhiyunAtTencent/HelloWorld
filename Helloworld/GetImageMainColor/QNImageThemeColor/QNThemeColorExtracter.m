@@ -127,11 +127,25 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
         }
         
         UIColor *imageThemeColor = [self findMaxColorBox:self.priorityQueue];
+        [self _sortColorResultByPixelCount];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             colorBlock(imageThemeColor, self.colorArray);
         });
     });
+}
+
+- (void)_sortColorResultByPixelCount {
+    self.colorArray = [self.colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        QNColorItem *color1 = (QNColorItem *)obj1;
+        QNColorItem *color2 = (QNColorItem *)obj2;
+        
+        if (color1.pixelCount > color2.pixelCount) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedDescending;
+        }
+    }];
 }
 
 - (void)calculateAverageColors:(QNColorBoxPriorityQueue *)queue {

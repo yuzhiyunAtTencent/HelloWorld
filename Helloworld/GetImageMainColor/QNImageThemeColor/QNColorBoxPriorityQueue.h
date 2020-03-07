@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define QN_THEHE_COLOR_MAX_COUNT  16
+#define QN_THEHE_COLOR_MAX_COUNT  17
 
 @interface QNColorBoxPriorityQueue : NSObject
 

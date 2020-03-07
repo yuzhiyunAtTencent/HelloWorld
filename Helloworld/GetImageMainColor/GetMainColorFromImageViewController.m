@@ -43,7 +43,6 @@ UITableViewDataSource, UITableViewDelegate>
         CGFloat imageViewSize = 150;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 60, imageViewSize, imageViewSize)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.backgroundColor = [UIColor blueColor];
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
         imageView.image = [UIImage imageWithContentsOfFile:imagePath];
         imageView;
@@ -75,17 +74,6 @@ UITableViewDataSource, UITableViewDelegate>
         self.mainColorView.backgroundColor = themeColor;
         
         self.colorArray = [colorArray copy];
-    
-        self.colorArray = [colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-            QNColorItem *color1 = (QNColorItem *)obj1;
-            QNColorItem *color2 = (QNColorItem *)obj2;
-            
-            if (color1.pixelCount > color2.pixelCount) {
-                return NSOrderedAscending;
-            } else {
-                return NSOrderedDescending;
-            }
-        }];
         [self.colorTableView reloadData];
     }];
     
@@ -156,16 +144,7 @@ UITableViewDataSource, UITableViewDelegate>
         [originImage getThemeColor:^(UIColor * _Nonnull themeColor, NSArray<QNColorItem *> * _Nonnull colorArray) {
             self.mainColorView.backgroundColor = themeColor;
             
-            self.colorArray = [colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-                QNColorItem *color1 = (QNColorItem *)obj1;
-                QNColorItem *color2 = (QNColorItem *)obj2;
-                
-                if (color1.pixelCount > color2.pixelCount) {
-                    return NSOrderedAscending;
-                } else {
-                    return NSOrderedDescending;
-                }
-            }];
+            self.colorArray = [colorArray copy];
             [self.colorTableView reloadData];
         }];
     }
