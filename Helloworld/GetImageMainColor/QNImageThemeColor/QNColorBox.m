@@ -14,6 +14,7 @@
 @property(nonatomic, assign) NSInteger upperIndex;
 @property(nonatomic, strong) NSMutableArray *distinctColors;
 @property(nonatomic, assign) NSInteger population;
+@property(nonatomic, assign) NSInteger volume; //体积
 @property(nonatomic, assign) NSInteger minRed;
 @property(nonatomic, assign) NSInteger maxRed;
 @property(nonatomic, assign) NSInteger minGreen;
@@ -88,17 +89,15 @@
      */
     NSInteger longestDimension = [self getLongestColorDimension];
     
-    // We need to sort the colors in this box based on the longest color dimension.
-    // As we can't use a Comparator to define the sort logic, we modify each color so that
-    // it's most significant is the desired dimension
+    // 修改颜色，改成以某一个维度为排序标准的新颜色值
     [self modifySignificantOctetWithDismension:longestDimension lowerIndex:_lowerIndex upperIndex:_upperIndex];
     
+    // 把颜色按照新的维度进行排序
     [self sortColorArray];
     
+    // 排序后恢复成原来的颜色值，不能破坏颜色值，所以必须恢复原型
     // Now revert all of the colors so that they are packed as RGB again
     [self modifySignificantOctetWithDismension:longestDimension lowerIndex:_lowerIndex upperIndex:_upperIndex];
-
-//    modifySignificantOctet(colors, longestDimension, mLowerIndex, mUpperIndex);
     
     NSInteger midPoint = _population / 2;
     for (NSInteger i = _lowerIndex, count = 0; i <= _upperIndex; i++)  {
@@ -108,6 +107,8 @@
             return i;
         }
     }
+    
+    // warning zhiyun 通过实验发现，皮卡丘那张图，生成第四个box的时候，就再也无法生成了有效的box了，因为最大的box有一个颜色值出现的次数大于box一半，直接导致找不到分割面来切割这个box,就会不断生成体积为0的box,后续的分割就没有意义了。这里是否可以优化一下，把这个最大的box排除掉，后面的box继续参与分裂，这样可以获得更精准的颜色分布结果。因此当某个颜色值占的面积较大的时候，可能会导致其他颜色的获取有偏差，因为其他box没有机会继续分裂，只能返回多种颜色的平均值。这正好解释清楚了为什么皮卡丘那张图第二多的颜色为什么不对，因为第二多的颜色没来得及分裂，它是皮卡丘头部的黄色和半球的橘红色混合在一起的平均色，正好他两颜色各自一人一半，我用mac自带的颜色吸取器验证了一下，的确如此。 为了获得更准确的分布结果，建议这个优化要尝试一下，然后用皮卡丘图片做一次对比。可以和安卓的算法做对比。
     
     return _lowerIndex;
 }
@@ -129,7 +130,7 @@
     
     NSInteger arrayLength = sortIndex;
     
-    //bubble sort
+    //bubble sort warning zhiyun可以直接使用排序接口，不用自己写冒泡排序，后续可以优化下
     for(NSInteger i = 0; i < arrayLength-1; i++)
     {
         BOOL isSorted = YES;
@@ -222,17 +223,16 @@
     _minBlue = minBlue;
     _maxBlue = maxBlue;
     _population = count;
+    _volume = [self getVolume];
 }
 
-/**
- * Modify the significant octet in a packed color int. Allows sorting based on the value of a
- * single color component. This relies on all components being the same word size.
- *
- * @see QNColorBox#findSplitPoint()
- */
-- (void) modifySignificantOctetWithDismension:(NSInteger)dimension
-                                   lowerIndex:(NSInteger)lower
-                                   upperIndex:(NSInteger)upper {
+/// 修改颜色，以便排序,如果排序维度是B,就从RGB模式的颜色生成一个BRG（就是把B和第一位交换，这么设计是考虑到后续还得交换回来把颜色值恢复）的颜色
+/// @param dimension 排序维度 R/G/B
+/// @param lower lower description
+/// @param upper upper description
+- (void)modifySignificantOctetWithDismension:(NSInteger)dimension
+                                  lowerIndex:(NSInteger)lower
+                                  upperIndex:(NSInteger)upper {
     switch (dimension) {
         case COMPONENT_RED:
             // Already in RGB, no need to do anything

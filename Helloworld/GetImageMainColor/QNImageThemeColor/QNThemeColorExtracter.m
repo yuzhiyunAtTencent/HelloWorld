@@ -79,7 +79,9 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
             }
         }
         
-        // 颜色数量少于16种，非常简单，直接取数量最大的颜色即可
+        // 1、这里还可以优化一下，如果有某个色值的像素点数量大于整张图片的一半，就可以直接返回这个颜色值了
+        
+        // 2、颜色数量少于16种，非常简单，直接取数量最大的颜色即可，
         if (self.distinctColors.count <= QN_THEHE_COLOR_MAX_COUNT){
             for (NSInteger i = 0;i < self.distinctColors.count ; i++){
                 NSInteger color = [_distinctColors[i] integerValue];
