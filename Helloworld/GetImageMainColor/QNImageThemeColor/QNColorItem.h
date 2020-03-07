@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong, readonly) UIColor *color;
 @property(nonatomic, assign, readonly) NSInteger percent;
 @property(nonatomic, assign, readonly) NSInteger pixelCount;
+// warning zhiyun 仅用于调试
+@property(nonatomic, assign) BOOL isPureColor;
 
 - (instancetype)initWithColor:(UIColor *)color
                       percent:(NSInteger)percent

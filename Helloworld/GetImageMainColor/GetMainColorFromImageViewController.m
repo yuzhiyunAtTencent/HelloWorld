@@ -184,7 +184,9 @@ UITableViewDataSource, UITableViewDelegate>
     cell.textLabel.text = [NSString stringWithFormat:@"百分之%@', 像素点数量：%@",
                            @(colorItem.percent),
                            @(colorItem.pixelCount)];
-    
+    if (colorItem.isPureColor) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@  纯色", cell.textLabel.text];
+    }
     [cell.textLabel sizeToFit];
     cell.contentView.backgroundColor = colorItem.color;
 

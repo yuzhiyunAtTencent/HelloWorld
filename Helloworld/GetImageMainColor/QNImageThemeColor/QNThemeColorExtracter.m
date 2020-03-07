@@ -152,7 +152,7 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
         QNColorItem *colorItem = [[QNColorItem alloc] initWithColor:[box getAverageColor]
                                                             percent:colorPercentOfWholeImage
                                                          pixelCount:[box pixelTotalCount]];
-        
+        colorItem.isPureColor = box.isPureColor;
         [self.colorArray addObject:colorItem];
     }
 }
@@ -177,10 +177,16 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
         QNColorBox *colorBox = [queue poll];
         if (colorBox != nil && [colorBox canSplit]) {
             [queue addColorBox:[colorBox splitBox]];
+            // 这里一定要重新add,(poll的时候已经移除掉了)因为原先的box被削掉一部分，他在队列中的位置就得发生变化，每次add会重新计算位置
             [queue addColorBox:colorBox];
         } else {
-            NSLog(@"All boxes split");
-            return;
+            if (colorBox) {
+                // 当box内部只有一个像素点的时候，[colorBox canSplit] 返回NO,要记得重新add进queue,否则就丢失了
+                [queue addColorBox:colorBox];
+            } else {
+                // 找不到可以分裂的box了
+                return;
+            }
         }
     }
 }

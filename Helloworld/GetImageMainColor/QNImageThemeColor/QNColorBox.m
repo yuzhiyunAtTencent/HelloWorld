@@ -39,6 +39,8 @@
                               hist:(int *)hist {
     self = [super init];
     if (self){
+        self.shouldParticipateInVolumeSort = YES;
+        
         myHist = hist;
         
         _lowerIndex = lowerIndex;
@@ -101,6 +103,17 @@
     
     NSInteger midPoint = _population / 2;
     for (NSInteger i = _lowerIndex, count = 0; i <= _upperIndex; i++)  {
+        
+        if (i == _upperIndex) {
+            /*
+             * 进入这个分支表明最后一个颜色对应的像素点所占数量超过当前box的一半，
+             * 可以把最后一个颜色单独成立一个box,拆分开继续
+             * 如果不进行我这一步优化，会直接进入死循环一直生成体积为0的box直到队列撑满
+             *
+            */
+            // 把最后一个颜色值独立出一个box，该box体积为1，是纯色的（这一步非常关键，对除主颜色外其他颜色的统计起到非常好的效果）
+            return _upperIndex - 1;
+        }
         NSInteger population = myHist[[_distinctColors[i] intValue]];
         count += population;
         if (count >= midPoint) {
@@ -109,8 +122,9 @@
     }
     
     // warning zhiyun 通过实验发现，皮卡丘那张图，生成第四个box的时候，就再也无法生成了有效的box了，因为最大的box有一个颜色值出现的次数大于box一半，直接导致找不到分割面来切割这个box,就会不断生成体积为0的box,后续的分割就没有意义了。这里是否可以优化一下，把这个最大的box排除掉，后面的box继续参与分裂，这样可以获得更精准的颜色分布结果。因此当某个颜色值占的面积较大的时候，可能会导致其他颜色的获取有偏差，因为其他box没有机会继续分裂，只能返回多种颜色的平均值。这正好解释清楚了为什么皮卡丘那张图第二多的颜色为什么不对，因为第二多的颜色没来得及分裂，它是皮卡丘头部的黄色和半球的橘红色混合在一起的平均色，正好他两颜色各自一人一半，我用mac自带的颜色吸取器验证了一下，的确如此。 为了获得更准确的分布结果，建议这个优化要尝试一下，然后用皮卡丘图片做一次对比。可以和安卓的算法做对比。
-    
-    return _lowerIndex;
+
+    //  其实这里是永远都不会走到的
+    return 0;
 }
 
 // 对_distinctColors数组进行排序，数组内存储的是hist的横坐标，也就是具体的颜色值
@@ -188,6 +202,11 @@
     maxRed = maxGreen = maxBlue = 0;
     NSInteger count = 0;
     
+    if (_lowerIndex == _upperIndex) {
+        // 只有一个颜色值，不再参与分裂
+        self.isPureColor = YES;
+        self.shouldParticipateInVolumeSort = NO;
+    }
     for (NSInteger i = _lowerIndex; i <= _upperIndex; i++) {
         NSInteger color = [_distinctColors[i] intValue];
         count += myHist[color];

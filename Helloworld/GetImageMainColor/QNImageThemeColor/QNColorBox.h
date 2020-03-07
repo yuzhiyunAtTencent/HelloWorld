@@ -19,6 +19,9 @@ typedef NS_ENUM(NSInteger,COMPONENT_COLOR){
 
 @interface QNColorBox : NSObject
 
+@property(nonatomic, assign) BOOL shouldParticipateInVolumeSort;
+@property(nonatomic, assign) BOOL isPureColor;
+
 - (NSInteger)pixelTotalCount;
 
 - (UIColor *)getAverageColor;

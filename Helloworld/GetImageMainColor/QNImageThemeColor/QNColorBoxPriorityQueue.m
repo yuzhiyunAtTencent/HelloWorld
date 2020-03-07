@@ -61,9 +61,15 @@
     if (self.colorBoxArray.count <= 0){
         return nil;
     }
-    id headObject = [self.colorBoxArray objectAtIndex:0];
-    [self.colorBoxArray removeObjectAtIndex:0];
-    return headObject;
+    
+    for (int i = 0; i < self.colorBoxArray.count; i++) {
+        QNColorBox *box = [self.colorBoxArray objectAtIndex:i];
+        if (box.shouldParticipateInVolumeSort) {
+            [self.colorBoxArray removeObject:box];
+            return box;
+        }
+    }
+    return nil;
 }
 
 - (NSUInteger)count {
