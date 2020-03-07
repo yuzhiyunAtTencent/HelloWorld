@@ -67,32 +67,21 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
         }
         
         free(rawData);
-        
-        NSInteger distinctColorCount = 0;
         // length就是hist数组长度，也就是颜色直方图的横坐标最大值
         NSInteger length = sizeof(colorHistGram)/sizeof(colorHistGram[0]);
         
         // 算出不同颜色的种类数量
-        for (NSInteger color = 0; color < length ;color++){
-            if (colorHistGram[color] > 0){
-                distinctColorCount ++;
-            }
-        }
         
-        NSInteger distinctColorIndex = 0;
         self.distinctColors = [[NSMutableArray alloc]init];
         for (NSInteger color = 0; color < length ;color++){
             if (colorHistGram[color] > 0){
                 [self.distinctColors addObject: [NSNumber numberWithInteger:color]];
-                distinctColorIndex++;
             }
         }
         
-        distinctColorIndex--;
-        
         // 颜色数量少于16种，非常简单，直接取数量最大的颜色即可
-        if (distinctColorCount <= QN_THEHE_COLOR_MAX_COUNT){
-            for (NSInteger i = 0;i < distinctColorCount ; i++){
+        if (self.distinctColors.count <= QN_THEHE_COLOR_MAX_COUNT){
+            for (NSInteger i = 0;i < self.distinctColors.count ; i++){
                 NSInteger color = [_distinctColors[i] integerValue];
                 NSInteger population = colorHistGram[color];
                 
@@ -114,7 +103,7 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
             
 //             这个变量distinctColorIndex非常多余，其实就是 _distinctColors.count - 1
             QNColorBox *colorBox = [[QNColorBox alloc] initWithLowerIndex:0
-                                                               upperIndex:distinctColorIndex
+                                                               upperIndex:self.distinctColors.count - 1
                                                                colorArray:_distinctColors
                                                                      hist:&colorHistGram];
             
