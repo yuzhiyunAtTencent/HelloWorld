@@ -17,7 +17,6 @@
 @property(nonatomic, strong) UIImageView *avatarImageView;
 @property(nonatomic, strong) UIButton *saveCurrentImageToAlbumBtn;
 
-@property(nonatomic, strong) UIView *redView;
 @end
 
 @implementation GetAlbumPictureViewController
@@ -79,20 +78,12 @@
     [self aspect_hookSelector:@selector(avatarDidTapped:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){
         NSLog(@"class = %@: %@", [aspectInfo.instance class], aspectInfo.arguments);
     } error:nil];
-    
-    self.redView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        view.backgroundColor = [UIColor greenColor];
-        view;
-    });
-    [self.view addSubview:self.redView];
 }
 
 #pragma mark - Private
 
 - (void)_saveCurrentImageToAlbum {
-//    UIImage *image = [self.view viewToImage];
-    UIImage *image = [self.redView viewToImage];
+    UIImage *image = [self.view viewToImage];
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 

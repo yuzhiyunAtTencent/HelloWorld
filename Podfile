@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'Helloworld' do
 
-#pod 'AFNetworking', '3.2.1'
+pod 'AFNetworking', '3.2.1'
 pod 'lottie-ios'
 pod 'SVPullToRefresh'
 pod 'SDWebImage', '4.0'

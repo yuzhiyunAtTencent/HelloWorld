@@ -82,10 +82,13 @@ UITableViewDataSource, UITableViewDelegate>
     [self.view addSubview:self.mainColorView];
     [self.view addSubview:self.colorTableView];
     
-
+    //打开用户交互
     self.avatarImageView.userInteractionEnabled = YES;
+    //初始化一个手势
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidTapped:)];
+    //为图片添加手势
     [self.avatarImageView addGestureRecognizer:singleTap];
+
 }
 
 #pragma mark - Private
