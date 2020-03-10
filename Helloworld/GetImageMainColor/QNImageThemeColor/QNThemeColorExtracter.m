@@ -219,7 +219,11 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
     NSUInteger bytesPerRow = bytesPerPixel * width;
     NSUInteger bitsPerComponent = 8;
     
-    // kCGImageAlphaPremultipliedLast 透明度预乘，我让设计师给了一张纯红色但是透明度为0.5的图片，可以最终拿到红色不是255而是128，预乘的意思就是rbg三分量都已经乘以透明度了
+    /* https://www.jianshu.com/p/d0214b976683
+    * kCGImageAlphaPremultipliedLast 透明度预乘，我让设计师给了一张纯红色但是透明度为0.5的图片，可以最终拿到红色不是255而是128，Premultiplied预乘的意思就是rbg三分量都已经乘以透明度了
+    * last代表a通道放最后（RGBA），first代表a通道放开头（ARGB）
+    * kCGBitmapByteOrder32Big 选择大端字节序，是顺序的，也就是按照RGBA 展示，相反选择kCGBitmapByteOrder32Little就是 ABGR
+    */
     CGContextRef context = CGBitmapContextCreate(rawData, width, height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
     
     CGColorSpaceRelease(colorSpace);
