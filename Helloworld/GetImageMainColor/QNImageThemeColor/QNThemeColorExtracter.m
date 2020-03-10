@@ -83,9 +83,13 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
         
         // 2、颜色数量少于16种，非常简单，直接取数量最大的颜色即可，
         if (self.distinctColors.count <= QN_THEHE_COLOR_MAX_COUNT){
+            if (!self.colorArray) {
+                self.colorArray = [NSMutableArray array];
+            }
+            
             for (NSInteger i = 0;i < self.distinctColors.count ; i++){
                 NSInteger color = [_distinctColors[i] integerValue];
-                NSInteger population = colorHistGram[color];
+                NSInteger pixelCount = colorHistGram[color];
                 
                 NSInteger red = [QNColorTransformer quantizedRed:color];
                 NSInteger green = [QNColorTransformer quantizedGreen:color];
@@ -95,15 +99,23 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
                 green = [QNColorTransformer modifyWordWidthWithValue:green currentWidth:QUANTIZE_WORD_WIDTH targetWidth:8];
                 blue = [QNColorTransformer modifyWordWidthWithValue:blue currentWidth:QUANTIZE_WORD_WIDTH targetWidth:8];
                 
-                // 颜色还原
-                color = red << 2 * 8 | green << 8 | blue;
-                // warning zhiyun 这是极少数情况，颜色少于16种
+                UIColor *realColor =  [UIColor colorWithRed:(CGFloat)red / 255
+                                                      green:(CGFloat)green / 255
+                                                       blue:(CGFloat)blue / 255
+                                                      alpha:1];
+                
+                NSInteger colorPercentOfWholeImage = (NSInteger)(pixelCount * 100 / self.pixelCount);
+                QNColorItem *colorItem = [[QNColorItem alloc] initWithColor:realColor
+                                                                    percent:colorPercentOfWholeImage
+                                                                 pixelCount:pixelCount];
+                colorItem.isPureColor = YES;
+                
+                [self.colorArray addObject:colorItem];
             }
         } else {
             // 如果颜色数量大于16，开始中位切分算法，对颜色值进行归类，把相近的颜色归为一类颜色。
             self.priorityQueue = [[QNColorBoxPriorityQueue alloc] init];
             
-//             这个变量distinctColorIndex非常多余，其实就是 _distinctColors.count - 1
             QNColorBox *colorBox = [[QNColorBox alloc] initWithLowerIndex:0
                                                                upperIndex:self.distinctColors.count - 1
                                                                colorArray:_distinctColors
@@ -117,8 +129,8 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
             [self calculateAverageColors:self.priorityQueue];
         }
         
-        UIColor *imageThemeColor = [self findMaxColorBox:self.priorityQueue];
         [self _sortColorResultByPixelCount];
+        UIColor *imageThemeColor = [[self.colorArray firstObject] color];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             colorBlock(imageThemeColor, self.colorArray);
@@ -157,19 +169,19 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
     }
 }
 
-- (UIColor *)findMaxColorBox:(QNColorBoxPriorityQueue *)queue {
-    NSInteger max = 0;
-    QNColorBox *maxColorBox;
-    for (QNColorBox *colorBox in [queue getColorBoxArray]){
-        NSInteger count = [colorBox pixelTotalCount];
-        if (count > max) {
-            maxColorBox = colorBox;
-            max = count;
-        }
-    }
-    
-    return [maxColorBox getAverageColor];
-}
+//- (UIColor *)findMaxColorBox:(QNColorBoxPriorityQueue *)queue {
+//    NSInteger max = 0;
+//    QNColorBox *maxColorBox;
+//    for (QNColorBox *colorBox in [queue getColorBoxArray]){
+//        NSInteger count = [colorBox pixelTotalCount];
+//        if (count > max) {
+//            maxColorBox = colorBox;
+//            max = count;
+//        }
+//    }
+//
+//    return [maxColorBox getAverageColor];
+//}
 
 
 - (void)splitBoxes:(QNColorBoxPriorityQueue*)queue {
@@ -207,6 +219,7 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
     NSUInteger bytesPerRow = bytesPerPixel * width;
     NSUInteger bitsPerComponent = 8;
     
+    // kCGImageAlphaPremultipliedLast 透明度预乘，我让设计师给了一张纯红色但是透明度为0.5的图片，可以最终拿到红色不是255而是128，预乘的意思就是rbg三分量都已经乘以透明度了
     CGContextRef context = CGBitmapContextCreate(rawData, width, height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
     
     CGColorSpaceRelease(colorSpace);
