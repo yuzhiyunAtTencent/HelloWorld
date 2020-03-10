@@ -7,13 +7,13 @@
 //
 
 #import "AFNetworkingViewController.h"
-#import <AFNetworking/AFNetworking.h>
-#import <AFNetworking/AFURLResponseSerialization.h>
-#import <AFNetworking/AFURLRequestSerialization.h>
+//#import <AFNetworking/AFNetworking.h>
+//#import <AFNetworking/AFURLResponseSerialization.h>
+//#import <AFNetworking/AFURLRequestSerialization.h>
 
 @interface AFNetworkingViewController ()
 
-@property(nonatomic, strong) AFNetworkReachabilityManager *manager;
+//@property(nonatomic, strong) AFNetworkReachabilityManager *manager;
 
 @property(nonatomic, strong) UILabel *netStatusLabel;
 @property(nonatomic, strong) UIImageView *iconImageView;
@@ -27,7 +27,7 @@
     
     self.netStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, kQNNavigationBarHeight_DP + kQNSystemStatusBarHeight, SCREEN_WIDTH, 20)];
     [self.view addSubview:self.netStatusLabel];
-    [self judgeNet];
+//    [self judgeNet];
     
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 100, [UIScreen mainScreen].bounds.size.width - 40, 40)];
     [btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -44,7 +44,7 @@
     self.iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 300, 100, 40)];
     [self.view addSubview:self.iconImageView];
 }
-
+/*
 - (void)callDownloadFileAPI {
     // 1.网络请求管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -141,5 +141,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+*/
 @end
