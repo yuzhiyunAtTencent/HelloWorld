@@ -169,21 +169,6 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
     }
 }
 
-//- (UIColor *)findMaxColorBox:(QNColorBoxPriorityQueue *)queue {
-//    NSInteger max = 0;
-//    QNColorBox *maxColorBox;
-//    for (QNColorBox *colorBox in [queue getColorBoxArray]){
-//        NSInteger count = [colorBox pixelTotalCount];
-//        if (count > max) {
-//            maxColorBox = colorBox;
-//            max = count;
-//        }
-//    }
-//
-//    return [maxColorBox getAverageColor];
-//}
-
-
 - (void)splitBoxes:(QNColorBoxPriorityQueue*)queue {
     while (queue.count < QN_THEHE_COLOR_MAX_COUNT) {
         QNColorBox *colorBox = [queue poll];

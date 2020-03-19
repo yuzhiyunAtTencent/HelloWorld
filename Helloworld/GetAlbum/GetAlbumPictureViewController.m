@@ -52,7 +52,7 @@
         imageView.layer.cornerRadius = imageView.frame.size.width / 2;
         imageView.layer.masksToBounds = YES;
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
-        imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+        imageView.image = [self.class grayScaleImageForImage:[UIImage imageWithContentsOfFile:imagePath]];
         imageView;
     });
     [self.view addSubview:self.avatarImageView];
@@ -96,6 +96,42 @@
     }
 }
 
++ (nullable UIImage*)grayScaleImageForImage:(nullable UIImage*)image {
+    const int RED =1;
+    const int GREEN =2;
+    const int BLUE =3;
+    CGRect imageRect = CGRectMake(0,0, image.size.width* image.scale, image.size.height* image.scale);
+    
+    int width = imageRect.size.width;
+    int height = imageRect.size.height;
+    
+    uint32_t *pixels = (uint32_t*) malloc(width * height *sizeof(uint32_t));
+    memset(pixels,0, width * height *sizeof(uint32_t));
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(pixels, width, height,8, width *sizeof(uint32_t), colorSpace, kCGBitmapByteOrder32Big | kCGImageAlphaPremultipliedFirst);
+    CGContextDrawImage(context,CGRectMake(0,0, width, height), [image CGImage]);
+    
+    for(int y = 0; y < height; y++) {
+        for(int x = 0; x < width; x++) {
+            uint8_t *rgbaPixel = (uint8_t*) &pixels[y * width + x];
+            // convert to grayscale using recommended method: http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
+            uint32_t gray = 0.3 * rgbaPixel[RED] +0.59 * rgbaPixel[GREEN] +0.11 * rgbaPixel[BLUE];
+            rgbaPixel[RED] = gray;
+            rgbaPixel[GREEN] = gray;
+            rgbaPixel[BLUE] = gray;
+        }
+    }
+    CGImageRef imageRef = CGBitmapContextCreateImage(context);
+    
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    free(pixels);
+    
+    UIImage *resultUIImage = [UIImage imageWithCGImage:imageRef scale:image.scale orientation:UIImageOrientationUp];
+    CGImageRelease(imageRef);
+    
+    return resultUIImage;
+}
 
 //头像点击事件
 - (void)avatarDidTapped:(UIGestureRecognizer *) gestureRecognizer {
