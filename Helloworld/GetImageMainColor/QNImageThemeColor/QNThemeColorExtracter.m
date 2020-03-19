@@ -26,6 +26,16 @@ int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index
 
 @implementation QNThemeColorExtracter
 
++ (QNThemeColorExtracter *)sharedInstance {
+    static dispatch_once_t once;
+    static QNThemeColorExtracter *singleton;
+    dispatch_once(&once,
+                  ^{
+        singleton = [[QNThemeColorExtracter alloc] init];
+    });
+    return singleton;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -73,7 +83,8 @@ int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index
         
         free(rawData);
         // length就是hist数组长度，也就是颜色直方图的横坐标最大值
-        NSInteger length = sizeof(colorHistGram)/sizeof(colorHistGram[0]);
+
+        NSInteger length = sizeof(colorHistGram)/sizeof(colorHistGram[0]); // 131072 / 4
         
         // 算出不同颜色的种类数量
         
@@ -144,7 +155,7 @@ int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index
 }
 
 - (void)_sortColorResultByPixelCount {
-    self.colorArray = [self.colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+    self.colorArray = [[self.colorArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         QNColorItem *color1 = (QNColorItem *)obj1;
         QNColorItem *color2 = (QNColorItem *)obj2;
         
@@ -153,7 +164,7 @@ int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index
         } else {
             return NSOrderedDescending;
         }
-    }];
+    }] mutableCopy];
 }
 
 - (void)calculateAverageColors:(QNColorBoxPriorityQueue *)queue {
