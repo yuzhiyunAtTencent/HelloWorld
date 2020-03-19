@@ -11,8 +11,6 @@
 #import "QNColorBox.h"
 #import "QNColorBoxPriorityQueue.h"
 
-// warning zhiyun
-
 int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架还存在一个问题，一次只能处理一个图片，如果我在客户端同时处理两张图片，又是用着同一个全局数组，就bug了，）
 
 @interface QNThemeColorExtracter ()
@@ -22,22 +20,29 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
 @property(nonatomic, strong) NSMutableArray *distinctColors;
 @property(nonatomic, strong) QNColorBoxPriorityQueue *priorityQueue;
 @property(nonatomic, strong) NSMutableArray<QNColorItem *> *colorArray;
+@property(nonatomic, strong) dispatch_queue_t imageColorQueue;
 
 @end
 
 @implementation QNThemeColorExtracter
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        // 串行队列 （colorHistGram）
+        self.imageColorQueue = dispatch_queue_create("com.tencent.image.themecolor", DISPATCH_QUEUE_SERIAL);
+    }
+    return self;
+}
 
 - (void)extractColorsFromImage:(UIImage *)image
                     colorBlock:(QNGetColorBlock)colorBlock {
     if (!image) {
         return;
     }
-    
-    self.image = image;
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
-        // warning zhiyun
+    dispatch_async(self.imageColorQueue, ^{
+        self.image = image;
         [self clearHistArray];
         
         unsigned char *rawData = [self rawPixelDataFromImage:image];
@@ -55,7 +60,7 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
             
             /* 这一步转换的目的，我理解是缩减hist数组的大小，否则hist的size（也就是直方图横坐标最大值）应该是2^(3*8),现在缩减后，hist的size是2^(3*5)
             2^(3*8) 是如何得出的？ 因为颜色有rgb三种嘛，每种占8bit,比如白色 ffffff 就等于 2^24 - 1
-             但是为何转换后不会影响结果，这个需要我再研究研究
+             也就是说只取高5位，低3位就直接抛弃了，这是无所谓的，因为低三位影响很小，111仅仅是7而已
              */
             
             red = [QNColorTransformer modifyWordWidthWithValue:red currentWidth:8 targetWidth:QUANTIZE_WORD_WIDTH];
@@ -220,9 +225,9 @@ int colorHistGram[32768]; // 2^15   直方图：histogram（目前这个框架�
     return rawData;
 }
 
-// warning zhiyun
-- (void)clearHistArray{
-    for (NSInteger i = 0;i<32768;i++){
+- (void)clearHistArray {
+    NSInteger length = sizeof(colorHistGram)/sizeof(colorHistGram[0]);
+    for (NSInteger i = 0; i < length; i++) {
         colorHistGram[i] = 0;
     }
 }
