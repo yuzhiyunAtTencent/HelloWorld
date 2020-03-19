@@ -15,8 +15,6 @@ typedef void(^QNGetColorBlock)(UIColor *themeColor, NSArray<QNColorItem *> *colo
 
 @interface QNThemeColorExtracter : NSObject
 
-+ (QNThemeColorExtracter *)sharedInstance;
-
 - (void)extractColorsFromImage:(UIImage *)image
                     colorBlock:(QNGetColorBlock)colorBlock;
 

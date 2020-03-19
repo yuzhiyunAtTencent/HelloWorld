@@ -11,8 +11,10 @@
 @implementation UIImage (ThemeColor)
 
 - (void)getThemeColor:(QNGetColorBlock)colorBlock {
-    [[QNThemeColorExtracter sharedInstance] extractColorsFromImage:self
-                                                        colorBlock:colorBlock];
+    QNThemeColorExtracter *colorExtracter = [[QNThemeColorExtracter alloc] init];
+    
+    [colorExtracter extractColorsFromImage:self
+                                colorBlock:colorBlock];
 }
 
 @end

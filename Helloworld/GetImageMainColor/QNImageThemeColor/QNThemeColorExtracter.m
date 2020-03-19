@@ -11,7 +11,8 @@
 #import "QNColorBox.h"
 #import "QNColorBoxPriorityQueue.h"
 
-int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index代表颜色值，value代表这个颜色值的像素点数量
+static int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index代表颜色值，value代表这个颜色值的像素点数量
+static dispatch_queue_t imageColorQueue;
 
 @interface QNThemeColorExtracter ()
 
@@ -20,30 +21,10 @@ int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index
 @property(nonatomic, strong) NSMutableArray *distinctColors;
 @property(nonatomic, strong) QNColorBoxPriorityQueue *priorityQueue;
 @property(nonatomic, strong) NSMutableArray<QNColorItem *> *colorArray;
-@property(nonatomic, strong) dispatch_queue_t imageColorQueue;
 
 @end
 
 @implementation QNThemeColorExtracter
-
-+ (QNThemeColorExtracter *)sharedInstance {
-    static dispatch_once_t once;
-    static QNThemeColorExtracter *singleton;
-    dispatch_once(&once,
-                  ^{
-        singleton = [[QNThemeColorExtracter alloc] init];
-    });
-    return singleton;
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        // 串行队列 （colorHistGram）
-        self.imageColorQueue = dispatch_queue_create("com.tencent.image.themecolor", DISPATCH_QUEUE_SERIAL);
-    }
-    return self;
-}
 
 - (void)extractColorsFromImage:(UIImage *)image
                     colorBlock:(QNGetColorBlock)colorBlock {
@@ -51,7 +32,11 @@ int colorHistGram[32768]; // 2^15   一张图片对应的颜色直方图，index
         return;
     }
 
-    dispatch_async(self.imageColorQueue, ^{
+    if (!imageColorQueue) {
+        imageColorQueue = dispatch_queue_create("com.tencent.image.themecolor", DISPATCH_QUEUE_SERIAL);
+    }
+    
+    dispatch_async(imageColorQueue, ^{
         self.image = image;
         [self clearHistArray];
         
