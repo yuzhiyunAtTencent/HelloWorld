@@ -8,6 +8,8 @@
 
 #import "YUNGestureViewController.h"
 
+NSString * const global = @"glabal_v";
+
 @interface YUNGestureViewController ()
 
 @end

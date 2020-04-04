@@ -85,7 +85,15 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 //    NSHashTable
     
     
+    // 访问定义在另一个类的全局变量,的确能访问到，如果加上static,就不可访问了，变成那个文件的私有变量了
+    extern NSString *global;
+    NSLog(@"访问全局变量 appdelegate***%@---%p", global, &global);
     
+    // 但是如果是定义在 .h文件，即使加了static,仍旧外部可以访问，比如 新闻中这种用法： QN_DECLARE_STATIC_CONST_NSSTRING(kQNWeiboDidDeleteNotification);
+    // #define QN_DECLARE_STATIC_CONST_NSSTRING(name) static NSString *const name = @"" #name;
+    
+    // 这种宏定义在 头文件和m文件都可以定义变量，且随处可见。
+    // http://hanson647.com/2015/06/10/2015/OC%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E9%87%8F/
     return YES;
 }
 
