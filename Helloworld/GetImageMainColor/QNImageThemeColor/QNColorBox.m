@@ -129,42 +129,27 @@
 
 // 对_distinctColors数组进行排序，数组内存储的是hist的横坐标，也就是具体的颜色值
 - (void)sortColorArray {
-    
-    // Now sort... Arrays.sort uses a exclusive toIndex so we need to add 1
-    
     NSInteger sortCount = (_upperIndex - _lowerIndex) + 1;
-    NSInteger sortArray[sortCount];
-    NSInteger sortIndex = 0;
+    NSMutableArray<NSNumber *> *array = [NSMutableArray arrayWithCapacity:sortCount];
     
     // _distinctColors 数组内存储的是hist的横坐标，也就是具体的颜色值。
     for (NSInteger index = _lowerIndex;index<= _upperIndex ;index++){
-        sortArray[sortIndex] = [_distinctColors[index] integerValue];
-        sortIndex++;
+        [array addObject:_distinctColors[index]];
     }
     
-    NSInteger arrayLength = sortIndex;
-    
-    //bubble sort warning zhiyun可以直接使用排序接口，不用自己写冒泡排序，后续可以优化下
-    for(NSInteger i = 0; i < arrayLength-1; i++)
-    {
-        BOOL isSorted = YES;
-        for(NSInteger j=0; j<arrayLength-1-i; j++)
-        {
-            if(sortArray[j] > sortArray[j+1])
-            {
-                isSorted = NO;
-                NSInteger temp = sortArray[j];
-                sortArray[j] = sortArray[j+1];
-                sortArray[j+1]=temp;
-            }
+    array = [[array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSNumber *num1 = (NSNumber *)obj1;
+        NSNumber *num2 = (NSNumber *)obj2;
+        if (num1 > num2) {
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedAscending;
         }
-        if(isSorted)
-            break;
-    }
+    }] mutableCopy];
     
-    sortIndex = 0;
+    NSInteger sortIndex = 0;
     for (NSInteger index = _lowerIndex;index<= _upperIndex ;index++){
-        _distinctColors[index] = [NSNumber numberWithInteger:sortArray[sortIndex]];
+        _distinctColors[index] = array[sortIndex];
         sortIndex++;
     }
 }

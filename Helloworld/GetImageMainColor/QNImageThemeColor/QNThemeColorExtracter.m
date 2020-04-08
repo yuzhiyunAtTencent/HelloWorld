@@ -53,9 +53,11 @@ static dispatch_queue_t imageColorQueue;
             green = (NSInteger)rawData[pixelIndex*4+1];
             blue  = (NSInteger)rawData[pixelIndex*4+2];
             
-            /* 这一步转换的目的，我理解是缩减hist数组的大小，否则hist的size（也就是直方图横坐标最大值）应该是2^(3*8),现在缩减后，hist的size是2^(3*5)
+            /* 这一步转换的目的，是缩减hist数组的大小，否则hist的size（也就是直方图横坐标最大值）应该是2^(3*8),现在缩减后，hist的size是2^(3*5)
             2^(3*8) 是如何得出的？ 因为颜色有rgb三种嘛，每种占8bit,比如白色 ffffff 就等于 2^24 - 1
              也就是说只取高5位，低3位就直接抛弃了，这是无所谓的，因为低三位影响很小，111仅仅是7而已
+             
+             可以把颜色直方图所占的内存从 64M 降低到 128K
              */
             
             red = [QNColorTransformer modifyWordWidthWithValue:red currentWidth:8 targetWidth:QUANTIZE_WORD_WIDTH];
@@ -120,7 +122,7 @@ static dispatch_queue_t imageColorQueue;
             QNColorBox *colorBox = [[QNColorBox alloc] initWithLowerIndex:0
                                                                upperIndex:self.distinctColors.count - 1
                                                                colorArray:_distinctColors
-                                                                     hist:&colorHistGram];
+                                                                     hist:(int *)(&colorHistGram)];
             
             [self.priorityQueue addColorBox:colorBox];
             
