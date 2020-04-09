@@ -65,8 +65,9 @@
 		28C48D411FD7FDB50096BAB9 /* HelloworldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D401FD7FDB50096BAB9 /* HelloworldUITests.m */; };
 		28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */; };
 		28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */; };
-		28C78D01243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D00243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.m */; };
+		28C78D01243DFF8200F0BD88 /* QNObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D00243DFF8200F0BD88 /* QNObjcViewController.m */; };
 		28C78D04243E021000F0BD88 /* QNSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D03243E021000F0BD88 /* QNSwiftViewController.swift */; };
+		28C78D09243ED51000F0BD88 /* QNPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D08243ED51000F0BD88 /* QNPerson.m */; };
 		28C9B6D222DC8721008041EA /* BackgroundTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C9B6D122DC8720008041EA /* BackgroundTaskViewController.m */; };
 		28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */; };
 		28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D0EC5D22CE439A00261992 /* ThreadSafetyViewController.m */; };
@@ -217,10 +218,12 @@
 		28C48D561FD81B7F0096BAB9 /* NewsListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsListTableViewController.m; sourceTree = "<group>"; };
 		28C48D591FD81CBC0096BAB9 /* NewsItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItemTableViewCell.h; sourceTree = "<group>"; };
 		28C48D5A1FD81CBC0096BAB9 /* NewsItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItemTableViewCell.m; sourceTree = "<group>"; };
-		28C78CFF243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNSwiftObjectiveCViewController.h; sourceTree = "<group>"; };
-		28C78D00243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNSwiftObjectiveCViewController.m; sourceTree = "<group>"; };
+		28C78CFF243DFF8200F0BD88 /* QNObjcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNObjcViewController.h; sourceTree = "<group>"; };
+		28C78D00243DFF8200F0BD88 /* QNObjcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNObjcViewController.m; sourceTree = "<group>"; };
 		28C78D02243E021000F0BD88 /* Helloworld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helloworld-Bridging-Header.h"; sourceTree = "<group>"; };
 		28C78D03243E021000F0BD88 /* QNSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNSwiftViewController.swift; sourceTree = "<group>"; };
+		28C78D07243ED51000F0BD88 /* QNPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNPerson.h; sourceTree = "<group>"; };
+		28C78D08243ED51000F0BD88 /* QNPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNPerson.m; sourceTree = "<group>"; };
 		28C9B6D022DC8720008041EA /* BackgroundTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundTaskViewController.h; sourceTree = "<group>"; };
 		28C9B6D122DC8720008041EA /* BackgroundTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundTaskViewController.m; sourceTree = "<group>"; };
 		28C9B6FC22DDC2EF008041EA /* StrongWeakBlcokViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrongWeakBlcokViewController.h; sourceTree = "<group>"; };
@@ -772,9 +775,11 @@
 		28C78CFE243DFF4900F0BD88 /* SwiftObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				28C78CFF243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.h */,
-				28C78D00243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.m */,
+				28C78CFF243DFF8200F0BD88 /* QNObjcViewController.h */,
+				28C78D00243DFF8200F0BD88 /* QNObjcViewController.m */,
 				28C78D03243E021000F0BD88 /* QNSwiftViewController.swift */,
+				28C78D07243ED51000F0BD88 /* QNPerson.h */,
+				28C78D08243ED51000F0BD88 /* QNPerson.m */,
 				28C78D02243E021000F0BD88 /* Helloworld-Bridging-Header.h */,
 			);
 			path = SwiftObjectiveC;
@@ -1116,7 +1121,7 @@
 				28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */,
 				CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */,
 				286C7D022004C40800F928D1 /* BasicMenuController.m in Sources */,
-				28C78D01243DFF8200F0BD88 /* QNSwiftObjectiveCViewController.m in Sources */,
+				28C78D01243DFF8200F0BD88 /* QNObjcViewController.m in Sources */,
 				28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */,
 				28F3037623E9558100A96923 /* YUNUIInterfaceOrientationViewController.m in Sources */,
 				289F638D2117FAAC00F197CF /* YunDrawRectViewController.m in Sources */,
@@ -1141,6 +1146,7 @@
 				28AE5BC22025B5F8002B9B70 /* YunBasicViewController.m in Sources */,
 				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,
 				28C78D04243E021000F0BD88 /* QNSwiftViewController.swift in Sources */,
+				28C78D09243ED51000F0BD88 /* QNPerson.m in Sources */,
 				2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */,
 				28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */,
 				282BD4B02267105000B1F817 /* UIView+Utils.m in Sources */,

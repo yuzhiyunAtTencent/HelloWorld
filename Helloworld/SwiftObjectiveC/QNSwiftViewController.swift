@@ -9,22 +9,25 @@
 import UIKit
 
 class QNSwiftViewController: UIViewController {
-
+    @objc var titleStr: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor.red
+        
+        let person = QNPerson()
+        person.name = "俞志云"
+        person.sayHello()
+//        person.sendGreetingWithMessage("哈哈哈")
+//        person.sendGreeting(withMessage: "哈哈哈")
+        person.sendGreeting(message: "哈哈哈")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // @objc 使得可以被oc访问
+    @objc func testSwiftFunction() {
+        print("testSwiftFunction")
     }
-    */
-
 }

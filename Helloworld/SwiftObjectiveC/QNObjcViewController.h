@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QNSwiftObjectiveCViewController : YunBasicViewController
+@interface QNObjcViewController : YunBasicViewController
 
 @end
 
