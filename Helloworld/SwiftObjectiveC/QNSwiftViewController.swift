@@ -8,7 +8,12 @@
 
 import UIKit
 
-class QNSwiftViewController: UIViewController {
+class QNSwiftViewController: UIViewController, QNOCProtocol {
+    // 实现 QNOCProtocol 协议
+    func doSomething(_ something: String) {
+        print("swift 实现 oc的协议")
+    }
+    
     @objc var titleStr: String!
     
     override func viewDidLoad() {
