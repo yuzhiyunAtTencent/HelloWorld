@@ -14,7 +14,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong) NSString *name;
 
+// 无参数
 - (void)sayHello;
+// 带参数
+- (void)saySomething:(NSString *)str;
+// 带block
+- (void)sayCallback:(void (^)(NSString *))callback;
+// 多参数
+- (void)saySomething1:(NSString *)str1
+           something2:(NSString *)str2
+             callback:(void (^)(NSString *))callback;
+// NS_SWIFT_NAME 修改名字
 - (void)sendGreetingWithMessage:(NSString *)message NS_SWIFT_NAME(sendGreeting(message:));
 
 @end
