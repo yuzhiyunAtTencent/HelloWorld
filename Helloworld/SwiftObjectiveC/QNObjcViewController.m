@@ -25,10 +25,16 @@
 
 - (void)_click {
     QNSwiftViewController *viewController = [[QNSwiftViewController alloc] init];
+    
     [viewController testSwiftFunction];
+    [viewController swiftSayHelloWithHelloMsg:@"oc调用swift,带参数（）注意函数名变化"];
+    
+    if ([viewController conformsToProtocol:@protocol(QNOCProtocol)]
+        && [viewController respondsToSelector:@selector(doSomething:)]) {
+        [viewController doSomething:@"from oc "];
+    }
     
     viewController.titleStr = @"titleFromObjc";
-    NSLog(@"%@", viewController.titleStr);
     
     [self.navigationController pushViewController:viewController animated:YES];
 }

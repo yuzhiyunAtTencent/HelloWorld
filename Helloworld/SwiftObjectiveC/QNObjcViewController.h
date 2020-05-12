@@ -11,6 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol QNOCProtocol <NSObject>
+@required
+- (void)doSomething:(NSString *)something;
+@end
+
 @interface QNObjcViewController : YunBasicViewController
 
 @end

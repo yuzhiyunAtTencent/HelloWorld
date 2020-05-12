@@ -3,3 +3,4 @@
 //
 
 #import "QNPerson.h"
+#import "QNObjcViewController.h"
