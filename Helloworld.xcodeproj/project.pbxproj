@@ -58,6 +58,9 @@
 		28AF32672137D23C00AF4F25 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 28AF32662137D23B00AF4F25 /* index.html */; };
 		28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B092572191979D00DAC7F7 /* YunTestViewController.m */; };
 		28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B42169215CBD790079C81C /* YunLongImageView.m */; };
+		28C0C31E2458251D00EEFC08 /* QNTestCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C31D2458251D00EEFC08 /* QNTestCategoryController.m */; };
+		28C0C3212458256A00EEFC08 /* QNTestCategoryController+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C3202458256A00EEFC08 /* QNTestCategoryController+category.m */; };
+		28C0C3242458268A00EEFC08 /* QNTestCategoryChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C3232458268A00EEFC08 /* QNTestCategoryChildController.m */; };
 		28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */; };
 		28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C48D251FD7FDB50096BAB9 /* Assets.xcassets */; };
 		28C48D2C1FD7FDB50096BAB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C48D2B1FD7FDB50096BAB9 /* main.m */; };
@@ -75,6 +78,8 @@
 		28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */; };
 		28D3042723BB76720008DF3A /* 20191005A02R4R.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */; };
 		28D3042A23BC3CFB0008DF3A /* YUNAudioOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */; };
+		28D96828246A5AB70014CA9C /* BlurEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D96827246A5AB70014CA9C /* BlurEffectViewController.m */; };
+		28D9682B246A7ACA0014CA9C /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D9682A246A7ACA0014CA9C /* ColorUtil.m */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
 		28E62FF124128FA500C8CD33 /* QNColorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E62FF024128FA400C8CD33 /* QNColorItem.m */; };
 		28F090DC22E5A5FC00519567 /* YUNRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F090DB22E5A5FC00519567 /* YUNRunloopViewController.m */; };
@@ -202,6 +207,12 @@
 		28B092572191979D00DAC7F7 /* YunTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunTestViewController.m; sourceTree = "<group>"; };
 		28B42168215CBD790079C81C /* YunLongImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunLongImageView.h; sourceTree = "<group>"; };
 		28B42169215CBD790079C81C /* YunLongImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunLongImageView.m; sourceTree = "<group>"; };
+		28C0C31C2458251D00EEFC08 /* QNTestCategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNTestCategoryController.h; sourceTree = "<group>"; };
+		28C0C31D2458251D00EEFC08 /* QNTestCategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNTestCategoryController.m; sourceTree = "<group>"; };
+		28C0C31F2458256A00EEFC08 /* QNTestCategoryController+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QNTestCategoryController+category.h"; sourceTree = "<group>"; };
+		28C0C3202458256A00EEFC08 /* QNTestCategoryController+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "QNTestCategoryController+category.m"; sourceTree = "<group>"; };
+		28C0C3222458268A00EEFC08 /* QNTestCategoryChildController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNTestCategoryChildController.h; sourceTree = "<group>"; };
+		28C0C3232458268A00EEFC08 /* QNTestCategoryChildController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNTestCategoryChildController.m; sourceTree = "<group>"; };
 		28C48D191FD7FDB50096BAB9 /* Helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C48D1C1FD7FDB50096BAB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C48D1D1FD7FDB50096BAB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -237,6 +248,10 @@
 		28D3042623BB76720008DF3A /* 20191005A02R4R.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 20191005A02R4R.mp3; sourceTree = "<group>"; };
 		28D3042823BC3CFB0008DF3A /* YUNAudioOnlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAudioOnlineViewController.h; sourceTree = "<group>"; };
 		28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAudioOnlineViewController.m; sourceTree = "<group>"; };
+		28D96826246A5AB70014CA9C /* BlurEffectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurEffectViewController.h; sourceTree = "<group>"; };
+		28D96827246A5AB70014CA9C /* BlurEffectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurEffectViewController.m; sourceTree = "<group>"; };
+		28D96829246A7ACA0014CA9C /* ColorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
+		28D9682A246A7ACA0014CA9C /* ColorUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
 		28E62FEF24128FA400C8CD33 /* QNColorItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNColorItem.h; sourceTree = "<group>"; };
 		28E62FF024128FA400C8CD33 /* QNColorItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNColorItem.m; sourceTree = "<group>"; };
@@ -530,6 +545,8 @@
 			children = (
 				28AE5BC02025B5F8002B9B70 /* YunBasicViewController.h */,
 				28AE5BC12025B5F8002B9B70 /* YunBasicViewController.m */,
+				28D96829246A7ACA0014CA9C /* ColorUtil.h */,
+				28D9682A246A7ACA0014CA9C /* ColorUtil.m */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -655,6 +672,19 @@
 			path = LongImageView;
 			sourceTree = "<group>";
 		};
+		28C0C31B245824CC00EEFC08 /* TestCategory */ = {
+			isa = PBXGroup;
+			children = (
+				28C0C31C2458251D00EEFC08 /* QNTestCategoryController.h */,
+				28C0C31D2458251D00EEFC08 /* QNTestCategoryController.m */,
+				28C0C31F2458256A00EEFC08 /* QNTestCategoryController+category.h */,
+				28C0C3202458256A00EEFC08 /* QNTestCategoryController+category.m */,
+				28C0C3222458268A00EEFC08 /* QNTestCategoryChildController.h */,
+				28C0C3232458268A00EEFC08 /* QNTestCategoryChildController.m */,
+			);
+			path = TestCategory;
+			sourceTree = "<group>";
+		};
 		28C48D101FD7FDB50096BAB9 = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +714,8 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28D96825246A5A650014CA9C /* BlurEffect */,
+				28C0C31B245824CC00EEFC08 /* TestCategory */,
 				28C78CFE243DFF4900F0BD88 /* SwiftObjectiveC */,
 				28F3037023E9553300A96923 /* UIInterfaceOrientation */,
 				2895ED2623C89EF100D064BF /* GetImageMainColor */,
@@ -828,6 +860,15 @@
 				28D3042423BB6FC90008DF3A /* YUNKnowledgeItem.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		28D96825246A5A650014CA9C /* BlurEffect */ = {
+			isa = PBXGroup;
+			children = (
+				28D96826246A5AB70014CA9C /* BlurEffectViewController.h */,
+				28D96827246A5AB70014CA9C /* BlurEffectViewController.m */,
+			);
+			path = BlurEffect;
 			sourceTree = "<group>";
 		};
 		28F090D922E5A5CA00519567 /* Runloop */ = {
@@ -1096,6 +1137,7 @@
 				28F090DF22E5BC3F00519567 /* RunloopMonitor.m in Sources */,
 				28E62FF124128FA500C8CD33 /* QNColorItem.m in Sources */,
 				28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */,
+				28C0C31E2458251D00EEFC08 /* QNTestCategoryController.m in Sources */,
 				28C48D5B1FD81CBC0096BAB9 /* NewsItemTableViewCell.m in Sources */,
 				280E76FA21EF1AC80075DCA8 /* YUNTestPresentViewController.m in Sources */,
 				288C846E241124B900D65B78 /* QNThemeColorExtracter.m in Sources */,
@@ -1108,6 +1150,8 @@
 				28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */,
 				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
+				28D96828246A5AB70014CA9C /* BlurEffectViewController.m in Sources */,
+				28C0C3212458256A00EEFC08 /* QNTestCategoryController+category.m in Sources */,
 				286EB34D22C49F2B00359D7F /* YUNHashViewController.m in Sources */,
 				2872C1E4235855F800A215C7 /* ContentOfLayerViewController.m in Sources */,
 				28AE5BE520298E02002B9B70 /* UIScreen+YunUtils.m in Sources */,
@@ -1131,6 +1175,7 @@
 				28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */,
 				288C84742411320100D65B78 /* QNColorBox.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
+				28D9682B246A7ACA0014CA9C /* ColorUtil.m in Sources */,
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
 				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
@@ -1138,6 +1183,7 @@
 				28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */,
 				288C847124112DA200D65B78 /* QNColorTransformer.m in Sources */,
 				288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */,
+				28C0C3242458268A00EEFC08 /* QNTestCategoryChildController.m in Sources */,
 				280D632922FAEF570051AB12 /* WKWebView+Responder.m in Sources */,
 				284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
