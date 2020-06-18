@@ -42,6 +42,7 @@
 #import "QNTestCategoryController.h"
 #import <AdSupport/AdSupport.h>
 #import "BlurEffectViewController.h"
+#import "YUNJSPatchViewController.h"
 
 @interface RootTableViewController ()
 
@@ -79,12 +80,12 @@
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取图片的主颜色" viewCtlName:@"GetMainColorFromImageViewController"]];
 
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SwiftObjectiveC桥接规范" viewCtlName:@"QNObjcViewController"]];
-    
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"模糊效果" viewCtlName:@"BlurEffectViewController"]];
+      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"JSPatch 原理" viewCtlName:@"YUNJSPatchViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"模糊效果" viewCtlName:@"BlurEffectViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"QNTestCategoryChildController" viewCtlName:@"QNTestCategoryChildController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"QNTestCategoryController" viewCtlName:@"QNTestCategoryController"]];
 
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SwiftObjectiveC桥接" viewCtlName:@"QNObjcViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SwiftObjectiveC桥接" viewCtlName:@"QNObjcViewController"]];
 
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"UIInterfaceOrientation" viewCtlName:@"YUNUIInterfaceOrientationViewController"]];
