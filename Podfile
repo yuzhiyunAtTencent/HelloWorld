@@ -14,5 +14,6 @@ pod 'WebViewJavascriptBridge', '~> 6.0'
 pod 'FDFullscreenPopGesture', '1.1'
 pod 'CYLDeallocBlockExecutor'
 pod 'FLAnimatedImage', '~> 1.0'
+pod 'JSPatch'
 
 end

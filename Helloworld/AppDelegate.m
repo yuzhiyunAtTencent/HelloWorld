@@ -50,6 +50,13 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
     
+    NSTimeInterval now = [NSDate date].timeIntervalSince1970;
+    NSLog(@"NSTimeInterval %@", @(sizeof(now)));
+    NSLog(@"NSTimeInterval %@", @(now));
+    
+    NSInteger integer = 10;
+    NSLog(@"NSInteger %@", @(sizeof(integer)));
+    
     CGFloat screen_width;
     screen_width = [UIScreen mainScreen].bounds.size.width;
     
