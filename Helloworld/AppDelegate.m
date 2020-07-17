@@ -12,6 +12,7 @@
 #import "RootTableViewController.h"
 #import <UserNotifications/UserNotifications.h>
 #import <Aspects.h>
+#import "FLEX/FLEX.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -88,9 +89,6 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     [array2 addObject:@(1)];
     [array2 insertObject:@(2) atIndex:0];
     [array2 insertObject:@(3) atIndex:0];
-//    NSMutableDictionary
-//    NSHashTable
-    
     
     // 访问定义在另一个类的全局变量,的确能访问到，如果加上static,就不可访问了，变成那个文件的私有变量了
     extern NSString *global;
@@ -102,6 +100,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     // 这种宏定义在 头文件和m文件都可以定义变量，且随处可见。
     // http://hanson647.com/2015/06/10/2015/OC%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E9%87%8F/
     
+    [[FLEXManager sharedManager] showExplorer];
     return YES;
 }
 

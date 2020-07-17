@@ -18,6 +18,7 @@ PODS:
   - CYLDeallocBlockExecutor (1.2.0)
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
+  - FLEX (2.4.0)
   - JSPatch (1.1.3):
     - JSPatch/Core (= 1.1.3)
   - JSPatch/Core (1.1.3)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - CYLDeallocBlockExecutor
   - FDFullscreenPopGesture (= 1.1)
   - FLAnimatedImage (~> 1.0)
+  - FLEX
   - JSPatch
   - lottie-ios
   - SDWebImage (= 4.0)
@@ -51,6 +53,7 @@ SPEC REPOS:
     - CYLDeallocBlockExecutor
     - FDFullscreenPopGesture
     - FLAnimatedImage
+    - FLEX
     - JSPatch
     - lottie-ios
     - SDWebImage
@@ -63,12 +66,13 @@ SPEC CHECKSUMS:
   CYLDeallocBlockExecutor: 1f8e904d846b8dadff88b2e5c2817df974cb63a9
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   JSPatch: 02cfed591cb907bbfe80a346666e5a35fc2d349d
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: f9ff561d88f462d01d3e9b866ed612656bbdfd06
+PODFILE CHECKSUM: 3c3d52722066bfadd97df51e5c7c7e84430fab1d
 
 COCOAPODS: 1.7.1
