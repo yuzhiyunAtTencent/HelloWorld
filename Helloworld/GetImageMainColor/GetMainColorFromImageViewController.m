@@ -15,6 +15,7 @@
 UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) UIImageView *avatarImageView;
+@property(nonatomic, strong) UIImageView *avatarImageView2;
 @property(nonatomic, strong) UIView *mainColorView;
 @property(nonatomic, strong) UILabel *mainColorLabel;
 @property(nonatomic, strong) UITableView *colorTableView;
@@ -39,12 +40,23 @@ UITableViewDataSource, UITableViewDelegate>
         tableView;
     });
     
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
+    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    
     self.avatarImageView = ({
         CGFloat imageViewSize = 150;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - imageViewSize) / 2, 60, imageViewSize, imageViewSize)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pikaqiu" ofType:@"png" inDirectory:@"Image.bundle/home"];
-        imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+        imageView.image = image;
+        imageView;
+    });
+    
+    self.avatarImageView2 = ({
+        // 事实证明，两个不同的UIImageView是可以复用同一个image对象的，而不是说一定要不同的image对象
+        CGFloat imageViewSize = 150;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, imageViewSize, imageViewSize)];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.image = image;
         imageView;
     });
     
@@ -78,6 +90,7 @@ UITableViewDataSource, UITableViewDelegate>
     }];
     
     [self.view addSubview:self.avatarImageView];
+    [self.view addSubview:self.avatarImageView2];
     [self.view addSubview:self.mainColorLabel];
     [self.view addSubview:self.mainColorView];
     [self.view addSubview:self.colorTableView];
