@@ -28,7 +28,7 @@
     imageView.layer.masksToBounds = YES;
     imageView.clipsToBounds = YES;
     [self.view addSubview:imageView];
-    [imageView sd_setImageWithURL:[NSURL URLWithString:IMAGE_URL]];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:IMAGE_URL] placeholderImage:nil];
     
     [imageView setUserInteractionEnabled:YES];
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showCompleteImageView)];

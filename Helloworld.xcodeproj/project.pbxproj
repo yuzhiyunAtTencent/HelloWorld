@@ -80,6 +80,7 @@
 		28D3042A23BC3CFB0008DF3A /* YUNAudioOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D3042923BC3CFB0008DF3A /* YUNAudioOnlineViewController.m */; };
 		28D96828246A5AB70014CA9C /* BlurEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D96827246A5AB70014CA9C /* BlurEffectViewController.m */; };
 		28D9682B246A7ACA0014CA9C /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D9682A246A7ACA0014CA9C /* ColorUtil.m */; };
+		28DAE69B24D7E5850043623B /* TestNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DAE69A24D7E5850043623B /* TestNotificationCenterViewController.m */; };
 		28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 28E0F8D122A69BAD00A2452C /* NewsList.json */; };
 		28E62FF124128FA500C8CD33 /* QNColorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E62FF024128FA400C8CD33 /* QNColorItem.m */; };
 		28EED23C249B8A3300196E3E /* YUNJSPatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EED23B249B8A3300196E3E /* YUNJSPatchViewController.m */; };
@@ -268,6 +269,8 @@
 		28D96827246A5AB70014CA9C /* BlurEffectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurEffectViewController.m; sourceTree = "<group>"; };
 		28D96829246A7ACA0014CA9C /* ColorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
 		28D9682A246A7ACA0014CA9C /* ColorUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
+		28DAE69924D7E5850043623B /* TestNotificationCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNotificationCenterViewController.h; sourceTree = "<group>"; };
+		28DAE69A24D7E5850043623B /* TestNotificationCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNotificationCenterViewController.m; sourceTree = "<group>"; };
 		28E0F8D122A69BAD00A2452C /* NewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsList.json; sourceTree = "<group>"; };
 		28E62FEF24128FA400C8CD33 /* QNColorItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNColorItem.h; sourceTree = "<group>"; };
 		28E62FF024128FA400C8CD33 /* QNColorItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNColorItem.m; sourceTree = "<group>"; };
@@ -734,13 +737,14 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				28D3042123BB6F7D0008DF3A /* MainPage */,
+				28DAE69824D7E5140043623B /* NotificationCenter */,
 				28EED239249B8A0200196E3E /* JSPatch */,
 				28D96825246A5A650014CA9C /* BlurEffect */,
 				28C0C31B245824CC00EEFC08 /* TestCategory */,
 				28C78CFE243DFF4900F0BD88 /* SwiftObjectiveC */,
 				28F3037023E9553300A96923 /* UIInterfaceOrientation */,
 				2895ED2623C89EF100D064BF /* GetImageMainColor */,
-				28D3042123BB6F7D0008DF3A /* MainPage */,
 				28D3041D23BB6D050008DF3A /* AVFundation */,
 				287C6FA623604DED00F51F89 /* Gesture */,
 				2872C1E1235855D300A215C7 /* LayerContent */,
@@ -890,6 +894,15 @@
 				28D96827246A5AB70014CA9C /* BlurEffectViewController.m */,
 			);
 			path = BlurEffect;
+			sourceTree = "<group>";
+		};
+		28DAE69824D7E5140043623B /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				28DAE69924D7E5850043623B /* TestNotificationCenterViewController.h */,
+				28DAE69A24D7E5850043623B /* TestNotificationCenterViewController.m */,
+			);
+			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
 		28EED239249B8A0200196E3E /* JSPatch */ = {
@@ -1217,6 +1230,7 @@
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
 				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
+				28DAE69B24D7E5850043623B /* TestNotificationCenterViewController.m in Sources */,
 				28C48D1E1FD7FDB50096BAB9 /* AppDelegate.m in Sources */,
 				28D3042523BB6FC90008DF3A /* YUNKnowledgeItem.m in Sources */,
 				288C847124112DA200D65B78 /* QNColorTransformer.m in Sources */,
