@@ -58,6 +58,7 @@
 		28AF32672137D23C00AF4F25 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 28AF32662137D23B00AF4F25 /* index.html */; };
 		28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B092572191979D00DAC7F7 /* YunTestViewController.m */; };
 		28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B42169215CBD790079C81C /* YunLongImageView.m */; };
+		28B930EA24EA5A1400ED8997 /* YunPrivacySafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B930E924EA5A1400ED8997 /* YunPrivacySafetyViewController.m */; };
 		28C0C31E2458251D00EEFC08 /* QNTestCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C31D2458251D00EEFC08 /* QNTestCategoryController.m */; };
 		28C0C3212458256A00EEFC08 /* QNTestCategoryController+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C3202458256A00EEFC08 /* QNTestCategoryController+category.m */; };
 		28C0C3242458268A00EEFC08 /* QNTestCategoryChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C3232458268A00EEFC08 /* QNTestCategoryChildController.m */; };
@@ -224,6 +225,8 @@
 		28B092572191979D00DAC7F7 /* YunTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunTestViewController.m; sourceTree = "<group>"; };
 		28B42168215CBD790079C81C /* YunLongImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunLongImageView.h; sourceTree = "<group>"; };
 		28B42169215CBD790079C81C /* YunLongImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunLongImageView.m; sourceTree = "<group>"; };
+		28B930E824EA5A1400ED8997 /* YunPrivacySafetyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunPrivacySafetyViewController.h; sourceTree = "<group>"; };
+		28B930E924EA5A1400ED8997 /* YunPrivacySafetyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunPrivacySafetyViewController.m; sourceTree = "<group>"; };
 		28C0C31C2458251D00EEFC08 /* QNTestCategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNTestCategoryController.h; sourceTree = "<group>"; };
 		28C0C31D2458251D00EEFC08 /* QNTestCategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNTestCategoryController.m; sourceTree = "<group>"; };
 		28C0C31F2458256A00EEFC08 /* QNTestCategoryController+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QNTestCategoryController+category.h"; sourceTree = "<group>"; };
@@ -695,6 +698,15 @@
 			path = LongImageView;
 			sourceTree = "<group>";
 		};
+		28B930E724EA59A800ED8997 /* iOS14SafetyFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				28B930E824EA5A1400ED8997 /* YunPrivacySafetyViewController.h */,
+				28B930E924EA5A1400ED8997 /* YunPrivacySafetyViewController.m */,
+			);
+			path = iOS14SafetyFeatures;
+			sourceTree = "<group>";
+		};
 		28C0C31B245824CC00EEFC08 /* TestCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				28D3042123BB6F7D0008DF3A /* MainPage */,
+				28B930E724EA59A800ED8997 /* iOS14SafetyFeatures */,
 				28DAE69824D7E5140043623B /* NotificationCenter */,
 				28EED239249B8A0200196E3E /* JSPatch */,
 				28D96825246A5A650014CA9C /* BlurEffect */,
@@ -1197,6 +1210,7 @@
 				28C48D571FD81B7F0096BAB9 /* NewsListTableViewController.m in Sources */,
 				28F3037923E9566700A96923 /* HorizontalViewController.m in Sources */,
 				287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */,
+				28B930EA24EA5A1400ED8997 /* YunPrivacySafetyViewController.m in Sources */,
 				28F0914222F01AE100519567 /* TestAtomic.m in Sources */,
 				28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */,
 				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,

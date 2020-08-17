@@ -100,7 +100,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     // 这种宏定义在 头文件和m文件都可以定义变量，且随处可见。
     // http://hanson647.com/2015/06/10/2015/OC%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E9%87%8F/
     
-    [[FLEXManager sharedManager] showExplorer];
+//    [[FLEXManager sharedManager] showExplorer];
     return YES;
 }
 

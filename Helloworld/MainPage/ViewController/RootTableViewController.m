@@ -43,6 +43,7 @@
 #import <AdSupport/AdSupport.h>
 #import "BlurEffectViewController.h"
 #import "YUNJSPatchViewController.h"
+#import "YunPrivacySafetyViewController.h"
 
 @interface RootTableViewController ()
 
@@ -77,8 +78,8 @@
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取图片的主颜色" viewCtlName:@"GetMainColorFromImageViewController"]];
-
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取图片的主颜色" viewCtlName:@"GetMainColorFromImageViewController"]];
+      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS14 用户隐私安全升级" viewCtlName:@"YunPrivacySafetyViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SwiftObjectiveC桥接规范" viewCtlName:@"QNObjcViewController"]];
       [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"JSPatch 原理" viewCtlName:@"YUNJSPatchViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"模糊效果" viewCtlName:@"BlurEffectViewController"]];
@@ -89,8 +90,8 @@
 
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"UIInterfaceOrientation" viewCtlName:@"YUNUIInterfaceOrientationViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SDWebImage" viewCtlName:@"YunSDWebImageViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSNotificationCenter通知是同步的" viewCtlName:@"TestNotificationCenterViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SDWebImage" viewCtlName:@"YunSDWebImageViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSNotificationCenter通知是同步的" viewCtlName:@"TestNotificationCenterViewController"]];
     
     /*
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
