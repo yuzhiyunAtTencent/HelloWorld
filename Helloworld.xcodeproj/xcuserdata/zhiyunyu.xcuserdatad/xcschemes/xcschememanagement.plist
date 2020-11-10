@@ -12,7 +12,7 @@
 		<key>HelloWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Helloworld.xcscheme</key>
 		<dict>
@@ -22,7 +22,7 @@
 		<key>Helloworld.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>15</integer>
 		</dict>
 	</dict>
 </dict>

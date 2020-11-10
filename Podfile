@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'Helloworld' do
 
+pod 'coobjc'
 pod 'FLEX'
 pod 'AFNetworking', '3.2.1'
 pod 'lottie-ios'
