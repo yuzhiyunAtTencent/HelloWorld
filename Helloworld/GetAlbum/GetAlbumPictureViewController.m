@@ -136,7 +136,7 @@
 //头像点击事件
 - (void)avatarDidTapped:(UIGestureRecognizer *) gestureRecognizer {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.allowsEditing = YES;
+//    picker.allowsEditing = YES;
     picker.delegate = self;
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改头像" message:nil preferredStyle:UIAlertControllerStyleActionSheet];

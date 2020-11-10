@@ -41,7 +41,8 @@
                                                      delegateQueue:[[NSOperationQueue alloc] init]];
 
     // 创建任务
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://old.bz55.com/uploads/allimg/160125/139-160125150940.jpg"]]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:[NSURLRequest requestWithURL:
+                                                               [NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1503922663,533112086&fm=26&gp=0.jpg"]]];
     
     // 启动任务
     [task resume];

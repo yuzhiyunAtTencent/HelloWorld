@@ -31,6 +31,11 @@
 		286EB34D22C49F2B00359D7F /* YUNHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286EB34C22C49F2B00359D7F /* YUNHashViewController.m */; };
 		2872C1E4235855F800A215C7 /* ContentOfLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2872C1E3235855F800A215C7 /* ContentOfLayerViewController.m */; };
 		287C6FA923604E0D00F51F89 /* YUNGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */; };
+		287C8F4E251B694D00516F84 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287C8F4D251B694D00516F84 /* WidgetKit.framework */; };
+		287C8F50251B694D00516F84 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287C8F4F251B694D00516F84 /* SwiftUI.framework */; };
+		287C8F53251B694D00516F84 /* HelloWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C8F52251B694D00516F84 /* HelloWidget.swift */; };
+		287C8F55251B694E00516F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C8F54251B694E00516F84 /* Assets.xcassets */; };
+		287C8F59251B694E00516F84 /* HelloWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 287C8F4C251B694D00516F84 /* HelloWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */; };
 		288C846E241124B900D65B78 /* QNThemeColorExtracter.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C846D241124B900D65B78 /* QNThemeColorExtracter.m */; };
 		288C847124112DA200D65B78 /* QNColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 288C847024112DA200D65B78 /* QNColorTransformer.m */; };
@@ -57,6 +62,7 @@
 		28AE5BEB20299B1F002B9B70 /* DownLoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE5BE920299B1F002B9B70 /* DownLoadImageViewController.m */; };
 		28AF32672137D23C00AF4F25 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 28AF32662137D23B00AF4F25 /* index.html */; };
 		28B092582191979D00DAC7F7 /* YunTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B092572191979D00DAC7F7 /* YunTestViewController.m */; };
+		28B3A3AC24FF9377003B1DC2 /* TestPHPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B3A3AB24FF9377003B1DC2 /* TestPHPickerViewController.m */; };
 		28B4216A215CBD790079C81C /* YunLongImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B42169215CBD790079C81C /* YunLongImageView.m */; };
 		28B930EA24EA5A1400ED8997 /* YunPrivacySafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B930E924EA5A1400ED8997 /* YunPrivacySafetyViewController.m */; };
 		28C0C31E2458251D00EEFC08 /* QNTestCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0C31D2458251D00EEFC08 /* QNTestCategoryController.m */; };
@@ -99,6 +105,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		287C8F57251B694E00516F84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28C48D111FD7FDB50096BAB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 287C8F4B251B694D00516F84;
+			remoteInfo = HelloWidgetExtension;
+		};
 		28C48D321FD7FDB50096BAB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 28C48D111FD7FDB50096BAB9 /* Project object */;
@@ -116,6 +129,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		287C8F5A251B694E00516F84 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				287C8F59251B694E00516F84 /* HelloWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28F1E8E424B1CDB800F8E3B4 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +196,12 @@
 		2872C1E3235855F800A215C7 /* ContentOfLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentOfLayerViewController.m; sourceTree = "<group>"; };
 		287C6FA723604E0D00F51F89 /* YUNGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNGestureViewController.h; sourceTree = "<group>"; };
 		287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNGestureViewController.m; sourceTree = "<group>"; };
+		287C8F4C251B694D00516F84 /* HelloWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HelloWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		287C8F4D251B694D00516F84 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		287C8F4F251B694D00516F84 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		287C8F52251B694D00516F84 /* HelloWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWidget.swift; sourceTree = "<group>"; };
+		287C8F54251B694E00516F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		287C8F56251B694E00516F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		288C8469241123DB00D65B78 /* UIImage+ThemeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ThemeColor.h"; sourceTree = "<group>"; };
 		288C846A241123DB00D65B78 /* UIImage+ThemeColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ThemeColor.m"; sourceTree = "<group>"; };
 		288C846C241124B900D65B78 /* QNThemeColorExtracter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNThemeColorExtracter.h; sourceTree = "<group>"; };
@@ -223,6 +253,8 @@
 		28AF32662137D23B00AF4F25 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		28B092562191979D00DAC7F7 /* YunTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunTestViewController.h; sourceTree = "<group>"; };
 		28B092572191979D00DAC7F7 /* YunTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunTestViewController.m; sourceTree = "<group>"; };
+		28B3A3AA24FF9377003B1DC2 /* TestPHPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPHPickerViewController.h; sourceTree = "<group>"; };
+		28B3A3AB24FF9377003B1DC2 /* TestPHPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPHPickerViewController.m; sourceTree = "<group>"; };
 		28B42168215CBD790079C81C /* YunLongImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunLongImageView.h; sourceTree = "<group>"; };
 		28B42169215CBD790079C81C /* YunLongImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunLongImageView.m; sourceTree = "<group>"; };
 		28B930E824EA5A1400ED8997 /* YunPrivacySafetyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunPrivacySafetyViewController.h; sourceTree = "<group>"; };
@@ -302,6 +334,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		287C8F49251B694D00516F84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287C8F50251B694D00516F84 /* SwiftUI.framework in Frameworks */,
+				287C8F4E251B694D00516F84 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28C48D161FD7FDB50096BAB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +457,8 @@
 			children = (
 				284B2F792021C13300D32D63 /* GetAlbumPictureViewController.h */,
 				284B2F7A2021C13300D32D63 /* GetAlbumPictureViewController.m */,
+				28B3A3AA24FF9377003B1DC2 /* TestPHPickerViewController.h */,
+				28B3A3AB24FF9377003B1DC2 /* TestPHPickerViewController.m */,
 			);
 			path = GetAlbum;
 			sourceTree = "<group>";
@@ -473,6 +516,16 @@
 				287C6FA823604E0D00F51F89 /* YUNGestureViewController.m */,
 			);
 			path = Gesture;
+			sourceTree = "<group>";
+		};
+		287C8F51251B694D00516F84 /* HelloWidget */ = {
+			isa = PBXGroup;
+			children = (
+				287C8F52251B694D00516F84 /* HelloWidget.swift */,
+				287C8F54251B694E00516F84 /* Assets.xcassets */,
+				287C8F56251B694E00516F84 /* Info.plist */,
+			);
+			path = HelloWidget;
 			sourceTree = "<group>";
 		};
 		288C84622411145B00D65B78 /* QNImageThemeColor */ = {
@@ -600,6 +653,8 @@
 				28AE5BE020298A53002B9B70 /* WebKit.framework */,
 				28AE5BC82025B89B002B9B70 /* AVFoundation.framework */,
 				A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */,
+				287C8F4D251B694D00516F84 /* WidgetKit.framework */,
+				287C8F4F251B694D00516F84 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -730,6 +785,7 @@
 				28C48D1B1FD7FDB50096BAB9 /* Helloworld */,
 				28C48D341FD7FDB50096BAB9 /* HelloworldTests */,
 				28C48D3F1FD7FDB50096BAB9 /* HelloworldUITests */,
+				287C8F51251B694D00516F84 /* HelloWidget */,
 				28C48D1A1FD7FDB50096BAB9 /* Products */,
 				28AE5BC72025B89B002B9B70 /* Frameworks */,
 				3B6F9E69F5220B21617091E3 /* Pods */,
@@ -742,6 +798,7 @@
 				28C48D191FD7FDB50096BAB9 /* Helloworld.app */,
 				28C48D311FD7FDB50096BAB9 /* HelloworldTests.xctest */,
 				28C48D3C1FD7FDB50096BAB9 /* HelloworldUITests.xctest */,
+				287C8F4C251B694D00516F84 /* HelloWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -989,6 +1046,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		287C8F4B251B694D00516F84 /* HelloWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 287C8F5D251B694E00516F84 /* Build configuration list for PBXNativeTarget "HelloWidgetExtension" */;
+			buildPhases = (
+				287C8F48251B694D00516F84 /* Sources */,
+				287C8F49251B694D00516F84 /* Frameworks */,
+				287C8F4A251B694D00516F84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloWidgetExtension;
+			productName = HelloWidgetExtension;
+			productReference = 287C8F4C251B694D00516F84 /* HelloWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		28C48D181FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28C48D451FD7FDB50096BAB9 /* Build configuration list for PBXNativeTarget "Helloworld" */;
@@ -999,10 +1073,12 @@
 				28C48D171FD7FDB50096BAB9 /* Resources */,
 				AD9D3CEF41197B80D20C3F76 /* [CP] Embed Pods Frameworks */,
 				28F1E8E424B1CDB800F8E3B4 /* Embed App Clips */,
+				287C8F5A251B694E00516F84 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				287C8F58251B694E00516F84 /* PBXTargetDependency */,
 			);
 			name = Helloworld;
 			productName = Helloworld;
@@ -1055,6 +1131,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = zhiyunyu;
 				TargetAttributes = {
+					287C8F4B251B694D00516F84 = {
+						CreatedOnToolsVersion = 12.0;
+						ProvisioningStyle = Automatic;
+					};
 					28C48D181FD7FDB50096BAB9 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1100;
@@ -1093,11 +1173,20 @@
 				28C48D181FD7FDB50096BAB9 /* Helloworld */,
 				28C48D301FD7FDB50096BAB9 /* HelloworldTests */,
 				28C48D3B1FD7FDB50096BAB9 /* HelloworldUITests */,
+				287C8F4B251B694D00516F84 /* HelloWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		287C8F4A251B694D00516F84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287C8F55251B694E00516F84 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28C48D171FD7FDB50096BAB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1194,6 +1283,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		287C8F48251B694D00516F84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287C8F53251B694D00516F84 /* HelloWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28C48D151FD7FDB50096BAB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1259,6 +1356,7 @@
 				28AE5BBE2025ABCE002B9B70 /* RootTableViewController.m in Sources */,
 				28C78D04243E021000F0BD88 /* QNSwiftViewController.swift in Sources */,
 				28C78D09243ED51000F0BD88 /* QNPerson.m in Sources */,
+				28B3A3AC24FF9377003B1DC2 /* TestPHPickerViewController.m in Sources */,
 				2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */,
 				28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */,
 				28EED23C249B8A3300196E3E /* YUNJSPatchViewController.m in Sources */,
@@ -1286,6 +1384,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		287C8F58251B694E00516F84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 287C8F4B251B694D00516F84 /* HelloWidgetExtension */;
+			targetProxy = 287C8F57251B694E00516F84 /* PBXContainerItemProxy */;
+		};
 		28C48D331FD7FDB50096BAB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 28C48D181FD7FDB50096BAB9 /* Helloworld */;
@@ -1299,6 +1402,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		287C8F5B251B694E00516F84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F36KV5ER57;
+				INFOPLIST_FILE = HelloWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld3Y.HelloWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		287C8F5C251B694E00516F84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F36KV5ER57;
+				INFOPLIST_FILE = HelloWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld3Y.HelloWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		28C48D431FD7FDB50096BAB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1410,6 +1565,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00482C0EFCE561AB6DE0CB32 /* Pods-Helloworld.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1424,7 +1580,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/WechatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld3Y;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Helloworld/SwiftObjectiveC/Helloworld-Bridging-Header.h";
@@ -1438,6 +1594,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F826B74DBA3F35BE322847FA /* Pods-Helloworld.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1452,7 +1609,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/WechatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyunyu.Helloworld3Y;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Helloworld/SwiftObjectiveC/Helloworld-Bridging-Header.h";
@@ -1526,6 +1683,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		287C8F5D251B694E00516F84 /* Build configuration list for PBXNativeTarget "HelloWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287C8F5B251B694E00516F84 /* Debug */,
+				287C8F5C251B694E00516F84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28C48D141FD7FDB50096BAB9 /* Build configuration list for PBXProject "Helloworld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

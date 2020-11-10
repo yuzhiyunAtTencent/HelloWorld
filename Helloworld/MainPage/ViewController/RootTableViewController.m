@@ -44,6 +44,7 @@
 #import "BlurEffectViewController.h"
 #import "YUNJSPatchViewController.h"
 #import "YunPrivacySafetyViewController.h"
+#import "TestPHPickerViewController.h"
 
 @interface RootTableViewController ()
 
@@ -55,7 +56,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [UIPasteboard generalPasteboard].string = @"";
+    NSArray<NSDictionary *> *items = [UIPasteboard generalPasteboard].items;
+//    NSLog(@"toast %@", [UIPasteboard generalPasteboard].string);
     
+    NSSet *patterns = [[NSSet alloc] initWithObjects:UIPasteboardDetectionPatternProbableWebURL, UIPasteboardDetectionPatternProbableWebSearch, nil];
+    [[UIPasteboard generalPasteboard] detectPatternsForPatterns:patterns
+                                              completionHandler:^(NSSet<UIPasteboardDetectionPattern> * _Nullable result, NSError * _Nullable error) {
+        if (result && result.count) {
+            NSLog(@"");
+        } else {
+            NSLog(@"");
+        }
+    }];
+    
+//    NSDictionary *item = items.count > 0 ? items[0] : nil;
+//    NSLog(@"toast %@", [UIPasteboard generalPasteboard].string);
+//    NSLog(@"toast %@", [UIPasteboard generalPasteboard].items);
     
     if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
         NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
@@ -77,11 +94,13 @@
 ////    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:NSStringFromClass([GetAlbumPictureViewController class])]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取图片的主颜色" viewCtlName:@"GetMainColorFromImageViewController"]];
-      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS14 用户隐私安全升级" viewCtlName:@"YunPrivacySafetyViewController"]];
+//      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS14 用户隐私安全升级" viewCtlName:@"YunPrivacySafetyViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SwiftObjectiveC桥接规范" viewCtlName:@"QNObjcViewController"]];
-      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"JSPatch 原理" viewCtlName:@"YUNJSPatchViewController"]];
+//      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"JSPatch 原理" viewCtlName:@"YUNJSPatchViewController"]];
+      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS 14 图片权限问题" viewCtlName:NSStringFromClass([TestPHPickerViewController class])]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSURLSession下载图片" viewCtlName:NSStringFromClass([DownLoadImageViewController class])]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"模糊效果" viewCtlName:@"BlurEffectViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"QNTestCategoryChildController" viewCtlName:@"QNTestCategoryChildController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"QNTestCategoryController" viewCtlName:@"QNTestCategoryController"]];
