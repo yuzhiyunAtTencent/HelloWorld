@@ -12,6 +12,8 @@
 		281A2CF21FE170EC00D95B1B /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A2CF11FE170EC00D95B1B /* News.m */; };
 		281D970220FCBE8A009AED47 /* LottieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281D970120FCBE8A009AED47 /* LottieViewController.m */; };
 		281D970420FCC1A6009AED47 /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 281D970320FCC1A6009AED47 /* heart.json */; };
+		2823220B2580B46C004D8F47 /* QNCoordinatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 282322082580B46B004D8F47 /* QNCoordinatorView.m */; };
+		2823220C2580B46C004D8F47 /* QNCoordinatorSlideScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2823220A2580B46B004D8F47 /* QNCoordinatorSlideScrollView.m */; };
 		282BD4B02267105000B1F817 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 282BD4AF2267105000B1F817 /* UIView+Utils.m */; };
 		28407EE221E84A7900DB987D /* YUNWechatLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28407EE121E84A7900DB987D /* YUNWechatLoginViewController.m */; };
 		28407EEA21E84D7100DB987D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28407EE521E84D7100DB987D /* README.txt */; };
@@ -163,6 +165,11 @@
 		281D970020FCBE8A009AED47 /* LottieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieViewController.h; sourceTree = "<group>"; };
 		281D970120FCBE8A009AED47 /* LottieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieViewController.m; sourceTree = "<group>"; };
 		281D970320FCC1A6009AED47 /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
+		282322062580B46B004D8F47 /* QNCoordinatorSlideScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCoordinatorSlideScrollView.h; sourceTree = "<group>"; };
+		282322072580B46B004D8F47 /* QNCoordinatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCoordinatorView.h; sourceTree = "<group>"; };
+		282322082580B46B004D8F47 /* QNCoordinatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNCoordinatorView.m; sourceTree = "<group>"; };
+		282322092580B46B004D8F47 /* QNCoordinatorDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCoordinatorDefine.h; sourceTree = "<group>"; };
+		2823220A2580B46B004D8F47 /* QNCoordinatorSlideScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNCoordinatorSlideScrollView.m; sourceTree = "<group>"; };
 		282BD4AE2267105000B1F817 /* UIView+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
 		282BD4AF2267105000B1F817 /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
 		28407EE021E84A7900DB987D /* YUNWechatLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNWechatLoginViewController.h; sourceTree = "<group>"; };
@@ -397,6 +404,18 @@
 				281D970120FCBE8A009AED47 /* LottieViewController.m */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		282321F62580B3E4004D8F47 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				282322092580B46B004D8F47 /* QNCoordinatorDefine.h */,
+				282322062580B46B004D8F47 /* QNCoordinatorSlideScrollView.h */,
+				2823220A2580B46B004D8F47 /* QNCoordinatorSlideScrollView.m */,
+				282322072580B46B004D8F47 /* QNCoordinatorView.h */,
+				282322082580B46B004D8F47 /* QNCoordinatorView.m */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		28407EDE21E84A2000DB987D /* Account */ = {
@@ -806,6 +825,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				282321F62580B3E4004D8F47 /* Coordinator */,
 				28D3042123BB6F7D0008DF3A /* MainPage */,
 				28B930E724EA59A800ED8997 /* iOS14SafetyFeatures */,
 				28DAE69824D7E5140043623B /* NotificationCenter */,
@@ -1342,6 +1362,7 @@
 				288C84742411320100D65B78 /* QNColorBox.m in Sources */,
 				28AE5BCD2025BBDF002B9B70 /* YunPopWindowView.m in Sources */,
 				28D9682B246A7ACA0014CA9C /* ColorUtil.m in Sources */,
+				2823220C2580B46C004D8F47 /* QNCoordinatorSlideScrollView.m in Sources */,
 				CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */,
 				289F63C4212072EF00F197CF /* YunMethodSwizzlingViewController.m in Sources */,
 				284B2F7B2021C13300D32D63 /* GetAlbumPictureViewController.m in Sources */,
@@ -1363,6 +1384,7 @@
 				28B3A3AC24FF9377003B1DC2 /* TestPHPickerViewController.m in Sources */,
 				2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */,
 				28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */,
+				2823220B2580B46C004D8F47 /* QNCoordinatorView.m in Sources */,
 				28EED23C249B8A3300196E3E /* YUNJSPatchViewController.m in Sources */,
 				282BD4B02267105000B1F817 /* UIView+Utils.m in Sources */,
 				286C7CFF2004C2EC00F928D1 /* MenuView.m in Sources */,
