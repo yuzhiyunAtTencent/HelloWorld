@@ -153,7 +153,7 @@
     NSLog(@"%@", [NSThread callStackSymbols]);
 
     NSLog(@"===== 分隔符 =====");
-    fastUnwind();
+    fastUnwind_frame();
 }
 
 static long idx = 0;
@@ -197,6 +197,16 @@ void fastUnwind() {
      * 参数代表call stack的层级，0就是当前函数，1就是当前函数的caller，以此类推
      * https://www.daemon-systems.org/man/__builtin_frame_address.3.html
      * 注意还有一个__builtin_return_address 代表函数返回地址，和__builtin_frame_address是不一样的
+     
+     
+     https://gcc.gnu.org/onlinedocs/gcc/Return-Address.html
+     This function is similar to __builtin_return_address, but it returns the address of the function frame rather than the return address of the function. Calling __builtin_frame_address with a value of 0 yields the frame address of the current function, a value of 1 yields the frame address of the caller of the current function, and so forth.
+
+     The frame is the area on the stack that holds local variables and saved registers. The frame address is normally the address of the first word pushed on to the stack by the function. However, the exact definition depends upon the processor and the calling convention. If the processor has a dedicated frame pointer register, and the function has a frame, then __builtin_frame_address returns the value of the frame pointer register.
+
+     On some machines it may be impossible to determine the frame address of any function other than the current one; in such cases, or when the top of the stack has been reached, this function returns 0 if the first frame pointer is properly initialized by the startup code.
+
+     Calling this function with a nonzero argument can have unpredictable effects, including crashing the calling program. As a result, calls that are considered unsafe are diagnosed when the -Wframe-address option is in effect. Such calls should only be made in debugging situations.
      */
     void **fp = __builtin_frame_address(0);
     
