@@ -164,10 +164,9 @@ void dumpAddress(const void *p) {
     if (dladdr(p, &info)) {
         char *demangleName = demangle(info.dli_sname);
         if (demangleName && strlen(demangleName) > 0) {
-            NSLog(@"%ld 0x%016lx  %s + %@ \n", idx, (unsigned long)p, demangleName, @(p - info.dli_saddr));
-//            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, demangleName, p - info.dli_saddr);
+            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, demangleName, p - info.dli_saddr);
         } else {
-            NSLog(@"%ld 0x%016lx  %s + %@ \n", idx, (unsigned long)p, info.dli_sname , @(p - info.dli_saddr));
+            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, info.dli_sname , p - info.dli_saddr);
         }
     } else {
         printf("非法地址");
@@ -186,6 +185,7 @@ void fastUnwind_frame() {
     for (;;) {
         struct frame_data *next_fp = fp->frame_addr_next;
         if (next_fp <= fp) break;
+        // 实践表明，fp->ret_addr就是lr寄存器的值，fp->frame_addr_next就是上一个函数的fp(断点停在上一个函数执行 register read查看下fp即可，值是相等的)
         dumpAddress((fp->ret_addr));
         // printf("%p\n", *(fp+1));
         fp = next_fp;
