@@ -164,14 +164,32 @@ void dumpAddress(const void *p) {
     if (dladdr(p, &info)) {
         char *demangleName = demangle(info.dli_sname);
         if (demangleName && strlen(demangleName) > 0) {
-            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, demangleName, p - info.dli_saddr);
+            NSLog(@"%ld 0x%016lx  %s + %@ \n", idx, (unsigned long)p, demangleName, @(p - info.dli_saddr));
+//            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, demangleName, p - info.dli_saddr);
         } else {
-            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, info.dli_sname , p - info.dli_saddr);
+            NSLog(@"%ld 0x%016lx  %s + %@ \n", idx, (unsigned long)p, info.dli_sname , @(p - info.dli_saddr));
         }
     } else {
         printf("非法地址");
     }
     ++idx;
+}
+
+void fastUnwind_frame() {
+    typedef uintptr_t frame_data_addr_t;
+    
+    struct frame_data {
+        struct frame_data *frame_addr_next;
+        frame_data_addr_t *ret_addr;
+    };
+    struct frame_data *fp = __builtin_frame_address(0);
+    for (;;) {
+        struct frame_data *next_fp = fp->frame_addr_next;
+        if (next_fp <= fp) break;
+        dumpAddress((fp->ret_addr));
+        // printf("%p\n", *(fp+1));
+        fp = next_fp;
+    }
 }
 
 void fastUnwind() {
