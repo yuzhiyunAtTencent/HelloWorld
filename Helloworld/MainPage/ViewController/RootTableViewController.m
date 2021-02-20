@@ -175,10 +175,10 @@ void dumpAddress(const void *p) {
 }
 
 void fastUnwind() {
-    /* __builtin_frame_address, the return address of a function
+    /* __builtin_frame_address, the address of the function frame
      * 参数代表call stack的层级，0就是当前函数，1就是当前函数的caller，以此类推
      * https://www.daemon-systems.org/man/__builtin_frame_address.3.html
-     * 
+     * 注意还有一个__builtin_return_address 代表函数返回地址，和__builtin_frame_address是不一样的
      */
     void **fp = __builtin_frame_address(0);
     
