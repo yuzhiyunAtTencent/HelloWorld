@@ -100,6 +100,7 @@
 		28F3037623E9558100A96923 /* YUNUIInterfaceOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */; };
 		28F3037923E9566700A96923 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037823E9566700A96923 /* HorizontalViewController.m */; };
 		6A0460C596BD6B71BA73C5B9 /* Pods_Helloworld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */; };
+		A092AEA425AF25BD002596EE /* YUNAddStackFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */; };
 		CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */; };
 		CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D99320EF92C0005FA5D1 /* AppOpenURLViewController.m */; };
 		CD69D99920F20794005FA5D1 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D99820F20794005FA5D1 /* NotificationViewController.m */; };
@@ -330,6 +331,8 @@
 		28F3037723E9566700A96923 /* HorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
 		28F3037823E9566700A96923 /* HorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
 		A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helloworld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A092AEA225AF25BD002596EE /* YUNAddStackFrameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAddStackFrameViewController.h; sourceTree = "<group>"; };
+		A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAddStackFrameViewController.m; sourceTree = "<group>"; };
 		CD69D98C20D4F0D3005FA5D1 /* MultiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadViewController.h; sourceTree = "<group>"; };
 		CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadViewController.m; sourceTree = "<group>"; };
 		CD69D99220EF92C0005FA5D1 /* AppOpenURLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppOpenURLViewController.h; sourceTree = "<group>"; };
@@ -825,6 +828,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				A092AEA125AF2570002596EE /* AddStackFrame */,
 				282321F62580B3E4004D8F47 /* Coordinator */,
 				28D3042123BB6F7D0008DF3A /* MainPage */,
 				28B930E724EA59A800ED8997 /* iOS14SafetyFeatures */,
@@ -1034,6 +1038,15 @@
 				F826B74DBA3F35BE322847FA /* Pods-Helloworld.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A092AEA125AF2570002596EE /* AddStackFrame */ = {
+			isa = PBXGroup;
+			children = (
+				A092AEA225AF25BD002596EE /* YUNAddStackFrameViewController.h */,
+				A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */,
+			);
+			path = AddStackFrame;
 			sourceTree = "<group>";
 		};
 		CD69D98B20D4F060005FA5D1 /* MultiThread */ = {
@@ -1373,6 +1386,7 @@
 				288C846B241123DB00D65B78 /* UIImage+ThemeColor.m in Sources */,
 				28C0C3242458268A00EEFC08 /* QNTestCategoryChildController.m in Sources */,
 				280D632922FAEF570051AB12 /* WKWebView+Responder.m in Sources */,
+				A092AEA425AF25BD002596EE /* YUNAddStackFrameViewController.m in Sources */,
 				284FDB9D233A45C6002338B8 /* FLAnimatedViewController.m in Sources */,
 				CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */,
 				288C84772411334800D65B78 /* QNColorBoxPriorityQueue.m in Sources */,
@@ -1596,6 +1610,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = F36KV5ER57;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YunPrefixHeader.pch";

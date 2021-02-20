@@ -11,17 +11,17 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        NSLog([[NSNumber numberWithInt:0] boolValue] ? @"Yes" : @"No");
-        NSLog([[NSNumber numberWithInt:1] boolValue] ? @"Yes" : @"No");
-        
+//        NSLog([[NSNumber numberWithInt:0] boolValue] ? @"Yes" : @"No");
+//        NSLog([[NSNumber numberWithInt:1] boolValue] ? @"Yes" : @"No");
+//        
         void (^block)(void) = ^{
             NSLog(@"Hello");
         };
         
-        NSLog(@"%@", [block class]);
-        NSLog(@"%@", [[block class] superclass]);
-        NSLog(@"%@", [[[block class] superclass] superclass]);
-        NSLog(@"%@", [[[[block class] superclass] superclass] superclass]);
+//        NSLog(@"%@", [block class]);
+//        NSLog(@"%@", [[block class] superclass]);
+//        NSLog(@"%@", [[[block class] superclass] superclass]);
+//        NSLog(@"%@", [[[[block class] superclass] superclass] superclass]);
 
  
         

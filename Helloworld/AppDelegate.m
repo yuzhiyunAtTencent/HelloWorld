@@ -13,6 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import <Aspects.h>
 #import "FLEX/FLEX.h"
+#import "YUNAddStackFrameViewController.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -52,11 +53,11 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     [self.window makeKeyAndVisible];//显示
     
     NSTimeInterval now = [NSDate date].timeIntervalSince1970;
-    NSLog(@"NSTimeInterval %@", @(sizeof(now)));
-    NSLog(@"NSTimeInterval %@", @(now));
+//    NSLog(@"NSTimeInterval %@", @(sizeof(now)));
+//    NSLog(@"NSTimeInterval %@", @(now));
     
     NSInteger integer = 10;
-    NSLog(@"NSInteger %@", @(sizeof(integer)));
+//    NSLog(@"NSInteger %@", @(sizeof(integer)));
     
     CGFloat screen_width;
     screen_width = [UIScreen mainScreen].bounds.size.width;
@@ -92,7 +93,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     
     // 访问定义在另一个类的全局变量,的确能访问到，如果加上static,就不可访问了，变成那个文件的私有变量了
     extern NSString *global;
-    NSLog(@"访问全局变量 appdelegate***%@---%p", global, &global);
+//    NSLog(@"访问全局变量 appdelegate***%@---%p", global, &global);
     
     // 但是如果是定义在 .h文件，即使加了static,仍旧外部可以访问，比如 新闻中这种用法： QN_DECLARE_STATIC_CONST_NSSTRING(kQNWeiboDidDeleteNotification);
     // #define QN_DECLARE_STATIC_CONST_NSSTRING(name) static NSString *const name = @"" #name;

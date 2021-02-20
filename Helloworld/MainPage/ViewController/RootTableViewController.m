@@ -45,6 +45,9 @@
 #import "YUNJSPatchViewController.h"
 #import "YunPrivacySafetyViewController.h"
 #import "TestPHPickerViewController.h"
+#import "YUNAddStackFrameViewController.h"
+#include <dlfcn.h>
+
 
 @interface RootTableViewController ()
 
@@ -94,13 +97,15 @@
 ////    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:NSStringFromClass([GetAlbumPictureViewController class])]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"在函数调用前增加一个栈帧，处理iOS Kotlin crash堆栈丢失问题"
+                                                      viewCtlName:NSStringFromClass([YUNAddStackFrameViewController class])]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:NSStringFromClass([GetAlbumPictureViewController class])]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取图片的主颜色" viewCtlName:@"GetMainColorFromImageViewController"]];
 //      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS14 用户隐私安全升级" viewCtlName:@"YunPrivacySafetyViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SwiftObjectiveC桥接规范" viewCtlName:@"QNObjcViewController"]];
 //      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"JSPatch 原理" viewCtlName:@"YUNJSPatchViewController"]];
-      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS 14 图片权限问题" viewCtlName:NSStringFromClass([TestPHPickerViewController class])]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSURLSession下载图片" viewCtlName:NSStringFromClass([DownLoadImageViewController class])]];
+//      [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"iOS 14 图片权限问题" viewCtlName:NSStringFromClass([TestPHPickerViewController class])]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSURLSession下载图片" viewCtlName:NSStringFromClass([DownLoadImageViewController class])]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"模糊效果" viewCtlName:@"BlurEffectViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"QNTestCategoryChildController" viewCtlName:@"QNTestCategoryChildController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"QNTestCategoryController" viewCtlName:@"QNTestCategoryController"]];
@@ -139,6 +144,51 @@
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"ContentOfLayerViewController" viewCtlName:@"ContentOfLayerViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"YUNGestureViewController" viewCtlName:@"YUNGestureViewController"]];
     */
+    
+    [self hello];
+}
+
+- (void)hello {
+    NSLog(@"开始打印：[NSThread callStackSymbols]");
+    NSLog(@"%@", [NSThread callStackSymbols]);
+
+    NSLog(@"===== 分隔符 =====");
+    fastUnwind();
+}
+
+static long idx = 0;
+// 为了直观对比效果，本函数会将 函数名 和 指令的字节偏移量 进行打印
+void dumpAddress(const void *p) {
+    char *(*demangle)(char const *) = dlsym(RTLD_DEFAULT, "demangle");
+    Dl_info info;
+    if (dladdr(p, &info)) {
+        char *demangleName = demangle(info.dli_sname);
+        if (demangleName && strlen(demangleName) > 0) {
+            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, demangleName, p - info.dli_saddr);
+        } else {
+            printf("%ld 0x%016lx  %s + %ld \n", idx, (unsigned long)p, info.dli_sname , p - info.dli_saddr);
+        }
+    } else {
+        printf("非法地址");
+    }
+    ++idx;
+}
+
+void fastUnwind() {
+    /* __builtin_frame_address, the return address of a function
+     * 参数代表call stack的层级，0就是当前函数，1就是当前函数的caller，以此类推
+     * https://www.daemon-systems.org/man/__builtin_frame_address.3.html
+     * 
+     */
+    void **fp = __builtin_frame_address(0);
+    
+    for (;;) {
+        void **next_fp = *fp;
+        if (next_fp <= fp) break;
+        dumpAddress(*(fp + 1));
+        // printf("%p\n", *(fp+1));
+        fp = next_fp;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

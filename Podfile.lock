@@ -51,9 +51,11 @@ DEPENDENCIES:
   - WebViewJavascriptBridge (~> 6.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - AspectsV1.4.2
+    - cocore
+    - coobjc
     - CYLDeallocBlockExecutor
     - FDFullscreenPopGesture
     - FLAnimatedImage
@@ -63,9 +65,6 @@ SPEC REPOS:
     - SDWebImage
     - SVPullToRefresh
     - WebViewJavascriptBridge
-  trunk:
-    - cocore
-    - coobjc
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -84,4 +83,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: f10d18c7db835527e916152dc73b504503dc7314
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.7.5
