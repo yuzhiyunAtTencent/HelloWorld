@@ -100,6 +100,8 @@
 		28F3037623E9558100A96923 /* YUNUIInterfaceOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */; };
 		28F3037923E9566700A96923 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037823E9566700A96923 /* HorizontalViewController.m */; };
 		6A0460C596BD6B71BA73C5B9 /* Pods_Helloworld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */; };
+		A079FB0426284A780000532B /* TestEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FB0326284A780000532B /* TestEqualViewController.m */; };
+		A079FB0B26284B590000532B /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FB0A26284B590000532B /* TestModel.m */; };
 		A092AEA425AF25BD002596EE /* YUNAddStackFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */; };
 		CD69D98E20D4F0D3005FA5D1 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D98D20D4F0D3005FA5D1 /* MultiThreadViewController.m */; };
 		CD69D99420EF92C0005FA5D1 /* AppOpenURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD69D99320EF92C0005FA5D1 /* AppOpenURLViewController.m */; };
@@ -331,6 +333,10 @@
 		28F3037723E9566700A96923 /* HorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
 		28F3037823E9566700A96923 /* HorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
 		A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helloworld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A079FB0226284A780000532B /* TestEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestEqualViewController.h; sourceTree = "<group>"; };
+		A079FB0326284A780000532B /* TestEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestEqualViewController.m; sourceTree = "<group>"; };
+		A079FB0926284B590000532B /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
+		A079FB0A26284B590000532B /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		A092AEA225AF25BD002596EE /* YUNAddStackFrameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAddStackFrameViewController.h; sourceTree = "<group>"; };
 		A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAddStackFrameViewController.m; sourceTree = "<group>"; };
 		CD69D98C20D4F0D3005FA5D1 /* MultiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadViewController.h; sourceTree = "<group>"; };
@@ -828,6 +834,7 @@
 		28C48D1B1FD7FDB50096BAB9 /* Helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				A079FAF926284A580000532B /* runtime */,
 				A092AEA125AF2570002596EE /* AddStackFrame */,
 				282321F62580B3E4004D8F47 /* Coordinator */,
 				28D3042123BB6F7D0008DF3A /* MainPage */,
@@ -1038,6 +1045,17 @@
 				F826B74DBA3F35BE322847FA /* Pods-Helloworld.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A079FAF926284A580000532B /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				A079FB0926284B590000532B /* TestModel.h */,
+				A079FB0A26284B590000532B /* TestModel.m */,
+				A079FB0226284A780000532B /* TestEqualViewController.h */,
+				A079FB0326284A780000532B /* TestEqualViewController.m */,
+			);
+			path = runtime;
 			sourceTree = "<group>";
 		};
 		A092AEA125AF2570002596EE /* AddStackFrame */ = {
@@ -1347,6 +1365,8 @@
 				28B930EA24EA5A1400ED8997 /* YunPrivacySafetyViewController.m in Sources */,
 				28F0914222F01AE100519567 /* TestAtomic.m in Sources */,
 				28D0EC5E22CE439A00261992 /* ThreadSafetyViewController.m in Sources */,
+				A079FB0B26284B590000532B /* TestModel.m in Sources */,
+				A079FB0426284A780000532B /* TestEqualViewController.m in Sources */,
 				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
 				28D96828246A5AB70014CA9C /* BlurEffectViewController.m in Sources */,
