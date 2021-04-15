@@ -14,6 +14,7 @@
 #import <Aspects.h>
 #import "FLEX/FLEX.h"
 #import "YUNAddStackFrameViewController.h"
+#import "TestEqualViewController.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -47,7 +48,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//设置窗口
-    UIViewController *mainVC = [[RootTableViewController alloc] init];
+    UIViewController *mainVC = [[TestEqualViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示

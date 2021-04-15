@@ -118,7 +118,7 @@
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SDWebImage" viewCtlName:@"YunSDWebImageViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSNotificationCenter通知是同步的" viewCtlName:@"TestNotificationCenterViewController"]];
     
-    /*
+   
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"学习AVFundation" viewCtlName:@"LearnAVFundationViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
@@ -131,6 +131,7 @@
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"应用间跳转" viewCtlName:@"AppOpenURLViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"push通知" viewCtlName:@"NotificationViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"lottie动画" viewCtlName:@"LottieViewController"]];
+    /*
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SDWebImage" viewCtlName:@"YunSDWebImageViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"DrawRect" viewCtlName:@"YunDrawRectViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"Method Swizzling" viewCtlName:@"YunMethodSwizzlingViewController"]];
