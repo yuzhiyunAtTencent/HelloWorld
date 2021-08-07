@@ -155,7 +155,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 #pragma mark - UNUserNotificationCenterDelegate
 /** 当收到通知时候 用户处于前台时,不在通知栏展示通知UI，可以在这里处理逻辑*/
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
-    NSLog(@"当收到通知的时候，App处于前台，逻辑会走到这里，如果不调用completionHandler就会导致通知不显示，调用completionHandler就会显示通知");
+    NSLog(@"当收到通知的时候，如果App处于前台,如果不调用completionHandler就会导致通知不显示，调用completionHandler就会显示通知");
     
     completionHandler(UNNotificationPresentationOptionAlert);
 }
