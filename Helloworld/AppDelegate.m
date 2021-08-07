@@ -15,6 +15,7 @@
 #import "FLEX/FLEX.h"
 #import "YUNAddStackFrameViewController.h"
 #import "TestEqualViewController.h"
+#import "TestImageNamedWithViewController.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -44,11 +45,22 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
      */
     // 10.0 之后的通知
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-//    [self p_requestPushAuthorize];
+    [self p_requestPushAuthorize];
     
+//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"a"];
+//    NSLog(@"NSUserDefaults %@", @([[NSUserDefaults standardUserDefaults] boolForKey:@"a"]));
+//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"a"];
+//    NSLog(@"NSUserDefaults%@", @([[NSUserDefaults standardUserDefaults] boolForKey:@"a"]));
+//
+//    [[NSUserDefaults standardUserDefaults] setObject:@"hhh" forKey:@"bb"];
+//    NSLog(@"NSUserDefaults%@", [[NSUserDefaults standardUserDefaults] stringForKey:@"bb"]);
+//
+//    [[NSUserDefaults standardUserDefaults] setValue:@"gg" forKey:@"cc"];
+//    NSLog(@"NSUserDefaults%@", [[NSUserDefaults standardUserDefaults] stringForKey:@"cc"]);
+//
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//设置窗口
-    UIViewController *mainVC = [[TestEqualViewController alloc] init];
+    UIViewController *mainVC = [[RootTableViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
@@ -143,7 +155,9 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 #pragma mark - UNUserNotificationCenterDelegate
 /** 当收到通知时候 用户处于前台时,不在通知栏展示通知UI，可以在这里处理逻辑*/
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
-    NSLog(@"前台 不展示通知");
+    NSLog(@"当收到通知的时候，App处于前台，逻辑会走到这里，如果不调用completionHandler就会导致通知不显示，调用completionHandler就会显示通知");
+    
+    completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 /** 当收到通知时候 不处于前台时,与通知交互走这个方法 */

@@ -9,6 +9,7 @@
 #import "TestEqualViewController.h"
 #import <objc/runtime.h>
 #import "TestModel.h"
+#import <UIKit/UITabBarController.h>
 
 @interface TestEqualViewController ()
 
@@ -19,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.tabBarItem.title = @"ss";
     TestModel *a = [TestModel new];
 //    a.age = 10;
 ////    a.isMan = NO;
@@ -29,11 +30,26 @@
 //    b.age = 10;
 ////    b.isMan = YES;
 //    b.title = @"jjj";
-    
-    NSLog(@"%s  %d", @encode(BOOL), strcmp("B", @encode(BOOL)));
+
     
     [self compareObject:a withAnother:b propertyClass:[a class]];
+
+//    [self systemEqual];
 }
+
+//- (void)systemEqual {
+//    TestModel *a = [TestModel new];
+//    a.age = 10;
+//    a.isMan = NO;
+//    a.title = @"jjje";
+//
+//    TestModel *b = [TestModel new];
+//    b.age = 10;
+//    b.isMan = YES;
+//    b.title = @"jjj";
+//
+//    NSLog(@"%@", @([a isEqual:b]));
+//}
 
 
 /// 对比两个object内容是否相同（手动写系统提供的对象的equals函数，需要一个个写每一个属性，比较麻烦，因此有这里的想法）

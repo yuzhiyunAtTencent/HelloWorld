@@ -10,4 +10,21 @@
 
 @implementation TestModel
 
+- (BOOL)isEqual:(TestModel *)other
+{
+    if (other == self) {
+        return YES;
+    } else {
+        if ([self.title isEqual:other.title]) {
+            return YES;
+        }
+        return NO;
+    }
+}
+
+- (NSUInteger)hash
+{
+    return 10;
+}
+
 @end
