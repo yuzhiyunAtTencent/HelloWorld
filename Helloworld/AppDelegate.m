@@ -15,7 +15,8 @@
 #import "FLEX/FLEX.h"
 #import "YUNAddStackFrameViewController.h"
 #import "TestEqualViewController.h"
-#import "TestImageNamedWithViewController.h"
+//#import "TestImageNamedWithViewController.h"
+#import "KYNDiskSizeReportUtil.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -47,6 +48,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     [self p_requestPushAuthorize];
     
+    [KYNDiskSizeReportUtil reportDiskSizeInfo];
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"a"];
 //    NSLog(@"NSUserDefaults %@", @([[NSUserDefaults standardUserDefaults] boolForKey:@"a"]));
 //    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"a"];

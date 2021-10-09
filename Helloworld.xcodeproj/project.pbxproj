@@ -100,6 +100,8 @@
 		28F3037623E9558100A96923 /* YUNUIInterfaceOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */; };
 		28F3037923E9566700A96923 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F3037823E9566700A96923 /* HorizontalViewController.m */; };
 		6A0460C596BD6B71BA73C5B9 /* Pods_Helloworld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */; };
+		A01A7BAD2710584F007E1AD9 /* KYNDiskSizeReportUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A7BAC2710584F007E1AD9 /* KYNDiskSizeReportUtil.m */; };
+		A01A7BB927105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A01A7BB827105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 */; };
 		A079FB0426284A780000532B /* TestEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FB0326284A780000532B /* TestEqualViewController.m */; };
 		A079FB0B26284B590000532B /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FB0A26284B590000532B /* TestModel.m */; };
 		A092AEA425AF25BD002596EE /* YUNAddStackFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */; };
@@ -332,6 +334,9 @@
 		28F3037523E9558100A96923 /* YUNUIInterfaceOrientationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNUIInterfaceOrientationViewController.m; sourceTree = "<group>"; };
 		28F3037723E9566700A96923 /* HorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
 		28F3037823E9566700A96923 /* HorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
+		A01A7BAB2710584F007E1AD9 /* KYNDiskSizeReportUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYNDiskSizeReportUtil.h; sourceTree = "<group>"; };
+		A01A7BAC2710584F007E1AD9 /* KYNDiskSizeReportUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYNDiskSizeReportUtil.m; sourceTree = "<group>"; };
+		A01A7BB827105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = VID_20210927_102251_8K.mp4; sourceTree = "<group>"; };
 		A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helloworld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A079FB0226284A780000532B /* TestEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestEqualViewController.h; sourceTree = "<group>"; };
 		A079FB0326284A780000532B /* TestEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestEqualViewController.m; sourceTree = "<group>"; };
@@ -806,6 +811,7 @@
 		28C48D101FD7FDB50096BAB9 = {
 			isa = PBXGroup;
 			children = (
+				A01A7BB827105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 */,
 				28E0F8D122A69BAD00A2452C /* NewsList.json */,
 				28407EE321E84D0000DB987D /* libs */,
 				2898CEA321379F7C00167892 /* YunPrefixHeader.pch */,
@@ -880,6 +886,8 @@
 				28C48D2B1FD7FDB50096BAB9 /* main.m */,
 				28C9B6FC22DDC2EF008041EA /* StrongWeakBlcokViewController.h */,
 				28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */,
+				A01A7BAB2710584F007E1AD9 /* KYNDiskSizeReportUtil.h */,
+				A01A7BAC2710584F007E1AD9 /* KYNDiskSizeReportUtil.m */,
 			);
 			path = Helloworld;
 			sourceTree = "<group>";
@@ -1242,6 +1250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01A7BB927105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 in Resources */,
 				28C48D261FD7FDB50096BAB9 /* Assets.xcassets in Resources */,
 				289F63CF212083E700F197CF /* icon_hello.png in Resources */,
 				28E0F8D222A69BAD00A2452C /* NewsList.json in Resources */,
@@ -1418,6 +1427,7 @@
 				28B3A3AC24FF9377003B1DC2 /* TestPHPickerViewController.m in Sources */,
 				2898CE9E213799A200167892 /* TestBridgeViewController.m in Sources */,
 				28C9B6FE22DDC2F0008041EA /* StrongWeakBlcokViewController.m in Sources */,
+				A01A7BAD2710584F007E1AD9 /* KYNDiskSizeReportUtil.m in Sources */,
 				2823220B2580B46C004D8F47 /* QNCoordinatorView.m in Sources */,
 				28EED23C249B8A3300196E3E /* YUNJSPatchViewController.m in Sources */,
 				282BD4B02267105000B1F817 /* UIView+Utils.m in Sources */,
