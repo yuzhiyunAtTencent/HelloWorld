@@ -15,7 +15,7 @@
 #import "FLEX/FLEX.h"
 #import "YUNAddStackFrameViewController.h"
 #import "TestEqualViewController.h"
-//#import "TestImageNamedWithViewController.h"
+#import "TestNSErrorDoublePointer.h"
 #import "KYNDiskSizeReportUtil.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
@@ -49,6 +49,11 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     [self p_requestPushAuthorize];
     
     [KYNDiskSizeReportUtil reportDiskSizeInfo];
+
+    
+    [TestNSErrorDoublePointer testFounction1];
+    [TestNSErrorDoublePointer testFounction2];
+    
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"a"];
 //    NSLog(@"NSUserDefaults %@", @([[NSUserDefaults standardUserDefaults] boolForKey:@"a"]));
 //    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"a"];

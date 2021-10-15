@@ -74,6 +74,12 @@
         }
     }];
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"VID_20210927_102251_8K" ofType:@"mp4"];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"访问成功" message:NSHomeDirectory() preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 //    NSDictionary *item = items.count > 0 ? items[0] : nil;
 //    NSLog(@"toast %@", [UIPasteboard generalPasteboard].string);
 //    NSLog(@"toast %@", [UIPasteboard generalPasteboard].items);

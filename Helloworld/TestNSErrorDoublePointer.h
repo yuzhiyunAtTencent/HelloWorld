@@ -1,8 +1,8 @@
 //
-//  KYNDiskSizeReportUtil.h
+//  TestNSErrorDoublePointer.h
 //  Helloworld
 //
-//  Created by  yuzhiyun on 2021/10/8.
+//  Created by  yuzhiyun on 2021/10/9.
 //  Copyright © 2021 zhiyunyu. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KYNDiskSizeReportUtil : NSObject
-+ (void)testFounction;
-+ (void)reportDiskSizeInfo;
+@interface TestNSErrorDoublePointer : NSObject
++ (void)testFounction1;
++ (void)testFounction2;
 @end
 
 NS_ASSUME_NONNULL_END

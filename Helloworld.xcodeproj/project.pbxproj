@@ -102,6 +102,7 @@
 		6A0460C596BD6B71BA73C5B9 /* Pods_Helloworld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */; };
 		A01A7BAD2710584F007E1AD9 /* KYNDiskSizeReportUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A7BAC2710584F007E1AD9 /* KYNDiskSizeReportUtil.m */; };
 		A01A7BB927105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A01A7BB827105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 */; };
+		A01A7BCA2711A5CA007E1AD9 /* TestNSErrorDoublePointer.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A7BC92711A5CA007E1AD9 /* TestNSErrorDoublePointer.m */; };
 		A079FB0426284A780000532B /* TestEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FB0326284A780000532B /* TestEqualViewController.m */; };
 		A079FB0B26284B590000532B /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FB0A26284B590000532B /* TestModel.m */; };
 		A092AEA425AF25BD002596EE /* YUNAddStackFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A092AEA325AF25BD002596EE /* YUNAddStackFrameViewController.m */; };
@@ -337,6 +338,8 @@
 		A01A7BAB2710584F007E1AD9 /* KYNDiskSizeReportUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYNDiskSizeReportUtil.h; sourceTree = "<group>"; };
 		A01A7BAC2710584F007E1AD9 /* KYNDiskSizeReportUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYNDiskSizeReportUtil.m; sourceTree = "<group>"; };
 		A01A7BB827105BB7007E1AD9 /* VID_20210927_102251_8K.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = VID_20210927_102251_8K.mp4; sourceTree = "<group>"; };
+		A01A7BC82711A5CA007E1AD9 /* TestNSErrorDoublePointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNSErrorDoublePointer.h; sourceTree = "<group>"; };
+		A01A7BC92711A5CA007E1AD9 /* TestNSErrorDoublePointer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNSErrorDoublePointer.m; sourceTree = "<group>"; };
 		A05CE46BF88FD1ABB62C64E5 /* Pods_Helloworld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helloworld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A079FB0226284A780000532B /* TestEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestEqualViewController.h; sourceTree = "<group>"; };
 		A079FB0326284A780000532B /* TestEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestEqualViewController.m; sourceTree = "<group>"; };
@@ -888,6 +891,8 @@
 				28C9B6FD22DDC2EF008041EA /* StrongWeakBlcokViewController.m */,
 				A01A7BAB2710584F007E1AD9 /* KYNDiskSizeReportUtil.h */,
 				A01A7BAC2710584F007E1AD9 /* KYNDiskSizeReportUtil.m */,
+				A01A7BC82711A5CA007E1AD9 /* TestNSErrorDoublePointer.h */,
+				A01A7BC92711A5CA007E1AD9 /* TestNSErrorDoublePointer.m */,
 			);
 			path = Helloworld;
 			sourceTree = "<group>";
@@ -1377,6 +1382,7 @@
 				A079FB0B26284B590000532B /* TestModel.m in Sources */,
 				A079FB0426284A780000532B /* TestEqualViewController.m in Sources */,
 				28A934212100B763007F8C40 /* YunSDWebImageViewController.m in Sources */,
+				A01A7BCA2711A5CA007E1AD9 /* TestNSErrorDoublePointer.m in Sources */,
 				28AE5BC62025B87B002B9B70 /* VideoViewController.m in Sources */,
 				28D96828246A5AB70014CA9C /* BlurEffectViewController.m in Sources */,
 				28C0C3212458256A00EEFC08 /* QNTestCategoryController+category.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "KYNDiskSizeReportUtil.h"
+#import "TestModel.h"
 
 @implementation KYNDiskSizeReportUtil
 
@@ -28,7 +29,12 @@ NSTimeInterval kYNDiskReportTimeOffset = 24 * 60 * 60;
     }
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"VID_20210927_102251_8K" ofType:@"mp4"];
-    [NSFileManager.defaultManager copyItemAtPath:path toPath:[NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Documents/VID_20210927_102251_8K.mp4"] error:NULL];
+    
+//
+    for (int i = 0; i < 10; i++) {
+        // 实测拷贝10次，会导致快影app的大小在系统那里显示占用了10倍的文件大小，但是系统总空间不变
+        [NSFileManager.defaultManager copyItemAtPath:path toPath:[NSString stringWithFormat:@"%@/%@_%@", NSHomeDirectory(),  @"Documents/VID_20210927_102251_8K.mp4", @(i)] error:NULL];
+    }
     
     NSMutableDictionary *sizeDic = [NSMutableDictionary dictionary];
 //    [sizeDic setObject:@([UIDevice ks_totalDiskSpace] / MBUint) forKey:@"disk_total_space"];
@@ -95,6 +101,7 @@ NSTimeInterval kYNDiskReportTimeOffset = 24 * 60 * 60;
 + (uint64_t)fileSizeAtPath:(NSString*)filePath {
     NSFileManager* manager = [NSFileManager defaultManager];
     if ([manager fileExistsAtPath:filePath]) {
+        
         return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
     }
     return 0;
