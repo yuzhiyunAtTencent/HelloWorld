@@ -17,6 +17,12 @@
 #import "TestEqualViewController.h"
 #import "TestNSErrorDoublePointer.h"
 #import "KYNDiskSizeReportUtil.h"
+#import "SaveVideoToCustomAlbumViewController.h"
+#import "TimerViewController.h"
+#import "YunTestViewController.h"
+#import "MJMutableContainerSafeProxy.H"
+#import "TransformViewController.h"
+#import "TestHitTestViewController.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -50,6 +56,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     
     [KYNDiskSizeReportUtil reportDiskSizeInfo];
 
+    NSArray *iconList = [YunTestViewController readLocalFileWithName:@"IconList"];
     
     [TestNSErrorDoublePointer testFounction1];
     [TestNSErrorDoublePointer testFounction2];
@@ -67,7 +74,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 //
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//设置窗口
-    UIViewController *mainVC = [[RootTableViewController alloc] init];
+    UIViewController *mainVC = [[TestHitTestViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
@@ -121,8 +128,41 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     // 这种宏定义在 头文件和m文件都可以定义变量，且随处可见。
     // http://hanson647.com/2015/06/10/2015/OC%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E9%87%8F/
     
-//    [[FLEXManager sharedManager] showExplorer];
+    [[FLEXManager sharedManager] showExplorer];
+    
+//    [self testConcurrent];
+//    [self testNSDictionary];
+    
     return YES;
+}
+
+- (void)testConcurrent {
+    // 多线程访问数组crash
+    dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    NSMutableArray *originArray = [NSMutableArray array];
+    for (int i = 0 ; i < 10000; i++) {
+        NSString *a = [NSString stringWithFormat:@"item%d", i];
+        dispatch_async(quene, ^{
+            [originArray addObject:a];
+        });
+        
+        dispatch_async(quene, ^{
+            [originArray removeObject:a];
+        });
+    }
+}
+
+- (void)testNSDictionary {
+    dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    for (int i = 0 ; i < 1000000; i++) {
+        NSString *a = [NSString stringWithFormat:@"item%d", i];
+        [dic setObject:a forKey:a];
+        dispatch_async(quene, ^{
+            [dic objectForKey:a];
+        });
+    }
 }
 
 // 其他app通过openURL跳转到这个 app 会回调这个函数

@@ -29,17 +29,33 @@ NSTimeInterval kYNDiskReportTimeOffset = 24 * 60 * 60;
     }
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"VID_20210927_102251_8K" ofType:@"mp4"];
+    NSString *newPath = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(),  @"Documents/VID_20210927_102251_8K.mp4"];
+    NSString *newLinkPath = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(),  @"Documents/link.mp4"];
+    [NSFileManager.defaultManager linkItemAtPath:newPath toPath:newLinkPath error:NULL];
     
-//
-    for (int i = 0; i < 10; i++) {
-        // 实测拷贝10次，会导致快影app的大小在系统那里显示占用了10倍的文件大小，但是系统总空间不变
-        [NSFileManager.defaultManager copyItemAtPath:path toPath:[NSString stringWithFormat:@"%@/%@_%@", NSHomeDirectory(),  @"Documents/VID_20210927_102251_8K.mp4", @(i)] error:NULL];
+    NSError *aerr = nil;
+    [NSFileManager.defaultManager setAttributes:@{NSFileSize: @1024} ofItemAtPath:newLinkPath error:&aerr];
+    if (aerr) {
+        NSLog(@"");
     }
+    [NSFileManager.defaultManager removeItemAtPath:newPath error:NULL];
+//
+////
+//    for (int i = 0; i < 10; i++) {
+//        // 实测拷贝10次，会导致快影app的大小在系统那里显示占用了10倍的文件大小，但是系统总空间不变
+//        [NSFileManager.defaultManager copyItemAtPath:path toPath:newPath error:NULL];
+//    }
+    
+//    NSString *xcodepath = [[NSBundle mainBundle] pathForResource:@"Xcode_13.2_beta_2" ofType:@"xip"];
+//    NSString *newPath = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(),  @"Documents/Xcode_132_beta_2.xip"];
+//    NSError *aErr;
+//    [NSFileManager.defaultManager copyItemAtPath:xcodepath toPath:newPath error:&aErr];
+//    NSLog(@"err = %@", aErr.description);
     
     NSMutableDictionary *sizeDic = [NSMutableDictionary dictionary];
 //    [sizeDic setObject:@([UIDevice ks_totalDiskSpace] / MBUint) forKey:@"disk_total_space"];
 //    [sizeDic setObject:@([UIDevice ks_freeDiskSpace] / MBUint) forKey:@"disk_free_space"];
-    
+    /*
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]];
     NSError *error = nil;
     if (@available(iOS 11.0, *)) {
@@ -79,6 +95,7 @@ NSTimeInterval kYNDiskReportTimeOffset = 24 * 60 * 60;
     
     // 上报快影的Documents，Library，tmp累计占用的总大小
     [sizeDic setObject:@(kuaiying_editor_total_size) forKey:@"editor_total"];
+     */
 }
 
 // 获得文件夹磁盘占用size

@@ -17,5 +17,7 @@ pod 'FDFullscreenPopGesture', '1.1'
 pod 'CYLDeallocBlockExecutor'
 pod 'FLAnimatedImage', '~> 1.0'
 pod 'JSPatch'
+#pod 'YYCache'
+pod 'YYKit', '1.0.9'
 
 end

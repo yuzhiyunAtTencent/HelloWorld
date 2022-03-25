@@ -1,0 +1,41 @@
+[
+    {
+        "name":"电话",
+        "imagelist":[
+            "url":"http://ww.sssss.a.png",
+            "url":"http://ww.sssss.b.png",
+        ],
+        "description":"if tech"
+    },
+    {
+        "name":"信息",
+        "file_name":"Stickers_02",
+        "description":"wechat"
+    },
+    {
+        "name":"图库",
+        "file_name":"Stickers_03",
+        "description":"wechat"
+    },
+    {
+        "name":"相机",
+        "file_name":"Stickers_04"
+    },
+    {
+        "name":"App Store",
+        "file_name":"Stickers_05"
+    },
+    {
+        "name":"App music",
+        "file_name":"Stickers_06"
+    },
+    {
+        "name":"备忘录",
+        "file_name":"Stickers_07"
+    },
+    {
+        "name":"Safari 浏览器",
+        "file_name":"Stickers_08"
+    }
+]
+    

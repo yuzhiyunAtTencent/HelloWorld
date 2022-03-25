@@ -34,6 +34,9 @@ PODS:
     - SDWebImage/Core
   - SVPullToRefresh (0.4.1)
   - WebViewJavascriptBridge (6.0.3)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (= 3.2.1)
@@ -49,6 +52,7 @@ DEPENDENCIES:
   - SDWebImage/GIF
   - SVPullToRefresh
   - WebViewJavascriptBridge (~> 6.0)
+  - YYKit (= 1.0.9)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -65,6 +69,8 @@ SPEC REPOS:
     - SDWebImage
     - SVPullToRefresh
     - WebViewJavascriptBridge
+  trunk:
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -80,7 +86,8 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f10d18c7db835527e916152dc73b504503dc7314
+PODFILE CHECKSUM: cba03d1399dc5a3a51192446a30af8158960aaca
 
 COCOAPODS: 1.10.0

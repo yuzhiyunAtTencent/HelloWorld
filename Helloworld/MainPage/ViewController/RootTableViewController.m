@@ -46,6 +46,7 @@
 #import "YunPrivacySafetyViewController.h"
 #import "TestPHPickerViewController.h"
 #import "YUNAddStackFrameViewController.h"
+#import "SaveVideoToCustomAlbumViewController.h"
 #include <dlfcn.h>
 #include <libunwind.h>
 
@@ -74,12 +75,12 @@
         }
     }];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"VID_20210927_102251_8K" ofType:@"mp4"];
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"访问成功" message:NSHomeDirectory() preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alertController addAction:okAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"VID_20210927_102251_8K" ofType:@"mp4"];
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"访问成功" message:NSHomeDirectory() preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+//    [alertController addAction:okAction];
+//    [self presentViewController:alertController animated:YES completion:nil];
+//
 //    NSDictionary *item = items.count > 0 ? items[0] : nil;
 //    NSLog(@"toast %@", [UIPasteboard generalPasteboard].string);
 //    NSLog(@"toast %@", [UIPasteboard generalPasteboard].items);
@@ -100,7 +101,7 @@
     
     self.array = [NSMutableArray array];
     
-//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVAudioPlayer 播放本地音频" viewCtlName:@"YUNAudioViewController"]];
+    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVAudioPlayer 播放本地音频" viewCtlName:@"YUNAudioViewController"]];
 ////    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"播放在线音频" viewCtlName:@"YUNAudioOnlineViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线music" viewCtlName:@"YUNPlayOnlineAudioViewController"]];
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AVFundation 播放在线video" viewCtlName:@"VideoViewController"]];
@@ -125,18 +126,19 @@
 //    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSNotificationCenter通知是同步的" viewCtlName:@"TestNotificationCenterViewController"]];
     
    
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"学习AVFundation" viewCtlName:@"LearnAVFundationViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"弹出自定义窗口" viewCtlName:@"YunPopViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"WKWebView" viewCtlName:@"WKWebViewViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AFNetworking" viewCtlName:@"AFNetworkingViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSURLSession下载图片" viewCtlName:@"DownLoadImageViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"多线程" viewCtlName:@"MultiThreadViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"线程安全" viewCtlName:@"ThreadSafetyViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"应用间跳转" viewCtlName:@"AppOpenURLViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"push通知" viewCtlName:@"NotificationViewController"]];
-    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"lottie动画" viewCtlName:@"LottieViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"下拉刷新" viewCtlName:@"NewsListTableViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"学习AVFundation" viewCtlName:@"LearnAVFundationViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"获取相册中的图片" viewCtlName:@"GetAlbumPictureViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"弹出自定义窗口" viewCtlName:@"YunPopViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"WKWebView" viewCtlName:@"WKWebViewViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"AFNetworking" viewCtlName:@"AFNetworkingViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"NSURLSession下载图片" viewCtlName:@"DownLoadImageViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"多线程" viewCtlName:@"MultiThreadViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"线程安全" viewCtlName:@"ThreadSafetyViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"应用间跳转" viewCtlName:@"AppOpenURLViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"push通知" viewCtlName:@"NotificationViewController"]];
+//    [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"lottie动画" viewCtlName:@"LottieViewController"]];
     /*
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"SDWebImage" viewCtlName:@"YunSDWebImageViewController"]];
     [self.array addObject:[[YUNKnowledgeItem alloc] initWithTitle:@"DrawRect" viewCtlName:@"YunDrawRectViewController"]];

@@ -33,7 +33,8 @@
     NSError *outError;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:&outError];
     // 3.设置循环播放
-    self.audioPlayer.numberOfLoops = 0;
+    self.audioPlayer.numberOfLoops = 1;
+    BOOL isPre = [self.audioPlayer prepareToPlay];
     // 4.设置AVAudioPlayer代理
 //    self.audioPlayer.delegate = self;
     // 5.开始播放

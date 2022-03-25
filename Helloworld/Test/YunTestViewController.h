@@ -9,5 +9,5 @@
 #import "YunBasicViewController.h"
 
 @interface YunTestViewController : YunBasicViewController
-
++ (NSDictionary *)readLocalFileWithName:(NSString *)name;
 @end
