@@ -1,0 +1,2 @@
+VID_20210927_102251_8K.mp4 filter=lfs diff=lfs merge=lfs -text
+Jianying_2.dmg filter=lfs diff=lfs merge=lfs -text
