@@ -23,6 +23,8 @@
 #import "MJMutableContainerSafeProxy.H"
 #import "TransformViewController.h"
 #import "TestHitTestViewController.h"
+#import "YUNRunloopViewController.h"
+#import "StackUnwindViewController.h"
 
 QN_DECLARE_CONST_NSSTRING(kQNViewAction);
 QN_DECLARE_CONST_NSSTRING(kQNFavoriteAction);
@@ -33,7 +35,7 @@ QN_DECLARE_CONST_NSSTRING(kQNUserHasReadArticleEvent);
 QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
-
+@property(nonatomic, assign) NSInteger current;
 @end
 
 @implementation AppDelegate
@@ -58,8 +60,8 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 
     NSArray *iconList = [YunTestViewController readLocalFileWithName:@"IconList"];
     
-    [TestNSErrorDoublePointer testFounction1];
-    [TestNSErrorDoublePointer testFounction2];
+//    [TestNSErrorDoublePointer testFounction1];
+//    [TestNSErrorDoublePointer testFounction2];
     
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"a"];
 //    NSLog(@"NSUserDefaults %@", @([[NSUserDefaults standardUserDefaults] boolForKey:@"a"]));
@@ -74,7 +76,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
 //
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//设置窗口
-    UIViewController *mainVC = [[TestHitTestViewController alloc] init];
+    UIViewController *mainVC = [[StackUnwindViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;//进入的首个页面
     [self.window makeKeyAndVisible];//显示
@@ -132,6 +134,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
     
 //    [self testConcurrent];
 //    [self testNSDictionary];
+    [self testThreadSafety];
     
     return YES;
 }
@@ -150,6 +153,29 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
             [originArray removeObject:a];
         });
     }
+}
+
+- (void)testThreadSafety {
+    self.current = 0;
+    dispatch_queue_t queue = dispatch_queue_create("TestQueue", DISPATCH_QUEUE_CONCURRENT);
+
+    dispatch_async(queue, ^{
+        NSLog(@"yzy current thread1 = %@", [NSThread currentThread]);
+      for (int i=0; i<10000; i++) {
+          self.current = self.current + 1;
+      }
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"yzy current thread2 = %@", [NSThread currentThread]);
+      for (int i=0; i<10000; i++) {
+          self.current = self.current + 1;
+      }
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"yzy current = %@", @(self.current));
+    });
 }
 
 - (void)testNSDictionary {
@@ -249,7 +275,7 @@ QN_DECLARE_CONST_NSSTRING(kQNReadArticleTimesKey);
      requestAuthorizationWithOptions:UNAuthorizationOptionBadge | UNAuthorizationOptionSound |
      UNAuthorizationOptionAlert
      completionHandler:^(BOOL granted, NSError *_Nullable error) {
-         NSLog(@"用户允许push？ --- %@",granted?@"YES":@"NO");
+//         NSLog(@"用户允许push？ --- %@",granted?@"YES":@"NO");
          dispatch_async(
                         dispatch_get_main_queue(),
                         ^{
